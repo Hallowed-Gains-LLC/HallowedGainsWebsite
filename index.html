@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hallowed Gains LLC</title>
-    <meta name="description" content="Hallowed Gains LLC - Building simple tools for spiritual growth.">
+    <meta name="description" content="Hallowed Gains LLC removes barriers to spiritual disciplines through digital simplicity — building free, confessional Lutheran tools for prayer, catechism, and theological study.">
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="HG.png">
     <!-- Tailwind CSS -->
@@ -45,6 +45,7 @@
                 <img src="HG.png" alt="Hallowed Gains Logo" class="w-8 h-8 object-contain">
                 Hallowed Gains LLC
             </div>
+            <!-- Desktop Nav -->
             <nav class="hidden sm:block">
                 <ul class="flex gap-6 text-sm font-medium text-brand-500">
                     <li><a href="#about" class="hover:text-brand-900 transition-colors">About</a></li>
@@ -52,6 +53,20 @@
                     <li><a href="#contact" class="hover:text-brand-900 transition-colors">Contact</a></li>
                 </ul>
             </nav>
+            <!-- Mobile Hamburger -->
+            <button id="menu-btn" class="sm:hidden flex flex-col gap-1.5 p-1" aria-label="Toggle navigation" aria-expanded="false">
+                <span id="bar1" class="block w-6 h-0.5 bg-brand-800 transition-all duration-300 origin-center"></span>
+                <span id="bar2" class="block w-6 h-0.5 bg-brand-800 transition-all duration-300"></span>
+                <span id="bar3" class="block w-6 h-0.5 bg-brand-800 transition-all duration-300 origin-center"></span>
+            </button>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="sm:hidden hidden border-t border-brand-100 bg-white px-6 py-4">
+            <ul class="flex flex-col gap-1 text-sm font-medium text-brand-500">
+                <li><a href="#about" onclick="closeMenu()" class="hover:text-brand-900 transition-colors block py-2">About</a></li>
+                <li><a href="#projects" onclick="closeMenu()" class="hover:text-brand-900 transition-colors block py-2">Our Projects</a></li>
+                <li><a href="#contact" onclick="closeMenu()" class="hover:text-brand-900 transition-colors block py-2">Contact</a></li>
+            </ul>
         </div>
     </header>
 
@@ -61,7 +76,7 @@
         <!-- Hero Section -->
         <section class="max-w-5xl mx-auto px-6 py-20 md:py-32 text-center">
             <h1 class="font-serif text-4xl md:text-6xl font-bold text-brand-900 mb-6 leading-tight">
-                Cultivating Growth <br class="hidden md:block" /> Through Simplicity
+                Spiritual Disciplines, <br class="hidden md:block" />Simplified.
             </h1>
             <p class="text-lg md:text-xl text-brand-500 max-w-2xl mx-auto mb-10 leading-relaxed">
                 Removing barriers to spiritual disciplines through digital simplicity, ensuring the best tools stay out of your way so you can focus on what truly matters.
@@ -80,8 +95,8 @@
                     <p class="text-brand-500 max-w-xl mx-auto">We focus on creating high-quality, freely available resources for our community.</p>
                 </div>
 
-                <!-- Product Card -->
-                <div class="max-w-3xl mx-auto bg-brand-50 rounded-2xl p-8 md:p-12 border border-brand-100 shadow-sm transition-transform hover:-translate-y-1 duration-300">
+                <!-- ASWTP Card -->
+                <div class="max-w-3xl mx-auto bg-brand-50 rounded-2xl p-8 md:p-12 border border-brand-100 shadow-sm transition-all duration-300 hover:-translate-y-1">
                     <div class="flex flex-col md:flex-row gap-8 items-start md:items-center">
                         <div class="bg-white p-4 rounded-xl shadow-sm border border-brand-100 flex-shrink-0 flex items-center justify-center">
                             <img src="aswtp-favicon.ico" alt="A Simple Way To Pray Logo" class="w-12 h-12 object-contain">
@@ -94,9 +109,27 @@
                             <p class="text-brand-500 mb-4 leading-relaxed">
                                 A straightforward, guided online resource designed to help you build a consistent and meaningful prayer life. Now featuring a <strong class="text-brand-800">Catechism Memorization</strong> tool and a <strong class="text-brand-800">Prayer Wall</strong> — where users can submit, pull, and fulfill real prayer requests from the community.
                             </p>
-                            <p class="text-brand-500 mb-6 leading-relaxed">
+                            <p class="text-brand-500 mb-5 leading-relaxed">
                                 Also includes in-depth confessional Lutheran studies on the <strong class="text-brand-800">Trinity</strong> and the <strong class="text-brand-800">Nicene Creed</strong> — deep theological resources wrapped in digital simplicity. Accessible anywhere, entirely for free.
                             </p>
+                            <!-- Feature Tags -->
+                            <div class="flex flex-wrap gap-2 mb-6">
+                                <span class="inline-flex items-center gap-1.5 text-xs font-medium bg-white border border-brand-100 text-brand-500 px-3 py-1 rounded-full shadow-sm">
+                                    <i data-lucide="scroll-text" class="w-3 h-3"></i> Catechism
+                                </span>
+                                <span class="inline-flex items-center gap-1.5 text-xs font-medium bg-white border border-brand-100 text-brand-500 px-3 py-1 rounded-full shadow-sm">
+                                    <i data-lucide="users" class="w-3 h-3"></i> Prayer Wall
+                                </span>
+                                <span class="inline-flex items-center gap-1.5 text-xs font-medium bg-white border border-brand-100 text-brand-500 px-3 py-1 rounded-full shadow-sm">
+                                    <i data-lucide="book-open" class="w-3 h-3"></i> Trinity Studies
+                                </span>
+                                <span class="inline-flex items-center gap-1.5 text-xs font-medium bg-white border border-brand-100 text-brand-500 px-3 py-1 rounded-full shadow-sm">
+                                    <i data-lucide="scroll" class="w-3 h-3"></i> Nicene Creed
+                                </span>
+                                <span class="inline-flex items-center gap-1.5 text-xs font-medium bg-white border border-brand-100 text-brand-500 px-3 py-1 rounded-full shadow-sm">
+                                    <i data-lucide="heart" class="w-3 h-3"></i> Prayer Journal
+                                </span>
+                            </div>
                             <a href="https://asimplewaytopray.com" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-brand-900 font-semibold hover:text-brand-500 transition-colors">
                                 Visit ASimpleWayToPray.com
                                 <i data-lucide="external-link" class="w-4 h-4"></i>
@@ -138,15 +171,66 @@
             </div>
         </section>
 
-        <!-- About/Contact Section -->
-        <section id="about" class="max-w-5xl mx-auto px-6 py-20 text-center">
-            <div class="max-w-2xl mx-auto">
-                <h2 class="font-serif text-3xl font-bold text-brand-900 mb-6">About Us</h2>
-                <p class="text-brand-500 mb-10 leading-relaxed">
-                    Hallowed Gains LLC is built on a single mission: removing barriers to spiritual disciplines through digital simplicity, ensuring the best tools stay out of your way so you can focus on what truly matters.
-                </p>
-                
-                <div id="contact" class="bg-white p-8 rounded-2xl border border-brand-100 shadow-sm inline-block w-full max-w-md">
+        <!-- About Section -->
+        <section id="about" class="max-w-5xl mx-auto px-6 py-20">
+            <div class="max-w-3xl mx-auto">
+                <div class="text-center mb-12">
+                    <h2 class="font-serif text-3xl font-bold text-brand-900 mb-4">About Us</h2>
+                    <p class="text-brand-500 max-w-xl mx-auto leading-relaxed">
+                        We're a small LLC with a single conviction: spiritual disciplines shouldn't require fighting through bad software to get there.
+                    </p>
+                </div>
+
+                <!-- About Grid -->
+                <div class="grid md:grid-cols-2 gap-6 mb-14">
+                    <div class="bg-white rounded-2xl p-7 border border-brand-100 shadow-sm">
+                        <div class="flex items-center gap-3 mb-4">
+                            <div class="bg-brand-50 p-2 rounded-lg border border-brand-100">
+                                <i data-lucide="target" class="w-5 h-5 text-brand-800"></i>
+                            </div>
+                            <h3 class="font-semibold text-brand-900">Our Mission</h3>
+                        </div>
+                        <p class="text-brand-500 leading-relaxed text-sm">
+                            Removing barriers to spiritual disciplines through digital simplicity — ensuring the best tools stay out of your way so you can focus on what truly matters.
+                        </p>
+                    </div>
+                    <div class="bg-white rounded-2xl p-7 border border-brand-100 shadow-sm">
+                        <div class="flex items-center gap-3 mb-4">
+                            <div class="bg-brand-50 p-2 rounded-lg border border-brand-100">
+                                <i data-lucide="anchor" class="w-5 h-5 text-brand-800"></i>
+                            </div>
+                            <h3 class="font-semibold text-brand-900">Our Identity</h3>
+                        </div>
+                        <p class="text-brand-500 leading-relaxed text-sm">
+                            Proudly confessional Lutheran, we build with the historic creeds and catechisms as our foundation. Our tools are designed to serve the whole Church — grounded in the rich tradition of the Lutheran confession of faith.
+                        </p>
+                    </div>
+                    <div class="bg-white rounded-2xl p-7 border border-brand-100 shadow-sm">
+                        <div class="flex items-center gap-3 mb-4">
+                            <div class="bg-brand-50 p-2 rounded-lg border border-brand-100">
+                                <i data-lucide="zap" class="w-5 h-5 text-brand-800"></i>
+                            </div>
+                            <h3 class="font-semibold text-brand-900">Our Philosophy</h3>
+                        </div>
+                        <p class="text-brand-500 leading-relaxed text-sm">
+                            Technology should reduce friction, not add it. Every product is evaluated by a simple standard: does it help you pray, study, and grow — or does it get in the way? If it's in the way, it doesn't ship.
+                        </p>
+                    </div>
+                    <div class="bg-white rounded-2xl p-7 border border-brand-100 shadow-sm">
+                        <div class="flex items-center gap-3 mb-4">
+                            <div class="bg-brand-50 p-2 rounded-lg border border-brand-100">
+                                <i data-lucide="shield-check" class="w-5 h-5 text-brand-800"></i>
+                            </div>
+                            <h3 class="font-semibold text-brand-900">Free Where It Counts</h3>
+                        </div>
+                        <p class="text-brand-500 leading-relaxed text-sm">
+                            <strong class="text-brand-800">A Simple Way to Pray</strong> is, and will always remain, completely free — no subscriptions, no paywalls, no exceptions. While some future products may be paid, our commitment to keeping core spiritual tools accessible never changes.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Contact Card -->
+                <div id="contact" class="bg-white p-8 rounded-2xl border border-brand-100 shadow-sm text-center max-w-md mx-auto">
                     <h3 class="font-bold text-brand-900 mb-2">Get in Touch</h3>
                     <p class="text-sm text-brand-500 mb-6">Questions, feedback, or business inquiries — we'd love to hear from you.</p>
                     <a href="mailto:contact@hallowedgains.com" class="block w-full bg-brand-100 text-brand-900 font-medium py-3 rounded-lg hover:bg-brand-200 transition-colors">
@@ -165,9 +249,38 @@
         </div>
     </footer>
 
-    <!-- Initialize Icons -->
+    <!-- Initialize Icons + Mobile Nav -->
     <script>
         lucide.createIcons();
+
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const bar1 = document.getElementById('bar1');
+        const bar2 = document.getElementById('bar2');
+        const bar3 = document.getElementById('bar3');
+        let menuOpen = false;
+
+        function closeMenu() {
+            menuOpen = false;
+            mobileMenu.classList.add('hidden');
+            menuBtn.setAttribute('aria-expanded', 'false');
+            bar1.style.transform = '';
+            bar2.style.opacity = '1';
+            bar3.style.transform = '';
+        }
+
+        menuBtn.addEventListener('click', () => {
+            menuOpen = !menuOpen;
+            if (menuOpen) {
+                mobileMenu.classList.remove('hidden');
+                menuBtn.setAttribute('aria-expanded', 'true');
+                bar1.style.transform = 'translateY(8px) rotate(45deg)';
+                bar2.style.opacity = '0';
+                bar3.style.transform = 'translateY(-8px) rotate(-45deg)';
+            } else {
+                closeMenu();
+            }
+        });
     </script>
 </body>
 </html>
