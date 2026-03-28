@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact — Hallowed Gains LLC</title>
+    <meta name="description" content="Get in touch with Hallowed Gains LLC — questions, feedback, or business inquiries.">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="HG.png">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#f4f6f8',
+                            100: '#e4e8ec',
+                            500: '#64748b',
+                            800: '#1e293b',
+                            900: '#0f172a',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-brand-50 text-brand-800 font-sans antialiased flex flex-col min-h-screen">
+
+    <!-- Header -->
+    <header class="bg-white shadow-sm sticky top-0 z-10">
+        <div class="max-w-5xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="/" class="flex items-center gap-2 text-brand-900 font-serif font-semibold text-xl tracking-tight hover:opacity-80 transition-opacity">
+                <img src="HG.png" alt="Hallowed Gains Logo" class="w-8 h-8 object-contain">
+                Hallowed Gains LLC
+            </a>
+            <!-- Desktop Nav -->
+            <nav class="hidden sm:block">
+                <ul class="flex gap-6 text-sm font-medium text-brand-500">
+                    <li><a href="/#about" class="hover:text-brand-900 transition-colors">About</a></li>
+                    <li><a href="/#projects" class="hover:text-brand-900 transition-colors">Our Projects</a></li>
+                    <li><a href="/contact.html" class="text-brand-900 font-semibold">Contact</a></li>
+                </ul>
+            </nav>
+            <!-- Mobile Hamburger -->
+            <button id="menu-btn" class="sm:hidden flex flex-col gap-1.5 p-1" aria-label="Toggle navigation" aria-expanded="false">
+                <span id="bar1" class="block w-6 h-0.5 bg-brand-800 transition-all duration-300 origin-center"></span>
+                <span id="bar2" class="block w-6 h-0.5 bg-brand-800 transition-all duration-300"></span>
+                <span id="bar3" class="block w-6 h-0.5 bg-brand-800 transition-all duration-300 origin-center"></span>
+            </button>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="sm:hidden hidden border-t border-brand-100 bg-white px-6 py-4">
+            <ul class="flex flex-col gap-1 text-sm font-medium text-brand-500">
+                <li><a href="/#about" onclick="closeMenu()" class="hover:text-brand-900 transition-colors block py-2">About</a></li>
+                <li><a href="/#projects" onclick="closeMenu()" class="hover:text-brand-900 transition-colors block py-2">Our Projects</a></li>
+                <li><a href="/contact.html" onclick="closeMenu()" class="text-brand-900 font-semibold block py-2">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main class="flex-grow">
+        <section class="max-w-2xl mx-auto px-6 py-20">
+
+            <div class="text-center mb-12">
+                <h1 class="font-serif text-4xl font-bold text-brand-900 mb-4">Get in Touch</h1>
+                <p class="text-brand-500 text-lg leading-relaxed">Questions, feedback, or business inquiries — we'd love to hear from you.</p>
+            </div>
+
+            <!-- Success message (shown after submission) -->
+            <div id="success-msg" class="hidden mb-8 bg-green-50 border border-green-200 text-green-800 rounded-xl p-6 text-center">
+                <p class="font-semibold text-lg mb-1">Message sent!</p>
+                <p class="text-sm">Thanks for reaching out. We'll get back to you soon.</p>
+            </div>
+
+            <div class="bg-white rounded-2xl border border-brand-100 shadow-sm p-8 md:p-10">
+                <!-- Replace YOUR_FORM_ID below with your Formspree form ID -->
+                <form id="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="space-y-6">
+
+                    <div>
+                        <label for="name" class="block text-sm font-medium text-brand-800 mb-1.5">Name</label>
+                        <input
+                            type="text"
+                            id="name"
+                            name="name"
+                            required
+                            placeholder="Your name"
+                            class="w-full px-4 py-3 rounded-lg border border-brand-100 bg-brand-50 text-brand-900 placeholder-brand-500 focus:outline-none focus:ring-2 focus:ring-brand-800 focus:border-transparent transition-colors"
+                        >
+                    </div>
+
+                    <div>
+                        <label for="email" class="block text-sm font-medium text-brand-800 mb-1.5">Email</label>
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            required
+                            placeholder="you@example.com"
+                            class="w-full px-4 py-3 rounded-lg border border-brand-100 bg-brand-50 text-brand-900 placeholder-brand-500 focus:outline-none focus:ring-2 focus:ring-brand-800 focus:border-transparent transition-colors"
+                        >
+                    </div>
+
+                    <div>
+                        <label for="subject" class="block text-sm font-medium text-brand-800 mb-1.5">Subject</label>
+                        <input
+                            type="text"
+                            id="subject"
+                            name="subject"
+                            required
+                            placeholder="What's this about?"
+                            class="w-full px-4 py-3 rounded-lg border border-brand-100 bg-brand-50 text-brand-900 placeholder-brand-500 focus:outline-none focus:ring-2 focus:ring-brand-800 focus:border-transparent transition-colors"
+                        >
+                    </div>
+
+                    <div>
+                        <label for="message" class="block text-sm font-medium text-brand-800 mb-1.5">Message</label>
+                        <textarea
+                            id="message"
+                            name="message"
+                            required
+                            rows="6"
+                            placeholder="Tell us what's on your mind..."
+                            class="w-full px-4 py-3 rounded-lg border border-brand-100 bg-brand-50 text-brand-900 placeholder-brand-500 focus:outline-none focus:ring-2 focus:ring-brand-800 focus:border-transparent transition-colors resize-none"
+                        ></textarea>
+                    </div>
+
+                    <button
+                        type="submit"
+                        id="submit-btn"
+                        class="w-full bg-brand-900 text-white font-medium py-3 rounded-lg hover:bg-brand-800 transition-colors flex items-center justify-center gap-2 cursor-pointer"
+                    >
+                        <i data-lucide="send" class="w-4 h-4"></i>
+                        Send Message
+                    </button>
+
+                </form>
+            </div>
+
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-brand-900 text-brand-500 py-10 text-center text-sm">
+        <div class="max-w-5xl mx-auto px-6 flex flex-col items-center justify-center">
+            <p>&copy; <script>document.write(new Date().getFullYear())</script> Hallowed Gains LLC. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const bar1 = document.getElementById('bar1');
+        const bar2 = document.getElementById('bar2');
+        const bar3 = document.getElementById('bar3');
+        let menuOpen = false;
+
+        function closeMenu() {
+            menuOpen = false;
+            mobileMenu.classList.add('hidden');
+            menuBtn.setAttribute('aria-expanded', 'false');
+            bar1.style.transform = '';
+            bar2.style.opacity = '1';
+            bar3.style.transform = '';
+        }
+
+        menuBtn.addEventListener('click', () => {
+            menuOpen = !menuOpen;
+            if (menuOpen) {
+                mobileMenu.classList.remove('hidden');
+                menuBtn.setAttribute('aria-expanded', 'true');
+                bar1.style.transform = 'translateY(8px) rotate(45deg)';
+                bar2.style.opacity = '0';
+                bar3.style.transform = 'translateY(-8px) rotate(-45deg)';
+            } else {
+                closeMenu();
+            }
+        });
+
+        // Handle form submission with fetch to show inline success message
+        const form = document.getElementById('contact-form');
+        const successMsg = document.getElementById('success-msg');
+        const submitBtn = document.getElementById('submit-btn');
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Sending...';
+
+            const data = new FormData(form);
+            const response = await fetch(form.action, {
+                method: 'POST',
+                body: data,
+                headers: { 'Accept': 'application/json' }
+            });
+
+            if (response.ok) {
+                form.reset();
+                form.classList.add('hidden');
+                successMsg.classList.remove('hidden');
+            } else {
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = '<i data-lucide="send" class="w-4 h-4"></i> Send Message';
+                lucide.createIcons();
+                alert('Something went wrong. Please try again.');
+            }
+        });
+    </script>
+</body>
+</html>
