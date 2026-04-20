@@ -24,22 +24,40 @@
                     },
                     colors: {
                         brand: {
-                            50: '#f4f6f8',
-                            100: '#e4e8ec',
-                            500: '#64748b',
-                            800: '#1e293b',
-                            900: '#0f172a',
-                        }
+                            50: '#F7F3E3',   // ivory
+                            100: '#EDE4CC',  // warm ivory (borders / subtle bg)
+                            200: '#DED2B2',  // warm ivory hover
+                            500: '#8A7866',  // warm muted brown (secondary text)
+                            800: '#65342F',  // burgundy red (accent / hover)
+                            900: '#322E2C',  // dark brown/black (headings / dark bg)
+                        },
+                        gold: {
+                            DEFAULT: '#AF9164',
+                            soft: '#EFE3CB',
+                            deep: '#7A6340',
+                        },
+                        silver: {
+                            DEFAULT: '#B4B6B7',
+                            soft: '#E6E7E8',
+                            deep: '#6E7172',
+                        },
+                        burgundy: {
+                            soft: '#F0DCD9',
+                            deep: '#4A2421',
+                        },
                     }
                 }
             }
         }
     </script>
 </head>
-<body class="bg-brand-50 text-brand-800 font-sans antialiased flex flex-col min-h-screen">
+<body class="bg-brand-50 text-brand-900 font-sans antialiased flex flex-col min-h-screen">
+
+    <!-- Gold accent stripe -->
+    <div class="h-1 bg-gold w-full"></div>
 
     <!-- Header -->
-    <header class="bg-white shadow-sm sticky top-0 z-10">
+    <header class="bg-white shadow-sm sticky top-0 z-10 border-b border-brand-100">
         <div class="max-w-5xl mx-auto px-6 py-4 flex justify-between items-center">
             <div class="flex items-center gap-2 text-brand-900 font-serif font-semibold text-xl tracking-tight">
                 <img src="HG.png" alt="Hallowed Gains Logo" class="w-8 h-8 object-contain">
@@ -106,7 +124,7 @@
                         <div class="flex-grow">
                             <div class="flex items-center gap-3 mb-2">
                                 <h3 class="font-serif text-2xl font-bold text-brand-900">A Simple Way to Pray</h3>
-                                <span class="bg-green-100 text-green-800 text-xs font-semibold px-2.5 py-0.5 rounded-full border border-green-200">100% Free</span>
+                                <span class="bg-gold-soft text-gold-deep text-xs font-semibold px-2.5 py-0.5 rounded-full border border-gold/40">100% Free</span>
                             </div>
                             <p class="text-brand-500 mb-4 leading-relaxed">
                                 A straightforward, guided online resource designed to help you build a consistent and meaningful prayer life. Now featuring a <strong class="text-brand-800">Catechism Memorization</strong> tool and a <strong class="text-brand-800">Prayer Wall</strong> — where users can submit, pull, and fulfill real prayer requests from the community.
@@ -131,7 +149,7 @@
                         <div class="flex-grow">
                             <div class="flex items-center gap-3 mb-2">
                                 <h3 class="font-serif text-2xl font-bold text-brand-900">Church Web & App Development</h3>
-                                <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded-full border border-blue-200">Service</span>
+                                <span class="bg-burgundy-soft text-brand-800 text-xs font-semibold px-2.5 py-0.5 rounded-full border border-brand-800/30">Service</span>
                             </div>
                             <p class="text-brand-500 mb-4 leading-relaxed">
                                 We build websites and apps for <strong class="text-brand-800">LCMS congregations and church-affiliated programs</strong> — from simple parish sites to custom ministry tools. Purpose-built for Lutheran communities, with the same commitment to clarity and simplicity we bring to all our work.
@@ -164,7 +182,7 @@
                             <div class="flex-grow">
                                 <div class="flex items-center gap-3 mb-2">
                                     <h3 class="font-serif text-2xl font-bold text-brand-900">Idle Bible</h3>
-                                    <span class="bg-amber-100 text-amber-800 text-xs font-semibold px-2.5 py-0.5 rounded-full border border-amber-200">Coming Soon</span>
+                                    <span class="bg-silver-soft text-silver-deep text-xs font-semibold px-2.5 py-0.5 rounded-full border border-silver/50">Coming Soon</span>
                                 </div>
                                 <p class="text-brand-500 mb-3 leading-relaxed">
                                     An educational idle game that guides players through the full sweep of the biblical timeline — from laying the foundations of the <strong class="text-brand-800">Old Covenant</strong> and building landmarks like <strong class="text-brand-800">Solomon's Temple</strong>, through the <strong class="text-brand-800">Incarnation</strong>, to the <strong class="text-brand-800">Great Commission</strong> and the planting of the early Church.
@@ -275,7 +293,7 @@
     </main>
 
     <!-- Footer -->
-    <footer class="bg-brand-900 text-brand-500 py-10 text-center text-sm">
+    <footer class="bg-brand-900 text-brand-50/70 py-10 text-center text-sm border-t-2 border-gold">
         <div class="max-w-5xl mx-auto px-6 flex flex-col items-center justify-center">
             <p>&copy; <script>document.write(new Date().getFullYear())</script> Hallowed Gains LLC. All rights reserved.</p>
         </div>

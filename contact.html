@@ -24,22 +24,40 @@
                     },
                     colors: {
                         brand: {
-                            50: '#f4f6f8',
-                            100: '#e4e8ec',
-                            500: '#64748b',
-                            800: '#1e293b',
-                            900: '#0f172a',
-                        }
+                            50: '#F7F3E3',   // ivory
+                            100: '#EDE4CC',  // warm ivory (borders / subtle bg)
+                            200: '#DED2B2',  // warm ivory hover
+                            500: '#8A7866',  // warm muted brown (secondary text)
+                            800: '#65342F',  // burgundy red (accent / hover)
+                            900: '#322E2C',  // dark brown/black (headings / dark bg)
+                        },
+                        gold: {
+                            DEFAULT: '#AF9164',
+                            soft: '#EFE3CB',
+                            deep: '#7A6340',
+                        },
+                        silver: {
+                            DEFAULT: '#B4B6B7',
+                            soft: '#E6E7E8',
+                            deep: '#6E7172',
+                        },
+                        burgundy: {
+                            soft: '#F0DCD9',
+                            deep: '#4A2421',
+                        },
                     }
                 }
             }
         }
     </script>
 </head>
-<body class="bg-brand-50 text-brand-800 font-sans antialiased flex flex-col min-h-screen">
+<body class="bg-brand-50 text-brand-900 font-sans antialiased flex flex-col min-h-screen">
+
+    <!-- Gold accent stripe -->
+    <div class="h-1 bg-gold w-full"></div>
 
     <!-- Header -->
-    <header class="bg-white shadow-sm sticky top-0 z-10">
+    <header class="bg-white shadow-sm sticky top-0 z-10 border-b border-brand-100">
         <div class="max-w-5xl mx-auto px-6 py-4 flex justify-between items-center">
             <a href="/" class="flex items-center gap-2 text-brand-900 font-serif font-semibold text-xl tracking-tight hover:opacity-80 transition-opacity">
                 <img src="HG.png" alt="Hallowed Gains Logo" class="w-8 h-8 object-contain">
@@ -96,7 +114,7 @@
     </main>
 
     <!-- Footer -->
-    <footer class="bg-brand-900 text-brand-500 py-10 text-center text-sm">
+    <footer class="bg-brand-900 text-brand-50/70 py-10 text-center text-sm border-t-2 border-gold">
         <div class="max-w-5xl mx-auto px-6 flex flex-col items-center justify-center">
             <p>&copy; <script>document.write(new Date().getFullYear())</script> Hallowed Gains LLC. All rights reserved.</p>
         </div>
