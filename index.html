@@ -57,35 +57,35 @@
     <div class="h-1 bg-gold w-full"></div>
 
     <!-- Header -->
-    <header class="bg-white shadow-sm sticky top-0 z-10 border-b border-brand-100">
+    <header class="bg-brand-900 shadow-lg sticky top-0 z-10 border-b border-gold/40">
         <div class="max-w-5xl mx-auto px-6 py-4 flex justify-between items-center">
-            <div class="flex items-center gap-2 text-brand-900 font-serif font-semibold text-xl tracking-tight">
+            <div class="flex items-center gap-2 text-brand-50 font-serif font-semibold text-xl tracking-tight">
                 <img src="HG.png" alt="Hallowed Gains Logo" class="w-8 h-8 object-contain">
                 Hallowed Gains LLC
             </div>
             <!-- Desktop Nav -->
             <nav class="hidden sm:block">
-                <ul class="flex gap-6 text-sm font-medium text-brand-500">
-                    <li><a href="#about" class="hover:text-brand-900 transition-colors">About</a></li>
-                    <li><a href="#projects" class="hover:text-brand-900 transition-colors">Our Projects</a></li>
-                    <li><a href="#contact" class="hover:text-brand-900 transition-colors">Contact</a></li>
-                    <li><a href="https://buy.stripe.com/7sY14pa5Kdsh3lLbQm87K00" target="_blank" rel="noopener noreferrer" class="bg-brand-900 text-white px-4 py-1.5 rounded-full hover:bg-brand-800 transition-colors">Donate</a></li>
+                <ul class="flex gap-6 text-sm font-medium text-brand-50/70">
+                    <li><a href="#about" class="hover:text-gold transition-colors">About</a></li>
+                    <li><a href="#projects" class="hover:text-gold transition-colors">Our Projects</a></li>
+                    <li><a href="#contact" class="hover:text-gold transition-colors">Contact</a></li>
+                    <li><a href="https://buy.stripe.com/7sY14pa5Kdsh3lLbQm87K00" target="_blank" rel="noopener noreferrer" class="bg-brand-800 text-brand-50 px-4 py-1.5 rounded-full border border-gold/60 hover:bg-gold hover:text-brand-900 transition-colors">Donate</a></li>
                 </ul>
             </nav>
             <!-- Mobile Hamburger -->
             <button id="menu-btn" class="sm:hidden flex flex-col gap-1.5 p-1" aria-label="Toggle navigation" aria-expanded="false">
-                <span id="bar1" class="block w-6 h-0.5 bg-brand-800 transition-all duration-300 origin-center"></span>
-                <span id="bar2" class="block w-6 h-0.5 bg-brand-800 transition-all duration-300"></span>
-                <span id="bar3" class="block w-6 h-0.5 bg-brand-800 transition-all duration-300 origin-center"></span>
+                <span id="bar1" class="block w-6 h-0.5 bg-brand-50 transition-all duration-300 origin-center"></span>
+                <span id="bar2" class="block w-6 h-0.5 bg-brand-50 transition-all duration-300"></span>
+                <span id="bar3" class="block w-6 h-0.5 bg-brand-50 transition-all duration-300 origin-center"></span>
             </button>
         </div>
         <!-- Mobile Menu -->
-        <div id="mobile-menu" class="sm:hidden hidden border-t border-brand-100 bg-white px-6 py-4">
-            <ul class="flex flex-col gap-1 text-sm font-medium text-brand-500">
-                <li><a href="#about" onclick="closeMenu()" class="hover:text-brand-900 transition-colors block py-2">About</a></li>
-                <li><a href="#projects" onclick="closeMenu()" class="hover:text-brand-900 transition-colors block py-2">Our Projects</a></li>
-                <li><a href="#contact" onclick="closeMenu()" class="hover:text-brand-900 transition-colors block py-2">Contact</a></li>
-                <li><a href="https://buy.stripe.com/7sY14pa5Kdsh3lLbQm87K00" target="_blank" rel="noopener noreferrer" onclick="closeMenu()" class="inline-block mt-1 bg-brand-900 text-white px-4 py-2 rounded-full hover:bg-brand-800 transition-colors text-center">Donate</a></li>
+        <div id="mobile-menu" class="sm:hidden hidden border-t border-gold/30 bg-brand-900 px-6 py-4">
+            <ul class="flex flex-col gap-1 text-sm font-medium text-brand-50/80">
+                <li><a href="#about" onclick="closeMenu()" class="hover:text-gold transition-colors block py-2">About</a></li>
+                <li><a href="#projects" onclick="closeMenu()" class="hover:text-gold transition-colors block py-2">Our Projects</a></li>
+                <li><a href="#contact" onclick="closeMenu()" class="hover:text-gold transition-colors block py-2">Contact</a></li>
+                <li><a href="https://buy.stripe.com/7sY14pa5Kdsh3lLbQm87K00" target="_blank" rel="noopener noreferrer" onclick="closeMenu()" class="inline-block mt-1 bg-brand-800 text-brand-50 px-4 py-2 rounded-full border border-gold/60 hover:bg-gold hover:text-brand-900 transition-colors text-center">Donate</a></li>
             </ul>
         </div>
     </header>
@@ -94,17 +94,20 @@
     <main class="flex-grow">
         
         <!-- Hero Section -->
-        <section class="max-w-5xl mx-auto px-6 py-20 md:py-32 text-center">
-            <h1 class="font-serif text-4xl md:text-6xl font-bold text-brand-900 mb-6 leading-tight">
-                Spiritual Disciplines, <br class="hidden md:block" />Simplified.
-            </h1>
-            <p class="text-lg md:text-xl text-brand-500 max-w-2xl mx-auto mb-10 leading-relaxed">
-                Removing barriers to spiritual disciplines through digital simplicity, ensuring the best tools stay out of your way so you can focus on what truly matters.
-            </p>
-            <a href="#projects" class="inline-flex items-center gap-2 bg-brand-900 text-white px-6 py-3 rounded-full font-medium hover:bg-brand-800 transition-colors shadow-sm">
-                View Our Work
-                <i data-lucide="arrow-down" class="w-4 h-4"></i>
-            </a>
+        <section class="bg-brand-900 text-brand-50 border-b-2 border-gold/70 relative overflow-hidden">
+            <div class="max-w-5xl mx-auto px-6 py-20 md:py-32 text-center relative z-10">
+                <span class="inline-block text-xs font-semibold uppercase tracking-[0.25em] text-gold mb-5">Confessional Lutheran · Digital Simplicity</span>
+                <h1 class="font-serif text-4xl md:text-6xl font-bold text-brand-50 mb-6 leading-tight">
+                    Spiritual Disciplines, <br class="hidden md:block" /><span class="text-gold">Simplified.</span>
+                </h1>
+                <p class="text-lg md:text-xl text-brand-50/75 max-w-2xl mx-auto mb-10 leading-relaxed">
+                    Removing barriers to spiritual disciplines through digital simplicity, ensuring the best tools stay out of your way so you can focus on what truly matters.
+                </p>
+                <a href="#projects" class="inline-flex items-center gap-2 bg-brand-800 text-brand-50 px-7 py-3 rounded-full font-medium border border-gold/60 hover:bg-gold hover:text-brand-900 hover:border-gold transition-colors shadow-lg">
+                    View Our Work
+                    <i data-lucide="arrow-down" class="w-4 h-4"></i>
+                </a>
+            </div>
         </section>
 
         <!-- Projects Section -->
@@ -201,22 +204,22 @@
         <!-- Support Section -->
         <section id="support" class="max-w-5xl mx-auto px-6 py-20">
             <div class="max-w-md mx-auto text-center">
-                <div class="bg-white p-8 rounded-2xl border border-brand-100 shadow-sm">
+                <div class="bg-brand-900 p-8 rounded-2xl border border-gold/50 shadow-xl">
                     <div class="flex justify-center mb-4">
-                        <div class="bg-brand-50 p-3 rounded-xl border border-brand-100">
-                            <i data-lucide="heart" class="w-6 h-6 text-brand-800"></i>
+                        <div class="bg-brand-800 p-3 rounded-xl border border-gold/50">
+                            <i data-lucide="heart" class="w-6 h-6 text-gold"></i>
                         </div>
                     </div>
-                    <h3 class="font-serif text-2xl font-bold text-brand-900 mb-2">Support Our Work</h3>
-                    <p class="text-sm text-brand-500 mb-6 leading-relaxed">
+                    <h3 class="font-serif text-2xl font-bold text-brand-50 mb-2">Support Our Work</h3>
+                    <p class="text-sm text-brand-50/70 mb-6 leading-relaxed">
                         We are a small LLC, trying to get started. If the products we have made have been a blessing to you, consider supporting the LLC so we can keep building and maintaining them.
                     </p>
                     <a href="https://buy.stripe.com/7sY14pa5Kdsh3lLbQm87K00" target="_blank" rel="noopener noreferrer"
-                       class="inline-flex items-center justify-center gap-2 w-full bg-brand-900 text-white font-medium py-3 rounded-lg hover:bg-brand-800 transition-colors">
+                       class="inline-flex items-center justify-center gap-2 w-full bg-gold text-brand-900 font-semibold py-3 rounded-lg border border-gold hover:bg-gold-deep hover:text-brand-50 transition-colors">
                         <i data-lucide="heart" class="w-4 h-4"></i>
                         Donate via Stripe
                     </a>
-                    <p class="text-xs text-brand-500 mt-3">Secure payments powered by Stripe</p>
+                    <p class="text-xs text-brand-50/50 mt-3">Secure payments powered by Stripe</p>
                 </div>
             </div>
         </section>
@@ -283,7 +286,7 @@
                 <div id="contact" class="bg-white p-8 rounded-2xl border border-brand-100 shadow-sm text-center max-w-md mx-auto">
                     <h3 class="font-bold text-brand-900 mb-2">Get in Touch</h3>
                     <p class="text-sm text-brand-500 mb-6">Questions, feedback, or business inquiries — we'd love to hear from you.</p>
-                    <a href="/contact.html" class="block w-full bg-brand-100 text-brand-900 font-medium py-3 rounded-lg hover:bg-brand-200 transition-colors text-center">
+                    <a href="/contact.html" class="block w-full bg-brand-900 text-brand-50 font-medium py-3 rounded-lg hover:bg-brand-800 transition-colors text-center">
                         Email Us
                     </a>
                 </div>
