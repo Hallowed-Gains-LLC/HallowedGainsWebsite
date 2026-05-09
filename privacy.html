@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy — Hallowed Gains LLC</title>
+    <meta name="description" content="Privacy policy for Hallowed Gains LLC and its apps, including Idle Bible. Learn what data we collect, how we use it, and your rights.">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="HallowedGains_Logo_Lettermark_Gold.png">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#F7F3E3',
+                            100: '#EDE4CC',
+                            200: '#DED2B2',
+                            500: '#8A7866',
+                            800: '#65342F',
+                            900: '#322E2C',
+                        },
+                        gold: {
+                            DEFAULT: '#AF9164',
+                            soft: '#EFE3CB',
+                            deep: '#7A6340',
+                        },
+                        silver: {
+                            DEFAULT: '#B4B6B7',
+                            soft: '#E6E7E8',
+                            deep: '#6E7172',
+                        },
+                        burgundy: {
+                            soft: '#F0DCD9',
+                            deep: '#4A2421',
+                        },
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .prose-policy h2 { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 700; color: #322E2C; margin-top: 2.25rem; margin-bottom: 0.75rem; scroll-margin-top: 6rem; }
+        .prose-policy h3 { font-weight: 600; color: #322E2C; margin-top: 1.5rem; margin-bottom: 0.5rem; }
+        .prose-policy p { color: #5a5046; line-height: 1.7; margin-bottom: 1rem; }
+        .prose-policy ul { list-style: disc; padding-left: 1.5rem; margin-bottom: 1rem; color: #5a5046; }
+        .prose-policy ul li { margin-bottom: 0.4rem; line-height: 1.65; }
+        .prose-policy strong { color: #322E2C; }
+        .prose-policy a { color: #65342F; text-decoration: underline; text-underline-offset: 2px; }
+        .prose-policy a:hover { color: #AF9164; }
+    </style>
+</head>
+<body class="bg-brand-50 text-brand-900 font-sans antialiased flex flex-col min-h-screen">
+
+    <!-- Gold accent stripe -->
+    <div class="h-1 bg-gold w-full"></div>
+
+    <!-- Header -->
+    <header class="bg-brand-900 shadow-lg sticky top-0 z-10 border-b border-gold/40">
+        <div class="max-w-5xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="/" class="flex items-center gap-2 text-brand-50 font-serif font-semibold text-xl tracking-tight hover:opacity-80 transition-opacity">
+                <img src="HallowedGains_Logo_Lettermark_Gold.png" alt="Hallowed Gains Logo" class="h-9 w-auto object-contain">
+                Hallowed Gains LLC
+            </a>
+            <!-- Desktop Nav -->
+            <nav class="hidden sm:block">
+                <ul class="flex gap-6 text-sm font-medium text-brand-50/70">
+                    <li><a href="/#about" class="hover:text-gold transition-colors">About</a></li>
+                    <li><a href="/#projects" class="hover:text-gold transition-colors">Our Projects</a></li>
+                    <li><a href="/contact.html" class="hover:text-gold transition-colors">Contact</a></li>
+                </ul>
+            </nav>
+            <!-- Mobile Hamburger -->
+            <button id="menu-btn" class="sm:hidden flex flex-col gap-1.5 p-1" aria-label="Toggle navigation" aria-expanded="false">
+                <span id="bar1" class="block w-6 h-0.5 bg-brand-50 transition-all duration-300 origin-center"></span>
+                <span id="bar2" class="block w-6 h-0.5 bg-brand-50 transition-all duration-300"></span>
+                <span id="bar3" class="block w-6 h-0.5 bg-brand-50 transition-all duration-300 origin-center"></span>
+            </button>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="sm:hidden hidden border-t border-gold/30 bg-brand-900 px-6 py-4">
+            <ul class="flex flex-col gap-1 text-sm font-medium text-brand-50/80">
+                <li><a href="/#about" onclick="closeMenu()" class="hover:text-gold transition-colors block py-2">About</a></li>
+                <li><a href="/#projects" onclick="closeMenu()" class="hover:text-gold transition-colors block py-2">Our Projects</a></li>
+                <li><a href="/contact.html" onclick="closeMenu()" class="hover:text-gold transition-colors block py-2">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main class="flex-grow">
+        <section class="max-w-3xl mx-auto px-6 py-16 md:py-20">
+
+            <div class="mb-10">
+                <span class="inline-block text-xs font-semibold uppercase tracking-[0.25em] text-gold mb-4">Privacy Policy</span>
+                <h1 class="font-serif text-4xl md:text-5xl font-bold text-brand-900 mb-4 leading-tight">Privacy Policy</h1>
+                <p class="text-brand-500 text-base"><strong class="text-brand-900">Effective date:</strong> May 9, 2026</p>
+                <p class="text-brand-500 text-base"><strong class="text-brand-900">Last updated:</strong> May 9, 2026</p>
+            </div>
+
+            <!-- Table of Contents -->
+            <nav class="bg-white border border-brand-100 rounded-2xl p-6 mb-10 shadow-sm" aria-label="Table of contents">
+                <h2 class="font-serif text-lg font-bold text-brand-900 mb-3">On this page</h2>
+                <ul class="grid sm:grid-cols-2 gap-x-6 gap-y-1 text-sm text-brand-800">
+                    <li><a href="#overview" class="hover:text-gold underline underline-offset-2">Overview</a></li>
+                    <li><a href="#info-we-collect" class="hover:text-gold underline underline-offset-2">Information we collect</a></li>
+                    <li><a href="#how-we-use" class="hover:text-gold underline underline-offset-2">How we use information</a></li>
+                    <li><a href="#legal-bases" class="hover:text-gold underline underline-offset-2">Legal bases (GDPR)</a></li>
+                    <li><a href="#third-parties" class="hover:text-gold underline underline-offset-2">Third-party services</a></li>
+                    <li><a href="#sharing" class="hover:text-gold underline underline-offset-2">How we share information</a></li>
+                    <li><a href="#retention" class="hover:text-gold underline underline-offset-2">Data retention</a></li>
+                    <li><a href="#your-rights" class="hover:text-gold underline underline-offset-2">Your rights</a></li>
+                    <li><a href="#security" class="hover:text-gold underline underline-offset-2">Security</a></li>
+                    <li><a href="#children" class="hover:text-gold underline underline-offset-2">Children's privacy</a></li>
+                    <li><a href="#international" class="hover:text-gold underline underline-offset-2">International users</a></li>
+                    <li><a href="#changes" class="hover:text-gold underline underline-offset-2">Changes to this policy</a></li>
+                    <li><a href="#contact" class="hover:text-gold underline underline-offset-2">Contact us</a></li>
+                    <li><a href="#idle-bible" class="hover:text-gold underline underline-offset-2 font-semibold">Idle Bible (app-specific)</a></li>
+                </ul>
+            </nav>
+
+            <article class="prose-policy">
+
+                <section id="overview">
+                    <h2>Overview</h2>
+                    <p>
+                        <strong>Hallowed Gains LLC</strong> ("Hallowed Gains," "we," "us," or "our") builds digital tools and games for prayer, study, and learning &mdash; including
+                        <a href="https://asimplewaytopray.com">A Simple Way to Pray</a> and our forthcoming game <em>Idle Bible</em>. This Privacy Policy explains what
+                        information we collect, how we use it, and the choices you have.
+                    </p>
+                    <p>
+                        This policy applies to our websites at <strong>hallowedgains.com</strong> and <strong>asimplewaytopray.com</strong>, and to our mobile and web apps
+                        (collectively, the "Services"). Some apps have additional, app-specific terms in the
+                        <a href="#idle-bible">app-specific sections</a> below; if there is any conflict, the app-specific section controls for that app.
+                    </p>
+                    <p>
+                        We are a small Lutheran software shop. We try to collect as little as possible, we don't sell personal information, and we don't run advertising
+                        networks against you.
+                    </p>
+                </section>
+
+                <section id="info-we-collect">
+                    <h2>Information we collect</h2>
+                    <p>The categories of information we may collect depend on which Service you use.</p>
+
+                    <h3>Information you provide directly</h3>
+                    <ul>
+                        <li><strong>Account information.</strong> If an app offers a sign-in option, we receive the information your sign-in provider sends us &mdash; typically a unique identifier and, depending on the provider and your settings, a name and email address (e.g., from Sign in with Apple, Google Sign-In, or email/password through Firebase Authentication).</li>
+                        <li><strong>Saved progress and settings.</strong> Game saves, preferences, prayer-wall submissions, and similar content you create or save in our apps.</li>
+                        <li><strong>Communications.</strong> If you contact us (for example, through our contact form, by email, or through a feedback link in an app), we receive the contents of that message and the email address you provide.</li>
+                    </ul>
+
+                    <h3>Information collected automatically</h3>
+                    <ul>
+                        <li><strong>Device and technical information.</strong> Device model, operating system and version, app version, language, region, and a non-resettable or resettable device/installation identifier &mdash; used to make the Services work correctly and to debug issues.</li>
+                        <li><strong>Usage and event analytics.</strong> Aggregated, mostly de-identified analytics about how the Services are used (screens opened, features used, session length, performance metrics). We use this to understand which features help people and which need work.</li>
+                        <li><strong>Crash and diagnostic data.</strong> If an app crashes or throws an error, we collect a stack trace, device state, and app version so we can fix it.</li>
+                        <li><strong>Log data.</strong> Standard server logs (IP address, request timestamps, user-agent) when you visit our websites or our backends.</li>
+                    </ul>
+
+                    <h3>What we do <em>not</em> collect</h3>
+                    <ul>
+                        <li>We do not collect precise location.</li>
+                        <li>We do not access your contacts, photos, microphone, or camera.</li>
+                        <li>We do not sell personal information, and we do not share it for cross-context behavioral advertising.</li>
+                        <li>We do not use third-party advertising SDKs in our apps.</li>
+                    </ul>
+                </section>
+
+                <section id="how-we-use">
+                    <h2>How we use information</h2>
+                    <p>We use the information we collect to:</p>
+                    <ul>
+                        <li>Provide, maintain, and improve the Services &mdash; including syncing your saved progress across your devices.</li>
+                        <li>Authenticate you and keep your account secure.</li>
+                        <li>Diagnose problems, fix bugs, and prevent abuse.</li>
+                        <li>Understand how features are used so we can improve them.</li>
+                        <li>Communicate with you about the Services (e.g., responding to support requests, important changes).</li>
+                        <li>Comply with legal obligations and enforce our terms.</li>
+                    </ul>
+                </section>
+
+                <section id="legal-bases">
+                    <h2>Legal bases (for users in the EEA / UK)</h2>
+                    <p>If you are in the European Economic Area, the United Kingdom, or another jurisdiction with similar laws, we process your personal data under the following bases:</p>
+                    <ul>
+                        <li><strong>Performance of a contract</strong> &mdash; to provide the Services you request (e.g., signing in, saving your progress).</li>
+                        <li><strong>Legitimate interests</strong> &mdash; to keep the Services secure, debug crashes, and understand aggregate usage.</li>
+                        <li><strong>Consent</strong> &mdash; where required (for example, certain analytics in regions that require opt-in). You can withdraw consent at any time.</li>
+                        <li><strong>Legal obligation</strong> &mdash; where we must process data to comply with the law.</li>
+                    </ul>
+                </section>
+
+                <section id="third-parties">
+                    <h2>Third-party services we use</h2>
+                    <p>
+                        We rely on a small number of trusted third parties to operate the Services. These providers process information on our behalf, under their own
+                        privacy terms, and only for the purposes we describe here.
+                    </p>
+                    <ul>
+                        <li><strong>Google / Firebase</strong> (Authentication, Firestore / Cloud database, Hosting, Analytics, Crashlytics, Cloud Messaging) &mdash;
+                            <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener noreferrer">Firebase Privacy and Security</a>,
+                            <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google Privacy Policy</a>.</li>
+                        <li><strong>Apple</strong> (Sign in with Apple, App Store / StoreKit, push notifications via APNs) &mdash;
+                            <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener noreferrer">Apple Privacy</a>.</li>
+                        <li><strong>Google Play</strong> (app distribution and, if applicable, in-app billing) &mdash;
+                            <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google Privacy Policy</a>.</li>
+                        <li><strong>Stripe</strong> (donations on hallowedgains.com) &mdash;
+                            <a href="https://stripe.com/privacy" target="_blank" rel="noopener noreferrer">Stripe Privacy Policy</a>. We do not receive or store your full payment card details.</li>
+                        <li><strong>Google Forms</strong> (our contact form is embedded from Google Forms) &mdash;
+                            <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google Privacy Policy</a>.</li>
+                    </ul>
+                    <p>
+                        We may add or change service providers over time. When we do, we will update this list. The specific providers used by a particular app are listed
+                        in that app's section below.
+                    </p>
+                </section>
+
+                <section id="sharing">
+                    <h2>How we share information</h2>
+                    <p>We share personal information only in the limited circumstances below:</p>
+                    <ul>
+                        <li><strong>Service providers.</strong> With the third parties listed above, who process information on our behalf to operate the Services.</li>
+                        <li><strong>Legal requirements.</strong> If required by law, subpoena, court order, or to protect the rights, property, or safety of Hallowed Gains, our users, or the public.</li>
+                        <li><strong>Business transfers.</strong> If Hallowed Gains is involved in a merger, acquisition, dissolution, or sale of assets, information may be transferred as part of that transaction. We will notify you and continue to honor the commitments in this policy.</li>
+                        <li><strong>With your consent.</strong> For any other purpose disclosed to you and consented to.</li>
+                    </ul>
+                    <p><strong>We do not sell personal information, and we do not share it for cross-context behavioral advertising.</strong></p>
+                </section>
+
+                <section id="retention">
+                    <h2>Data retention</h2>
+                    <p>
+                        We retain personal information for as long as we need it to provide the Services and for the legitimate purposes described in this policy. In
+                        practice:
+                    </p>
+                    <ul>
+                        <li><strong>Account data and saves</strong> are kept while your account is active. If you delete your account, we delete or anonymize associated personal data within a reasonable period, except where we must retain it for legal, security, or backup-rotation reasons.</li>
+                        <li><strong>Analytics events</strong> are retained on rolling windows configured in our analytics tools (typically up to 14 months) and are mostly de-identified.</li>
+                        <li><strong>Crash logs</strong> are retained for a limited diagnostic window (typically up to 90 days).</li>
+                        <li><strong>Server logs</strong> are retained for short operational windows (typically 30&ndash;90 days).</li>
+                    </ul>
+                </section>
+
+                <section id="your-rights">
+                    <h2>Your rights and choices</h2>
+                    <p>Depending on where you live, you may have the following rights regarding your personal information:</p>
+                    <ul>
+                        <li><strong>Access</strong> &mdash; request a copy of the personal information we hold about you.</li>
+                        <li><strong>Correction</strong> &mdash; ask us to correct inaccurate information.</li>
+                        <li><strong>Deletion</strong> &mdash; ask us to delete your personal information.</li>
+                        <li><strong>Portability</strong> &mdash; request a portable copy of your data.</li>
+                        <li><strong>Objection / restriction</strong> &mdash; object to or restrict certain processing.</li>
+                        <li><strong>Withdrawal of consent</strong> &mdash; where we rely on consent, you can withdraw it at any time without affecting prior processing.</li>
+                        <li><strong>Complaint</strong> &mdash; lodge a complaint with your local data protection authority.</li>
+                    </ul>
+                    <p>
+                        <strong>California residents</strong> have rights under the CCPA/CPRA, including the right to know, delete, correct, and limit the use of sensitive
+                        personal information, and the right not to be discriminated against for exercising those rights. We do not sell or share personal information for
+                        cross-context behavioral advertising.
+                    </p>
+                    <p>
+                        To make a request, email us at <a href="mailto:contact@hallowedgains.com">contact@hallowedgains.com</a> or use our
+                        <a href="/contact.html">contact form</a>. We will verify your request and respond within the time required by applicable law.
+                    </p>
+                    <p>
+                        You can also control certain things directly in your device settings &mdash; for example, you can reset your advertising identifier, opt out of
+                        analytics on iOS via App Tracking Transparency, or limit notifications.
+                    </p>
+                </section>
+
+                <section id="security">
+                    <h2>Security</h2>
+                    <p>
+                        We use reasonable administrative, technical, and physical safeguards to protect personal information &mdash; including encryption in transit (TLS),
+                        encryption at rest where supported by our service providers, access controls, and the principle of least privilege. No method of transmission or
+                        storage is 100% secure, and we cannot guarantee absolute security.
+                    </p>
+                </section>
+
+                <section id="children">
+                    <h2>Children's privacy</h2>
+                    <p>
+                        Our apps are intended for a <strong>general, family-friendly audience</strong>. They are <strong>not directed to children under 13</strong>
+                        (or the equivalent minimum age in your jurisdiction, such as 16 in some EU member states), and we do not knowingly collect personal information from
+                        children under that age.
+                    </p>
+                    <p>
+                        If you believe a child has provided us with personal information without parental consent, please contact us at
+                        <a href="mailto:contact@hallowedgains.com">contact@hallowedgains.com</a> and we will promptly delete it.
+                    </p>
+                    <p>
+                        Parents: we recommend supervising your child's use of any internet-connected app and using the parental-control features built into iOS, Android, and
+                        your home network.
+                    </p>
+                </section>
+
+                <section id="international">
+                    <h2>International users and data transfers</h2>
+                    <p>
+                        Hallowed Gains is based in the United States. If you use our Services from outside the United States, you understand that your information will be
+                        transferred to, stored, and processed in the United States and in the regions where our service providers operate. Where required, we rely on
+                        appropriate safeguards such as Standard Contractual Clauses for international transfers.
+                    </p>
+                </section>
+
+                <section id="changes">
+                    <h2>Changes to this policy</h2>
+                    <p>
+                        We may update this Privacy Policy from time to time &mdash; for example, when we add a new app, change a service provider, or in response to legal
+                        changes. When we do, we will update the "Last updated" date at the top and, for material changes, give you reasonable notice (such as a notice in the
+                        app or on this page). Your continued use of the Services after the change becomes effective constitutes your acceptance of the updated policy.
+                    </p>
+                </section>
+
+                <section id="contact">
+                    <h2>Contact us</h2>
+                    <p>If you have questions about this policy or want to exercise your rights, contact us at:</p>
+                    <ul>
+                        <li><strong>Email:</strong> <a href="mailto:contact@hallowedgains.com">contact@hallowedgains.com</a></li>
+                        <li><strong>Web:</strong> <a href="/contact.html">hallowedgains.com/contact</a></li>
+                        <li><strong>Entity:</strong> Hallowed Gains LLC (United States)</li>
+                    </ul>
+                </section>
+
+                <!-- ===================== APP-SPECIFIC ===================== -->
+
+                <div class="my-12 flex items-center gap-3">
+                    <span class="flex-grow h-px bg-brand-100"></span>
+                    <span class="text-xs font-semibold uppercase tracking-widest text-brand-500">App-specific notices</span>
+                    <span class="flex-grow h-px bg-brand-100"></span>
+                </div>
+
+                <section id="idle-bible">
+                    <h2>Idle Bible</h2>
+                    <p>
+                        <strong>Idle Bible</strong> is an educational idle game published by Hallowed Gains LLC, available on iOS, Android, and the web. This section
+                        describes how Idle Bible specifically handles your information; the rest of this policy still applies.
+                    </p>
+
+                    <h3>What Idle Bible collects</h3>
+                    <ul>
+                        <li><strong>Account (optional).</strong> If you choose to sign in &mdash; for example with Sign in with Apple, Google Sign-In, or email/password via Firebase Authentication &mdash; we receive a unique account ID and the basic profile fields you authorize (name, email). Sign-in is used solely to identify your save and is not required to play.</li>
+                        <li><strong>Game progress and settings.</strong> Your save data (era progress, unlocked content, settings, achievements). When you are signed in, this is synced to our cloud database (Firebase / Cloud Firestore) so you can pick up on another device.</li>
+                        <li><strong>Device and technical information.</strong> Device model, OS, app version, region/language, and an installation identifier so the game can run, sync, and be debugged.</li>
+                        <li><strong>Analytics events.</strong> Aggregated events through Firebase Analytics &mdash; such as which eras are played, which features are used, and session length &mdash; so we can improve the game.</li>
+                        <li><strong>Crash and performance data.</strong> Stack traces and basic device state through Firebase Crashlytics if the app crashes or hits an error.</li>
+                    </ul>
+
+                    <h3>What Idle Bible does <em>not</em> do</h3>
+                    <ul>
+                        <li>No third-party advertising SDKs and no ads.</li>
+                        <li>No precise location.</li>
+                        <li>No access to contacts, photos, microphone, or camera.</li>
+                        <li>No sale of personal information; no sharing for cross-context behavioral advertising.</li>
+                        <li>No "pay-to-win" data harvesting &mdash; the game is designed to stay out of your way.</li>
+                    </ul>
+
+                    <h3>In-app purchases</h3>
+                    <p>
+                        If Idle Bible offers any optional purchases (for example, a one-time tip or supporter pack), payments are processed by the App Store, Google Play,
+                        or Stripe (on web). We do not receive your full payment card details &mdash; we only receive a confirmation that the purchase succeeded and a
+                        platform-issued transaction identifier.
+                    </p>
+
+                    <h3>Push notifications (if enabled)</h3>
+                    <p>
+                        With your permission, Idle Bible may send occasional reminders or content notifications using Firebase Cloud Messaging (Android / web) and APNs
+                        (iOS). You can disable notifications at any time in your device settings.
+                    </p>
+
+                    <h3>Audience</h3>
+                    <p>
+                        Idle Bible is family-friendly and designed to be appropriate for all ages, but it is <strong>not directed to children under 13</strong>. We do not
+                        knowingly collect personal information from children under that age. See <a href="#children">Children's privacy</a> above.
+                    </p>
+
+                    <h3>Deleting your Idle Bible data</h3>
+                    <p>
+                        To delete your Idle Bible cloud save and account data, sign out and use the in-app "Delete account" option (when available) or email
+                        <a href="mailto:contact@hallowedgains.com">contact@hallowedgains.com</a> from the address associated with your account. Local save data on your
+                        device can be removed by clearing the app's data or uninstalling the app.
+                    </p>
+                </section>
+
+            </article>
+
+            <p class="text-xs text-brand-500 mt-12 italic">
+                This Privacy Policy is provided for informational purposes and is not legal advice. If you need legal advice about your specific situation, please consult
+                a qualified attorney.
+            </p>
+
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-brand-900 text-brand-50/70 py-10 text-center text-sm border-t-2 border-gold">
+        <div class="max-w-5xl mx-auto px-6 flex flex-col items-center justify-center gap-3">
+            <nav aria-label="Footer">
+                <ul class="flex flex-wrap justify-center gap-x-6 gap-y-2 text-brand-50/70">
+                    <li><a href="/" class="hover:text-gold transition-colors">Home</a></li>
+                    <li><a href="/contact.html" class="hover:text-gold transition-colors">Contact</a></li>
+                    <li><a href="/privacy.html" class="text-gold font-semibold">Privacy Policy</a></li>
+                </ul>
+            </nav>
+            <p>&copy; <script>document.write(new Date().getFullYear())</script> Hallowed Gains LLC. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const bar1 = document.getElementById('bar1');
+        const bar2 = document.getElementById('bar2');
+        const bar3 = document.getElementById('bar3');
+        let menuOpen = false;
+
+        function closeMenu() {
+            menuOpen = false;
+            mobileMenu.classList.add('hidden');
+            menuBtn.setAttribute('aria-expanded', 'false');
+            bar1.style.transform = '';
+            bar2.style.opacity = '1';
+            bar3.style.transform = '';
+        }
+
+        menuBtn.addEventListener('click', () => {
+            menuOpen = !menuOpen;
+            if (menuOpen) {
+                mobileMenu.classList.remove('hidden');
+                menuBtn.setAttribute('aria-expanded', 'true');
+                bar1.style.transform = 'translateY(8px) rotate(45deg)';
+                bar2.style.opacity = '0';
+                bar3.style.transform = 'translateY(-8px) rotate(-45deg)';
+            } else {
+                closeMenu();
+            }
+        });
+    </script>
+</body>
+</html>
