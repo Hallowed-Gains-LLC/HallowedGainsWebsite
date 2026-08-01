@@ -9,13 +9,6 @@
       "CNAME"
     ],
     "cleanUrls": true,
-    "trailingSlash": false,
-    "redirects": [
-      {
-        "source": "/idle-bible-android",
-        "destination": "https://play.google.com/store/apps/details?id=com.idlebible.idle_bible",
-        "type": 302
-      }
-    ]
+    "trailingSlash": false
   }
 }

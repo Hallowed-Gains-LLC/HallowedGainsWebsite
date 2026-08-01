@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Idle Bible — A Handcrafted Pixel-Art Idle Game Through the Entire Bible</title>
+    <meta name="description" content="Journey through the entire Bible — from 'In the beginning' to 'Amen' — in a handcrafted pixel-art idle game. No ads, no in-app purchases, ever. Pre-register on Google Play today.">
+    <!-- Open Graph / social preview -->
+    <meta property="og:title" content="Idle Bible — A Handcrafted Pixel-Art Idle Game Through the Entire Bible">
+    <meta property="og:description" content="A premium idle game with a beginning, a middle, and a true ending. Build the great landmarks of Scripture from Genesis to Revelation. No ads, no in-app purchases, ever. Pre-register now on Google Play.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://hallowedgains.com/idle-bible-android">
+    <meta property="og:image" content="https://hallowedgains.com/idle-bible-icon.png">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="idle-bible-icon.png">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#F7F3E3',   // ivory
+                            100: '#EDE4CC',  // warm ivory (borders / subtle bg)
+                            200: '#DED2B2',  // warm ivory hover
+                            500: '#8A7866',  // warm muted brown (secondary text)
+                            800: '#65342F',  // burgundy red (accent / hover)
+                            900: '#322E2C',  // dark brown/black (headings / dark bg)
+                        },
+                        gold: {
+                            DEFAULT: '#AF9164',
+                            soft: '#EFE3CB',
+                            deep: '#7A6340',
+                        },
+                        silver: {
+                            DEFAULT: '#B4B6B7',
+                            soft: '#E6E7E8',
+                            deep: '#6E7172',
+                        },
+                        burgundy: {
+                            soft: '#F0DCD9',
+                            deep: '#4A2421',
+                        },
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-brand-50 text-brand-900 font-sans antialiased flex flex-col min-h-screen">
+
+    <!-- Gold accent stripe -->
+    <div class="h-1 bg-gold w-full"></div>
+
+    <!-- Header -->
+    <header class="bg-brand-900 shadow-lg sticky top-0 z-50 border-b border-gold/40">
+        <div class="max-w-5xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="/" class="flex items-center gap-2 text-brand-50 font-serif font-semibold text-xl tracking-tight">
+                <img src="HallowedGains_Logo_Lettermark_Gold.png" alt="Hallowed Gains Logo" class="h-9 w-auto object-contain">
+                Hallowed Gains LLC
+            </a>
+            <nav>
+                <ul class="flex gap-6 text-sm font-medium text-brand-50/70">
+                    <li><a href="/" class="hover:text-gold transition-colors">Home</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-grow">
+
+        <!-- Hero Section -->
+        <section class="bg-brand-900 text-brand-50 border-b-2 border-gold/70 relative overflow-hidden">
+            <div class="max-w-3xl mx-auto px-6 py-16 md:py-24 text-center relative z-10">
+                <div class="flex justify-center mb-6">
+                    <div class="bg-white p-4 rounded-2xl shadow-lg border border-gold/40">
+                        <img src="idle-bible-icon.png" alt="Idle Bible App Icon" class="w-20 h-20 md:w-24 md:h-24 object-contain rounded-xl">
+                    </div>
+                </div>
+                <span class="inline-block text-xs font-semibold uppercase tracking-[0.25em] text-gold mb-4">Coming Soon to Android</span>
+                <h1 class="font-serif text-4xl md:text-6xl font-bold text-brand-50 mb-5 leading-tight">
+                    Idle <span class="text-gold">Bible</span>
+                </h1>
+                <p class="text-lg md:text-xl text-brand-50/75 max-w-2xl mx-auto mb-4 leading-relaxed">
+                    Journey through the entire Bible — from <em>"In the beginning"</em> to <em>"Amen"</em> — in a handcrafted pixel-art idle game.
+                </p>
+                <p class="text-sm text-brand-50/60 max-w-xl mx-auto mb-9 leading-relaxed">
+                    A premium idle/clicker with a beginning, a middle, and a true ending. Gather resources, raise the great landmarks of Scripture, and watch tiny workers bring each era to life.
+                </p>
+                <a href="https://play.google.com/store/apps/details?id=com.idlebible.idle_bible" target="_blank" rel="noopener noreferrer"
+                   class="inline-flex items-center gap-3 bg-gold text-brand-900 px-8 py-4 rounded-full font-semibold text-lg border border-gold hover:bg-gold-deep hover:text-brand-50 transition-colors shadow-lg">
+                    <i data-lucide="play" class="w-5 h-5"></i>
+                    Pre-register on Google Play
+                </a>
+                <p class="text-xs text-brand-50/50 mt-4">One purchase &middot; No ads &middot; No in-app purchases &middot; Ever</p>
+            </div>
+        </section>
+
+        <!-- Three Chapters -->
+        <section class="bg-white py-16 md:py-20 border-y border-brand-100">
+            <div class="max-w-5xl mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="font-serif text-3xl font-bold text-brand-900 mb-4">Three Complete Chapters</h2>
+                    <p class="text-brand-500 max-w-2xl mx-auto leading-relaxed">
+                        Play actively or let your builders keep working while you're away — every era of the biblical story, from Genesis to Revelation.
+                    </p>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="bg-brand-50 rounded-2xl p-7 border border-brand-100 shadow-sm">
+                        <div class="flex items-center gap-3 mb-4">
+                            <div class="bg-white p-2 rounded-lg border border-brand-100">
+                                <i data-lucide="scroll" class="w-5 h-5 text-brand-800"></i>
+                            </div>
+                            <h3 class="font-semibold text-brand-900">The Old Covenant</h3>
+                        </div>
+                        <p class="text-brand-500 leading-relaxed text-sm">
+                            8 eras from Creation to the Return from Exile. Build <strong class="text-brand-800">Noah's Ark</strong>, the <strong class="text-brand-800">Tabernacle</strong>, <strong class="text-brand-800">Solomon's Temple</strong>, and more — then face the 400 Years of Silence.
+                        </p>
+                    </div>
+                    <div class="bg-brand-50 rounded-2xl p-7 border border-brand-100 shadow-sm">
+                        <div class="flex items-center gap-3 mb-4">
+                            <div class="bg-white p-2 rounded-lg border border-brand-100">
+                                <i data-lucide="star" class="w-5 h-5 text-brand-800"></i>
+                            </div>
+                            <h3 class="font-semibold text-brand-900">The Life of Christ</h3>
+                        </div>
+                        <p class="text-brand-500 leading-relaxed text-sm">
+                            7 eras from the <strong class="text-brand-800">Nativity</strong> to the <strong class="text-brand-800">Resurrection</strong>. Recruit disciples, follow Jesus from place to place, and grow in Faith.
+                        </p>
+                    </div>
+                    <div class="bg-brand-50 rounded-2xl p-7 border border-brand-100 shadow-sm">
+                        <div class="flex items-center gap-3 mb-4">
+                            <div class="bg-white p-2 rounded-lg border border-brand-100">
+                                <i data-lucide="map" class="w-5 h-5 text-brand-800"></i>
+                            </div>
+                            <h3 class="font-semibold text-brand-900">Spreading the Word</h3>
+                        </div>
+                        <p class="text-brand-500 leading-relaxed text-sm">
+                            Walk the road from <strong class="text-brand-800">Jerusalem to Rome</strong> with the apostles — gathering souls, planting churches, and standing firm through every trial.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features -->
+        <section class="max-w-5xl mx-auto px-6 py-16 md:py-20">
+            <div class="text-center mb-12">
+                <h2 class="font-serif text-3xl font-bold text-brand-900 mb-4">A Game That Honors the Word</h2>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+                <div class="bg-white rounded-2xl p-7 border border-brand-100 shadow-sm">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="bg-brand-50 p-2 rounded-lg border border-brand-100">
+                            <i data-lucide="book-open" class="w-5 h-5 text-brand-800"></i>
+                        </div>
+                        <h3 class="font-semibold text-brand-900">Narrated Scripture</h3>
+                    </div>
+                    <p class="text-brand-500 leading-relaxed text-sm">
+                        <strong class="text-brand-800">45 fully narrated KJV Scripture readings</strong> unlock as you build — every landmark tells its own story, with epistle readings in the cities along the road.
+                    </p>
+                </div>
+                <div class="bg-white rounded-2xl p-7 border border-brand-100 shadow-sm">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="bg-brand-50 p-2 rounded-lg border border-brand-100">
+                            <i data-lucide="calendar-check" class="w-5 h-5 text-brand-800"></i>
+                        </div>
+                        <h3 class="font-semibold text-brand-900">Daily Bread</h3>
+                    </div>
+                    <p class="text-brand-500 leading-relaxed text-sm">
+                        A <strong class="text-brand-800">365-day reading plan</strong> through the whole Bible, with streaks and daily blessings that carry into the game.
+                    </p>
+                </div>
+                <div class="bg-white rounded-2xl p-7 border border-brand-100 shadow-sm">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="bg-brand-50 p-2 rounded-lg border border-brand-100">
+                            <i data-lucide="clapperboard" class="w-5 h-5 text-brand-800"></i>
+                        </div>
+                        <h3 class="font-semibold text-brand-900">Cinematic Story Moments</h3>
+                    </div>
+                    <p class="text-brand-500 leading-relaxed text-sm">
+                        The Creation intro, the Incarnation, Pentecost, and a <strong class="text-brand-800">five-act Revelation finale</strong> that ends the game the way the Book ends.
+                    </p>
+                </div>
+                <div class="bg-white rounded-2xl p-7 border border-brand-100 shadow-sm">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="bg-brand-50 p-2 rounded-lg border border-brand-100">
+                            <i data-lucide="trending-up" class="w-5 h-5 text-brand-800"></i>
+                        </div>
+                        <h3 class="font-semibold text-brand-900">Deep but Friendly Idle Mechanics</h3>
+                    </div>
+                    <p class="text-brand-500 leading-relaxed text-sm">
+                        Three prestige trees full of meaningful permanent upgrades, <strong class="text-brand-800">offline progress</strong> while the app is closed, legacy bonuses across chapters, and 38 achievements.
+                    </p>
+                </div>
+                <div class="bg-white rounded-2xl p-7 border border-brand-100 shadow-sm">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="bg-brand-50 p-2 rounded-lg border border-brand-100">
+                            <i data-lucide="palette" class="w-5 h-5 text-brand-800"></i>
+                        </div>
+                        <h3 class="font-semibold text-brand-900">Made with Care</h3>
+                    </div>
+                    <p class="text-brand-500 leading-relaxed text-sm">
+                        Handcrafted pixel art with day/night cycles, animated workers, and landmark celebrations — plus an <strong class="text-brand-800">original score</strong> and studio sound design.
+                    </p>
+                </div>
+                <div class="bg-white rounded-2xl p-7 border border-brand-100 shadow-sm">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="bg-brand-50 p-2 rounded-lg border border-brand-100">
+                            <i data-lucide="cloud" class="w-5 h-5 text-brand-800"></i>
+                        </div>
+                        <h3 class="font-semibold text-brand-900">Cloud Save</h3>
+                    </div>
+                    <p class="text-brand-500 leading-relaxed text-sm">
+                        Optional cloud save with Google sign-in — pick up your journey on any device.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- No Ads Banner -->
+        <section class="bg-white py-14 border-y border-brand-100">
+            <div class="max-w-3xl mx-auto px-6 text-center">
+                <div class="flex justify-center mb-4">
+                    <div class="bg-brand-50 p-3 rounded-xl border border-brand-100">
+                        <i data-lucide="shield-check" class="w-6 h-6 text-brand-800"></i>
+                    </div>
+                </div>
+                <h2 class="font-serif text-2xl md:text-3xl font-bold text-brand-900 mb-3">No Ads. No In-App Purchases. Ever.</h2>
+                <p class="text-brand-500 max-w-xl mx-auto leading-relaxed">
+                    One purchase, the whole journey. No timers to skip, no gems to buy, no interruptions — just the story, from Genesis to Revelation.
+                </p>
+            </div>
+        </section>
+
+        <!-- Bottom CTA -->
+        <section class="max-w-5xl mx-auto px-6 py-16 md:py-20">
+            <div class="max-w-md mx-auto text-center">
+                <div class="bg-brand-900 p-8 rounded-2xl border border-gold/50 shadow-xl">
+                    <div class="flex justify-center mb-4">
+                        <div class="bg-white p-3 rounded-xl border border-gold/50">
+                            <img src="idle-bible-icon.png" alt="Idle Bible App Icon" class="w-10 h-10 object-contain rounded-lg">
+                        </div>
+                    </div>
+                    <h3 class="font-serif text-2xl font-bold text-brand-50 mb-2">Be First to Play</h3>
+                    <p class="text-sm text-brand-50/70 mb-6 leading-relaxed">
+                        Pre-register now and Idle Bible will be delivered to your device automatically on launch day.
+                    </p>
+                    <a href="https://play.google.com/store/apps/details?id=com.idlebible.idle_bible" target="_blank" rel="noopener noreferrer"
+                       class="inline-flex items-center justify-center gap-2 w-full bg-gold text-brand-900 font-semibold py-3 rounded-lg border border-gold hover:bg-gold-deep hover:text-brand-50 transition-colors">
+                        <i data-lucide="play" class="w-4 h-4"></i>
+                        Pre-register on Google Play
+                    </a>
+                    <p class="text-xs text-brand-50/50 mt-3">Google Play and the Google Play logo are trademarks of Google LLC.</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-brand-900 text-brand-50/70 py-10 text-center text-sm border-t-2 border-gold">
+        <div class="max-w-5xl mx-auto px-6 flex flex-col items-center justify-center gap-3">
+            <nav aria-label="Footer">
+                <ul class="flex flex-wrap justify-center gap-x-6 gap-y-2 text-brand-50/70">
+                    <li><a href="/" class="hover:text-gold transition-colors">Home</a></li>
+                    <li><a href="/contact.html" class="hover:text-gold transition-colors">Contact</a></li>
+                    <li><a href="/privacy.html" class="hover:text-gold transition-colors">Privacy Policy</a></li>
+                </ul>
+            </nav>
+            <div class="flex items-center gap-5">
+                <a href="https://www.facebook.com/hallowedgains" target="_blank" rel="noopener noreferrer" aria-label="Hallowed Gains on Facebook" class="hover:text-gold transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+                </a>
+                <a href="https://www.instagram.com/hallowedgainsllc/" target="_blank" rel="noopener noreferrer" aria-label="Hallowed Gains on Instagram" class="hover:text-gold transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                </a>
+            </div>
+            <p>&copy; <script>document.write(new Date().getFullYear())</script> Hallowed Gains LLC. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Initialize Icons -->
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
