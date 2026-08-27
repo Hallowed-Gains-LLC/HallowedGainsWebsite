@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="robots" content="noindex, nofollow">
+<title>First Trinity Oktoberfest</title>
+<style>
+  html,body{margin:0;padding:0;height:100%;background:#1b2431;color:#f4e9c8;font-family:monospace;}
+  #loader{position:fixed;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;text-align:center;padding:20px;}
+  #retry{display:none;background:rgba(20,28,40,.72);color:#f4e9c8;border:2px solid #f4e9c8;border-radius:8px;font:bold 14px monospace;padding:8px 14px;cursor:pointer;}
+</style>
+</head>
+<body>
+<div id="loader">
+  <div id="msg">Loading&hellip;</div>
+  <button id="retry" onclick="location.reload()">Retry</button>
+</div>
+<script>
+'use strict';
+// Always pull the latest build of the game so updates to the source repo
+// show up here without redeploying this site.
+(async function () {
+  var SRC = 'https://raw.githubusercontent.com/brandonadamprice/first_trinity/main/index.html';
+  try {
+    var res = await fetch(SRC, { cache: 'no-store' });
+    if (!res.ok) throw new Error('HTTP ' + res.status);
+    var html = await res.text();
+    document.open();
+    document.write(html);
+    document.close();
+  } catch (err) {
+    document.getElementById('msg').textContent = 'Could not load the game. Check your connection and try again.';
+    document.getElementById('retry').style.display = 'inline-block';
+  }
+})();
+</script>
+</body>
+</html>
