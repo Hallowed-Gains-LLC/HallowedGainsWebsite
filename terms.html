@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms of Service — Hallowed Gains LLC</title>
+    <meta name="description" content="Terms of Service for Hallowed Gains LLC and its apps, including Idle Bible and A Simple Way to Pray.">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="HallowedGains_Logo_Lettermark_Gold.png">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#F7F3E3',
+                            100: '#EDE4CC',
+                            200: '#DED2B2',
+                            500: '#8A7866',
+                            800: '#65342F',
+                            900: '#322E2C',
+                        },
+                        gold: {
+                            DEFAULT: '#AF9164',
+                            soft: '#EFE3CB',
+                            deep: '#7A6340',
+                        },
+                        silver: {
+                            DEFAULT: '#B4B6B7',
+                            soft: '#E6E7E8',
+                            deep: '#6E7172',
+                        },
+                        burgundy: {
+                            soft: '#F0DCD9',
+                            deep: '#4A2421',
+                        },
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .prose-policy h2 { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 700; color: #322E2C; margin-top: 2.25rem; margin-bottom: 0.75rem; scroll-margin-top: 6rem; }
+        .prose-policy h3 { font-weight: 600; color: #322E2C; margin-top: 1.5rem; margin-bottom: 0.5rem; }
+        .prose-policy p { color: #5a5046; line-height: 1.7; margin-bottom: 1rem; }
+        .prose-policy ul { list-style: disc; padding-left: 1.5rem; margin-bottom: 1rem; color: #5a5046; }
+        .prose-policy ul li { margin-bottom: 0.4rem; line-height: 1.65; }
+        .prose-policy strong { color: #322E2C; }
+        .prose-policy a { color: #65342F; text-decoration: underline; text-underline-offset: 2px; }
+        .prose-policy a:hover { color: #AF9164; }
+    </style>
+</head>
+<body class="bg-brand-50 text-brand-900 font-sans antialiased flex flex-col min-h-screen">
+
+    <!-- Gold accent stripe -->
+    <div class="h-1 bg-gold w-full"></div>
+
+    <!-- Header -->
+    <header class="bg-brand-900 shadow-lg sticky top-0 z-10 border-b border-gold/40">
+        <div class="max-w-5xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="/" class="flex items-center gap-2 text-brand-50 font-serif font-semibold text-xl tracking-tight hover:opacity-80 transition-opacity">
+                <img src="HallowedGains_Logo_Lettermark_Gold.png" alt="Hallowed Gains Logo" class="h-9 w-auto object-contain">
+                Hallowed Gains LLC
+            </a>
+            <!-- Desktop Nav -->
+            <nav class="hidden sm:block">
+                <ul class="flex gap-6 text-sm font-medium text-brand-50/70">
+                    <li><a href="/#about" class="hover:text-gold transition-colors">About</a></li>
+                    <li><a href="/#projects" class="hover:text-gold transition-colors">Our Projects</a></li>
+                    <li><a href="/contact.html" class="hover:text-gold transition-colors">Contact</a></li>
+                </ul>
+            </nav>
+            <!-- Mobile Hamburger -->
+            <button id="menu-btn" class="sm:hidden flex flex-col gap-1.5 p-1" aria-label="Toggle navigation" aria-expanded="false">
+                <span id="bar1" class="block w-6 h-0.5 bg-brand-50 transition-all duration-300 origin-center"></span>
+                <span id="bar2" class="block w-6 h-0.5 bg-brand-50 transition-all duration-300"></span>
+                <span id="bar3" class="block w-6 h-0.5 bg-brand-50 transition-all duration-300 origin-center"></span>
+            </button>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="sm:hidden hidden border-t border-gold/30 bg-brand-900 px-6 py-4">
+            <ul class="flex flex-col gap-1 text-sm font-medium text-brand-50/80">
+                <li><a href="/#about" onclick="closeMenu()" class="hover:text-gold transition-colors block py-2">About</a></li>
+                <li><a href="/#projects" onclick="closeMenu()" class="hover:text-gold transition-colors block py-2">Our Projects</a></li>
+                <li><a href="/contact.html" onclick="closeMenu()" class="hover:text-gold transition-colors block py-2">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main class="flex-grow">
+        <section class="max-w-3xl mx-auto px-6 py-16 md:py-20">
+
+            <div class="mb-10">
+                <span class="inline-block text-xs font-semibold uppercase tracking-[0.25em] text-gold mb-4">Terms of Service</span>
+                <h1 class="font-serif text-4xl md:text-5xl font-bold text-brand-900 mb-4 leading-tight">Terms of Service</h1>
+                <p class="text-brand-500 text-base"><strong class="text-brand-900">Effective date:</strong> August 30, 2026</p>
+                <p class="text-brand-500 text-base"><strong class="text-brand-900">Last updated:</strong> August 30, 2026</p>
+            </div>
+
+            <!-- Table of Contents -->
+            <nav class="bg-white border border-brand-100 rounded-2xl p-6 mb-10 shadow-sm" aria-label="Table of contents">
+                <h2 class="font-serif text-lg font-bold text-brand-900 mb-3">On this page</h2>
+                <ul class="grid sm:grid-cols-2 gap-x-6 gap-y-1 text-sm text-brand-800">
+                    <li><a href="#acceptance" class="hover:text-gold underline underline-offset-2">Acceptance of these Terms</a></li>
+                    <li><a href="#eligibility" class="hover:text-gold underline underline-offset-2">Eligibility</a></li>
+                    <li><a href="#accounts" class="hover:text-gold underline underline-offset-2">Accounts</a></li>
+                    <li><a href="#license" class="hover:text-gold underline underline-offset-2">Your license to use the Services</a></li>
+                    <li><a href="#our-content" class="hover:text-gold underline underline-offset-2">Our content &amp; Scripture texts</a></li>
+                    <li><a href="#user-content" class="hover:text-gold underline underline-offset-2">User content</a></li>
+                    <li><a href="#acceptable-use" class="hover:text-gold underline underline-offset-2">Acceptable use</a></li>
+                    <li><a href="#virtual-items" class="hover:text-gold underline underline-offset-2">Game progress &amp; virtual items</a></li>
+                    <li><a href="#donations" class="hover:text-gold underline underline-offset-2">Donations</a></li>
+                    <li><a href="#notifications" class="hover:text-gold underline underline-offset-2">Notifications, email &amp; SMS</a></li>
+                    <li><a href="#third-party" class="hover:text-gold underline underline-offset-2">Third-party services &amp; app stores</a></li>
+                    <li><a href="#disclaimers" class="hover:text-gold underline underline-offset-2">Disclaimers</a></li>
+                    <li><a href="#liability" class="hover:text-gold underline underline-offset-2">Limitation of liability</a></li>
+                    <li><a href="#indemnification" class="hover:text-gold underline underline-offset-2">Indemnification</a></li>
+                    <li><a href="#termination" class="hover:text-gold underline underline-offset-2">Termination</a></li>
+                    <li><a href="#changes" class="hover:text-gold underline underline-offset-2">Changes to these Terms</a></li>
+                    <li><a href="#governing-law" class="hover:text-gold underline underline-offset-2">Governing law &amp; disputes</a></li>
+                    <li><a href="#misc" class="hover:text-gold underline underline-offset-2">Miscellaneous</a></li>
+                    <li><a href="#contact" class="hover:text-gold underline underline-offset-2">Contact us</a></li>
+                    <li><a href="#idle-bible" class="hover:text-gold underline underline-offset-2 font-semibold">Idle Bible (app-specific)</a></li>
+                    <li><a href="#aswtp" class="hover:text-gold underline underline-offset-2 font-semibold">A Simple Way to Pray (app-specific)</a></li>
+                </ul>
+            </nav>
+
+            <article class="prose-policy">
+
+                <section id="acceptance">
+                    <h2>Acceptance of these Terms</h2>
+                    <p>
+                        These Terms of Service ("Terms") are a legal agreement between you and <strong>Hallowed Gains LLC</strong> ("Hallowed Gains," "we," "us," or "our"),
+                        a Pennsylvania limited liability company. They govern your use of our websites at <strong>hallowedgains.com</strong> and
+                        <strong>asimplewaytopray.com</strong> and our apps and games — including <em>Idle Bible</em> and <em>A Simple Way to Pray</em> — on the web, iOS, and
+                        Android (collectively, the "Services").
+                    </p>
+                    <p>
+                        By accessing or using any of the Services, you agree to these Terms and to our
+                        <a href="/privacy">Privacy Policy</a>, which explains how we handle your information. If you do not agree, please do not use the Services.
+                    </p>
+                    <p>
+                        Some apps have additional, app-specific terms in the sections at the end of this page; if there is any conflict, the app-specific section controls
+                        for that app.
+                    </p>
+                </section>
+
+                <section id="eligibility">
+                    <h2>Eligibility</h2>
+                    <p>
+                        You must be at least <strong>13 years old</strong> (or the equivalent minimum age in your jurisdiction, such as 16 in some EU member states) to
+                        create an account or use the Services. If you are under 18, you may use the Services only with the involvement and consent of a parent or legal
+                        guardian who agrees to these Terms on your behalf.
+                    </p>
+                </section>
+
+                <section id="accounts">
+                    <h2>Accounts</h2>
+                    <p>
+                        Some Services let you sign in (for example with Google, Sign in with Apple, or an email address and password) to sync progress or save personal
+                        content. When you create an account, you agree to:
+                    </p>
+                    <ul>
+                        <li>Provide accurate information and keep it up to date.</li>
+                        <li>Keep your sign-in credentials confidential — you are responsible for activity that happens under your account.</li>
+                        <li>Tell us promptly at <a href="mailto:contact@hallowedgains.com">contact@hallowedgains.com</a> if you believe your account has been compromised.</li>
+                    </ul>
+                    <p>
+                        You may stop using the Services at any time and may request deletion of your account and data as described in our
+                        <a href="/privacy">Privacy Policy</a>.
+                    </p>
+                </section>
+
+                <section id="license">
+                    <h2>Your license to use the Services</h2>
+                    <p>
+                        Subject to these Terms, we grant you a personal, limited, non-exclusive, non-transferable, revocable license to use the Services for your own
+                        personal, non-commercial use. We and our licensors retain all rights not expressly granted to you.
+                    </p>
+                    <p>You may not, except to the extent applicable law says we cannot restrict it:</p>
+                    <ul>
+                        <li>Copy, modify, distribute, sell, rent, or lease any part of the Services.</li>
+                        <li>Reverse engineer, decompile, or attempt to extract the source code of the Services (portions of our software may be separately available under open-source licenses, which control for those portions).</li>
+                        <li>Remove or alter any copyright, trademark, or attribution notices.</li>
+                        <li>Use the Services to build a competing product or service.</li>
+                    </ul>
+                </section>
+
+                <section id="our-content">
+                    <h2>Our content &amp; Scripture texts</h2>
+                    <p>
+                        The Services — including artwork, music, audio narration, text, game design, code, logos, and the "Hallowed Gains," "Idle Bible," and
+                        "A Simple Way to Pray" names — are owned by Hallowed Gains LLC or our licensors and are protected by copyright, trademark, and other laws.
+                    </p>
+                    <p>
+                        Scripture texts in the Services are used under their own terms, which continue to apply to you:
+                    </p>
+                    <ul>
+                        <li><strong>King James Version (KJV)</strong> passages (used in Idle Bible) are in the public domain in the United States.</li>
+                        <li><strong>English Standard Version (ESV®)</strong> passages (used in A Simple Way to Pray) are copyright &copy; Crossway and are used by permission under the ESV API license. You may read them within the Service, but you may not copy or republish them beyond what Crossway's terms allow. See the <a href="https://asimplewaytopray.com/copyright">copyright notices page</a>.</li>
+                        <li>Other devotional and liturgical materials carry the attributions shown where they appear.</li>
+                    </ul>
+                </section>
+
+                <section id="user-content">
+                    <h2>User content</h2>
+                    <p>
+                        Some Services let you submit content — for example, prayer requests on the A Simple Way to Pray "Prayer Wall," private personal prayers, or feedback
+                        you send us ("User Content"). You keep ownership of your User Content. So that we can operate the Services, you grant us a non-exclusive, worldwide,
+                        royalty-free license to host, store, reproduce, and — for content you post to public areas such as the Prayer Wall — display and distribute that
+                        content as part of the Services.
+                    </p>
+                    <p>You are responsible for your User Content. You agree not to submit content that:</p>
+                    <ul>
+                        <li>Is unlawful, harassing, threatening, defamatory, hateful, obscene, or sexually explicit;</li>
+                        <li>Contains another person's personal information (full names, addresses, phone numbers, health details) without their permission;</li>
+                        <li>Infringes anyone's intellectual property or other rights;</li>
+                        <li>Contains spam, advertising, solicitation, or links to malicious software; or</li>
+                        <li>Impersonates any person or entity.</li>
+                    </ul>
+                    <p>
+                        <strong>Public content is public.</strong> Anything you post to a public area (such as the Prayer Wall) can be read by anyone. Do not post anything
+                        you would not want to be public.
+                    </p>
+                    <p>
+                        We may — but have no obligation to — review, moderate, remove, or refuse any User Content at any time, for any reason, including content we believe
+                        violates these Terms. To report content that concerns you, contact us at
+                        <a href="mailto:contact@hallowedgains.com">contact@hallowedgains.com</a>.
+                    </p>
+                </section>
+
+                <section id="acceptable-use">
+                    <h2>Acceptable use</h2>
+                    <p>You agree not to:</p>
+                    <ul>
+                        <li>Use the Services in violation of any applicable law or regulation;</li>
+                        <li>Interfere with or disrupt the Services, their servers, or their networks — including probing, scanning, or testing vulnerabilities without our written permission;</li>
+                        <li>Access the Services with automated tools (bots, scrapers) or attempt to access accounts, systems, or data you are not authorized to access;</li>
+                        <li>Circumvent rate limits, entitlement checks, or other technical restrictions;</li>
+                        <li>Exploit bugs for unintended advantage instead of reporting them to us; or</li>
+                        <li>Use the Services to harm minors in any way.</li>
+                    </ul>
+                </section>
+
+                <section id="virtual-items">
+                    <h2>Game progress &amp; virtual items</h2>
+                    <p>
+                        Game saves, progress, achievements, unlocked content, and any in-game items or currencies have <strong>no monetary value</strong>, cannot be
+                        exchanged for money or anything of value outside the Services, and are licensed to you, not sold. We work hard to preserve player progress, but we
+                        may rebalance, modify, or (in rare cases such as data corruption or discontinuation of a Service) reset or lose game data, and we recommend keeping
+                        the app updated and, where offered, using cloud sync. We are not liable for lost progress.
+                    </p>
+                </section>
+
+                <section id="donations">
+                    <h2>Donations</h2>
+                    <p>
+                        Donations made through hallowedgains.com are voluntary and are processed by Stripe. Hallowed Gains LLC is a limited liability company, <strong>not a
+                        501(c)(3) charity</strong>, so donations are <strong>not tax-deductible</strong> as charitable contributions. Donations are gifts, not purchases:
+                        they do not entitle you to any product, feature, or service, and they are generally non-refundable — though if you made a donation in error,
+                        contact us and we will try to help.
+                    </p>
+                </section>
+
+                <section id="notifications">
+                    <h2>Notifications, email &amp; SMS</h2>
+                    <p>
+                        Some Services can send you reminders and notifications — device notifications, email, and (in A Simple Way to Pray) SMS text messages — but only if
+                        you turn them on. Notifications are never a condition of using the Services, and you can turn them off at any time in the app's settings or your
+                        device settings.
+                    </p>
+                    <p>
+                        For SMS: message frequency depends on the reminder schedule you choose; message and data rates may apply; and you can stop SMS messages at any time
+                        by disabling them in your settings, removing your phone number, or replying <strong>STOP</strong>. Reply <strong>HELP</strong> or contact us for
+                        help. Carriers are not liable for delayed or undelivered messages.
+                    </p>
+                </section>
+
+                <section id="third-party">
+                    <h2>Third-party services &amp; app stores</h2>
+                    <p>
+                        The Services rely on third-party providers (such as Google/Firebase, Apple, Stripe, and Twilio) as described in our
+                        <a href="/privacy">Privacy Policy</a>. Your use of those providers' services is subject to their own terms.
+                    </p>
+                    <p>
+                        If you downloaded an app from the Apple App Store or Google Play, the store's terms also apply. Additionally, for apps obtained from Apple's App
+                        Store: these Terms are between you and Hallowed Gains only, not Apple; Apple has no obligation to provide maintenance or support, handle warranty
+                        claims, or address product or IP claims for the app; Apple and its subsidiaries are third-party beneficiaries of these Terms and may enforce them
+                        against you; and you represent that you are not located in a country subject to a U.S. government embargo and are not on any U.S. government list of
+                        prohibited or restricted parties.
+                    </p>
+                </section>
+
+                <section id="disclaimers">
+                    <h2>Disclaimers</h2>
+                    <p>
+                        THE SERVICES ARE PROVIDED <strong>"AS IS" AND "AS AVAILABLE," WITHOUT WARRANTIES OF ANY KIND</strong>, EXPRESS OR IMPLIED, INCLUDING WARRANTIES OF
+                        MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, TITLE, AND NON-INFRINGEMENT. WE DO NOT WARRANT THAT THE SERVICES WILL BE UNINTERRUPTED, ERROR-FREE,
+                        OR SECURE, OR THAT DATA (INCLUDING GAME SAVES AND PERSONAL CONTENT) WILL NEVER BE LOST.
+                    </p>
+                    <p>
+                        Our Services offer devotional and educational content. They are <strong>not a substitute for the care of your pastor or congregation, or for
+                        professional medical, mental-health, legal, or financial advice</strong>. Content posted by other users (such as Prayer Wall requests) is theirs,
+                        not ours, and we do not endorse it. <strong>If you are in crisis or thinking about harming yourself, please seek immediate help</strong> — in the
+                        United States, call or text 988 (Suicide &amp; Crisis Lifeline) or call 911.
+                    </p>
+                    <p>
+                        Some jurisdictions do not allow the exclusion of certain warranties, so some of the above may not apply to you.
+                    </p>
+                </section>
+
+                <section id="liability">
+                    <h2>Limitation of liability</h2>
+                    <p>
+                        TO THE MAXIMUM EXTENT PERMITTED BY LAW, HALLOWED GAINS AND ITS MEMBERS, OFFICERS, EMPLOYEES, AND AGENTS WILL NOT BE LIABLE FOR ANY INDIRECT,
+                        INCIDENTAL, SPECIAL, CONSEQUENTIAL, EXEMPLARY, OR PUNITIVE DAMAGES, OR ANY LOSS OF DATA, PROFITS, GOODWILL, OR USE, ARISING OUT OF OR RELATING TO
+                        THE SERVICES — EVEN IF WE HAVE BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
+                    </p>
+                    <p>
+                        TO THE MAXIMUM EXTENT PERMITTED BY LAW, OUR TOTAL LIABILITY FOR ALL CLAIMS RELATING TO THE SERVICES WILL NOT EXCEED THE GREATER OF (A) THE AMOUNTS
+                        YOU PAID US IN THE TWELVE (12) MONTHS BEFORE THE CLAIM AROSE, OR (B) FIFTY U.S. DOLLARS (US $50).
+                    </p>
+                    <p>
+                        Some jurisdictions do not allow the limitation of certain damages, so some of the above may not apply to you. Nothing in these Terms limits
+                        liability that cannot be limited by law.
+                    </p>
+                </section>
+
+                <section id="indemnification">
+                    <h2>Indemnification</h2>
+                    <p>
+                        To the extent permitted by law, you agree to indemnify and hold harmless Hallowed Gains and its members, officers, employees, and agents from any
+                        claims, damages, liabilities, and expenses (including reasonable attorneys' fees) arising out of your User Content, your use of the Services in
+                        violation of these Terms, or your violation of any law or the rights of a third party.
+                    </p>
+                </section>
+
+                <section id="termination">
+                    <h2>Termination</h2>
+                    <p>
+                        You may stop using the Services at any time. We may suspend or terminate your access to any Service at any time — with or without notice — if we
+                        reasonably believe you have violated these Terms, if required by law, or if we discontinue a Service. On termination, the licenses we granted you
+                        end; sections that by their nature should survive (including Our content, Disclaimers, Limitation of liability, Indemnification, and Governing law)
+                        survive.
+                    </p>
+                </section>
+
+                <section id="changes">
+                    <h2>Changes to these Terms</h2>
+                    <p>
+                        We may update these Terms from time to time — for example, when we add a new app or feature, or in response to legal changes. When we do, we will
+                        update the "Last updated" date above and, for material changes, give you reasonable notice (such as a notice in the app or on this page). Your
+                        continued use of the Services after the change becomes effective constitutes your acceptance of the updated Terms. If you do not agree, stop using
+                        the Services.
+                    </p>
+                </section>
+
+                <section id="governing-law">
+                    <h2>Governing law &amp; disputes</h2>
+                    <p>
+                        These Terms and any dispute arising out of them or the Services are governed by the laws of the Commonwealth of Pennsylvania, without regard to
+                        conflict-of-law rules, and by applicable U.S. federal law. You agree that any dispute will be brought exclusively in the state or federal
+                        courts located in Pennsylvania, and you consent to their jurisdiction — except that either party may bring an individual claim in small-claims
+                        court, and nothing here limits rights you have under the mandatory consumer-protection laws of your place of residence.
+                    </p>
+                    <p>
+                        Before filing a claim, please contact us at <a href="mailto:contact@hallowedgains.com">contact@hallowedgains.com</a> — most concerns can be resolved
+                        quickly and informally.
+                    </p>
+                </section>
+
+                <section id="misc">
+                    <h2>Miscellaneous</h2>
+                    <ul>
+                        <li><strong>Entire agreement.</strong> These Terms and the <a href="/privacy">Privacy Policy</a> are the entire agreement between you and us about the Services.</li>
+                        <li><strong>Severability.</strong> If any provision is found unenforceable, the rest remain in effect.</li>
+                        <li><strong>No waiver.</strong> Our failure to enforce a provision is not a waiver of it.</li>
+                        <li><strong>Assignment.</strong> You may not assign these Terms; we may assign them in connection with a merger, acquisition, or sale of assets.</li>
+                        <li><strong>Export.</strong> You agree to comply with applicable export-control laws when using the Services.</li>
+                    </ul>
+                </section>
+
+                <section id="contact">
+                    <h2>Contact us</h2>
+                    <p>Questions about these Terms? Contact us at:</p>
+                    <ul>
+                        <li><strong>Email:</strong> <a href="mailto:contact@hallowedgains.com">contact@hallowedgains.com</a></li>
+                        <li><strong>Web:</strong> <a href="/contact.html">hallowedgains.com/contact</a></li>
+                        <li><strong>Entity:</strong> Hallowed Gains LLC (Pennsylvania, United States)</li>
+                    </ul>
+                </section>
+
+                <!-- ===================== APP-SPECIFIC ===================== -->
+
+                <div class="my-12 flex items-center gap-3">
+                    <span class="flex-grow h-px bg-brand-100"></span>
+                    <span class="text-xs font-semibold uppercase tracking-widest text-brand-500">App-specific terms</span>
+                    <span class="flex-grow h-px bg-brand-100"></span>
+                </div>
+
+                <section id="idle-bible">
+                    <h2>Idle Bible</h2>
+                    <p>
+                        <strong>Idle Bible</strong> is a free educational idle game available on iOS, Android, and the web. These additional terms apply when you play it.
+                    </p>
+                    <ul>
+                        <li><strong>Progress and balance.</strong> Idle Bible is a live game: we may tune costs, timers, rewards, and content over time. The "Game progress &amp; virtual items" section above applies to all Idle Bible saves, achievements, and unlocks.</li>
+                        <li><strong>Cloud sync (optional).</strong> If you sign in, your save syncs to our servers. Only one cloud save is kept per account; syncing from a device can overwrite the cloud copy, and the in-app conflict dialog is your chance to choose. Keep your own devices in sync before switching.</li>
+                        <li><strong>Google Play Games (Android).</strong> Achievements and sign-in through Google Play Games Services are subject to Google's terms and your Play Games privacy settings.</li>
+                        <li><strong>Web access.</strong> Playing Idle Bible on the web requires signing in, and access may be linked to having installed the Android app. We may change how web access is granted.</li>
+                        <li><strong>Scripture and audio.</strong> Bible passages are KJV (public domain in the U.S.). Audio narration, music, and art are our copyrighted content and may not be extracted or redistributed.</li>
+                    </ul>
+                </section>
+
+                <section id="aswtp">
+                    <h2>A Simple Way to Pray</h2>
+                    <p>
+                        <strong>A Simple Way to Pray</strong> (asimplewaytopray.com and its mobile apps) is a free devotional prayer service. These additional terms apply
+                        when you use it; the fuller stand-alone versions live at
+                        <a href="https://asimplewaytopray.com/terms">asimplewaytopray.com/terms</a> and
+                        <a href="https://asimplewaytopray.com/privacy">asimplewaytopray.com/privacy</a>.
+                    </p>
+                    <ul>
+                        <li><strong>Prayer Wall.</strong> Prayer requests you post to the Prayer Wall are public. The "User content" rules above apply — no personal information about others, nothing unlawful or abusive, and we may remove any request at our discretion.</li>
+                        <li><strong>Personal prayers.</strong> Prayers you save privately are encrypted and visible only to your account, as described in the privacy policy.</li>
+                        <li><strong>ESV Scripture.</strong> ESV® text is copyright &copy; Crossway, used by permission, and may not be copied or republished beyond Crossway's terms. See the <a href="https://asimplewaytopray.com/copyright">copyright page</a>.</li>
+                        <li><strong>Reminders.</strong> The "Notifications, email &amp; SMS" section above applies to prayer reminders, including SMS reminders.</li>
+                    </ul>
+                </section>
+
+            </article>
+
+            <p class="text-xs text-brand-500 mt-12 italic">
+                These Terms of Service are provided for informational purposes and are not legal advice. If you need legal advice about your specific situation, please
+                consult a qualified attorney.
+            </p>
+
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-brand-900 text-brand-50/70 py-10 text-center text-sm border-t-2 border-gold">
+        <div class="max-w-5xl mx-auto px-6 flex flex-col items-center justify-center gap-3">
+            <nav aria-label="Footer">
+                <ul class="flex flex-wrap justify-center gap-x-6 gap-y-2 text-brand-50/70">
+                    <li><a href="/" class="hover:text-gold transition-colors">Home</a></li>
+                    <li><a href="/contact.html" class="hover:text-gold transition-colors">Contact</a></li>
+                    <li><a href="/privacy.html" class="hover:text-gold transition-colors">Privacy Policy</a></li>
+                    <li><a href="/terms.html" class="text-gold font-semibold">Terms of Service</a></li>
+                </ul>
+            </nav>
+            <div class="flex items-center gap-5">
+                <a href="https://www.facebook.com/hallowedgains" target="_blank" rel="noopener noreferrer" aria-label="Hallowed Gains on Facebook" class="hover:text-gold transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+                </a>
+                <a href="https://www.instagram.com/hallowedgainsllc/" target="_blank" rel="noopener noreferrer" aria-label="Hallowed Gains on Instagram" class="hover:text-gold transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                </a>
+            </div>
+            <p>&copy; <script>document.write(new Date().getFullYear())</script> Hallowed Gains LLC. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const bar1 = document.getElementById('bar1');
+        const bar2 = document.getElementById('bar2');
+        const bar3 = document.getElementById('bar3');
+        let menuOpen = false;
+
+        function closeMenu() {
+            menuOpen = false;
+            mobileMenu.classList.add('hidden');
+            menuBtn.setAttribute('aria-expanded', 'false');
+            bar1.style.transform = '';
+            bar2.style.opacity = '1';
+            bar3.style.transform = '';
+        }
+
+        menuBtn.addEventListener('click', () => {
+            menuOpen = !menuOpen;
+            if (menuOpen) {
+                mobileMenu.classList.remove('hidden');
+                menuBtn.setAttribute('aria-expanded', 'true');
+                bar1.style.transform = 'translateY(8px) rotate(45deg)';
+                bar2.style.opacity = '0';
+                bar3.style.transform = 'translateY(-8px) rotate(-45deg)';
+            } else {
+                closeMenu();
+            }
+        });
+    </script>
+</body>
+</html>
