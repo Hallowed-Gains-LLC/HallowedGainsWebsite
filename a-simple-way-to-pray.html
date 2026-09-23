@@ -4,12 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>A Simple Way to Pray — Free Prayer App for Web, Android &amp; iOS</title>
-    <meta name="description" content="A free prayer app inspired by Martin Luther's 'A Simple Way to Pray.' Daily prayer offices, catechism memorization, and a community prayer wall. Available on the web, Google Play, and iOS beta.">
+    <meta name="description" content="A free prayer app inspired by Martin Luther's 'A Simple Way to Pray.' Daily prayer offices, catechism memorization, and a community prayer wall. Available on the web, Google Play, and the App Store.">
     <!-- Open Graph / social preview -->
     <meta property="og:title" content="A Simple Way to Pray — Free Prayer App for Web, Android &amp; iOS">
-    <meta property="og:description" content="Daily prayer offices, catechism memorization, and a community prayer wall — completely free. Available on the web, Google Play, and iOS beta via TestFlight.">
+    <meta property="og:description" content="Daily prayer offices, catechism memorization, and a community prayer wall — completely free. Available on the web, Google Play, and the App Store.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://hallowedgains.com/a-simple-way-to-pray">
+    <!-- Safari on iOS shows its native Smart App Banner for the App Store listing -->
+    <meta name="apple-itunes-app" content="app-id=6804485777">
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="aswtp-favicon.ico">
     <!-- Tailwind CSS -->
@@ -55,6 +57,22 @@
             }
         }
     </script>
+    <style>
+        /* Official store badges, sized so both show the same visible height
+           (--badge-h). Apple's SVG is the bare badge; Google's PNG ships with
+           41px of required clear space around a 564x168 badge (646x250 total),
+           so it is scaled up by 250/168 and the padding pulled back in with a
+           negative margin. The artwork itself is unmodified, per both brand
+           guidelines (don't recolor, crop, or restyle the badges). */
+        .store-badge { display: inline-block; line-height: 0; transition: opacity .15s; }
+        .store-badge:hover { opacity: .85; }
+        .store-badge img { width: auto; max-width: none; }
+        .store-badge-apple img { height: var(--badge-h); }
+        .store-badge-play img {
+            height: calc(var(--badge-h) * 250 / 168);
+            margin: calc(var(--badge-h) * -41 / 168);
+        }
+    </style>
 </head>
 <body class="bg-brand-50 text-brand-900 font-sans antialiased flex flex-col min-h-screen">
 
@@ -105,18 +123,13 @@
                         <i data-lucide="globe" class="w-5 h-5"></i>
                         Use it on the Web
                     </a>
-                    <a href="https://play.google.com/store/apps/details?id=com.hallowedgains.aswtp" target="_blank" rel="noopener noreferrer"
-                       class="inline-flex items-center justify-center gap-2 w-64 sm:w-auto bg-brand-800 text-brand-50 px-6 py-3.5 rounded-full font-semibold border border-gold/60 hover:bg-gold hover:text-brand-900 transition-colors shadow-lg">
-                        <i data-lucide="play" class="w-5 h-5"></i>
-                        Get it on Google Play
+                    <a href="https://play.google.com/store/apps/details?id=com.hallowedgains.aswtp" target="_blank" rel="noopener noreferrer" class="store-badge store-badge-play" style="--badge-h: 52px;">
+                        <img src="badges/google-play-badge.png" alt="Get it on Google Play">
                     </a>
-                    <a href="https://testflight.apple.com/join/p1w6Nnra" target="_blank" rel="noopener noreferrer"
-                       class="inline-flex items-center justify-center gap-2 w-64 sm:w-auto bg-brand-800 text-brand-50 px-6 py-3.5 rounded-full font-semibold border border-gold/60 hover:bg-gold hover:text-brand-900 transition-colors shadow-lg">
-                        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"></path></svg>
-                        Join the iOS Beta
+                    <a href="https://apps.apple.com/us/app/a-simple-way-to-pray/id6804485777" target="_blank" rel="noopener noreferrer" class="store-badge store-badge-apple" style="--badge-h: 52px;">
+                        <img src="badges/app-store-badge.svg" alt="Download on the App Store">
                     </a>
                 </div>
-                <p class="text-xs text-brand-50/50 mt-4">The iOS version is in beta on TestFlight while we finish the App Store release.</p>
             </div>
         </section>
 
@@ -209,18 +222,16 @@
                             <i data-lucide="globe" class="w-4 h-4"></i>
                             ASimpleWayToPray.com
                         </a>
-                        <a href="https://play.google.com/store/apps/details?id=com.hallowedgains.aswtp" target="_blank" rel="noopener noreferrer"
-                           class="inline-flex items-center justify-center gap-2 w-full bg-brand-800 text-brand-50 font-semibold py-3 rounded-lg border border-gold/60 hover:bg-gold hover:text-brand-900 transition-colors">
-                            <i data-lucide="play" class="w-4 h-4"></i>
-                            Google Play
-                        </a>
-                        <a href="https://testflight.apple.com/join/p1w6Nnra" target="_blank" rel="noopener noreferrer"
-                           class="inline-flex items-center justify-center gap-2 w-full bg-brand-800 text-brand-50 font-semibold py-3 rounded-lg border border-gold/60 hover:bg-gold hover:text-brand-900 transition-colors">
-                            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"></path></svg>
-                            iOS Beta (TestFlight)
-                        </a>
+                        <div class="flex flex-wrap items-center justify-center gap-3 pt-1">
+                            <a href="https://play.google.com/store/apps/details?id=com.hallowedgains.aswtp" target="_blank" rel="noopener noreferrer" class="store-badge store-badge-play" style="--badge-h: 44px;">
+                                <img src="badges/google-play-badge.png" alt="Get it on Google Play">
+                            </a>
+                            <a href="https://apps.apple.com/us/app/a-simple-way-to-pray/id6804485777" target="_blank" rel="noopener noreferrer" class="store-badge store-badge-apple" style="--badge-h: 44px;">
+                                <img src="badges/app-store-badge.svg" alt="Download on the App Store">
+                            </a>
+                        </div>
                     </div>
-                    <p class="text-xs text-brand-50/50 mt-4">Google Play and the Google Play logo are trademarks of Google LLC. Apple and TestFlight are trademarks of Apple Inc.</p>
+                    <p class="text-xs text-brand-50/50 mt-4">Google Play and the Google Play logo are trademarks of Google LLC. Apple and the App Store are trademarks of Apple Inc., registered in the U.S. and other countries.</p>
                 </div>
             </div>
         </section>
