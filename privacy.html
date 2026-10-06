@@ -434,18 +434,21 @@
                     </p>
                     <p>
                         <strong>In short:</strong> Early Bloom keeps everything you enter on your phone. It has no ads, no analytics and no crash reporting.
-                        Sync is optional: if you sign in with Google to back up your journal or share it with your partner, it is end-to-end encrypted on your
-                        phone first, so neither Hallowed Gains nor Google can read it. Hallowed Gains only sees your email address and account ID. Otherwise
-                        your information leaves your phone only when you choose to export, email or copy it, or through Android's own encrypted backup.
+                        Sync is optional: if you sign in with Google to back up your journal or share it with your partner or family, it is end-to-end encrypted
+                        on your phone first, so neither Hallowed Gains nor Google can read it. Hallowed Gains only sees your email address and account ID.
+                        Otherwise your information leaves your phone only when you choose to export, email, text, share or copy it, or through Android's own
+                        encrypted backup.
                     </p>
 
                     <h3>What you enter</h3>
                     <ul>
-                        <li>Your due date, your baby's name, sex and birth date if you add them, and the conditions you choose.</li>
+                        <li>Your due date, your baby's name, sex, birth date and how they were born if you add them, and the conditions you choose.</li>
+                        <li>Your first name and your relationship to the baby, and the pregnant parent's first name, if you add them.</li>
                         <li>Journal entries: bleeding, contractions, symptoms, blood pressure, blood sugar, baby's movements, moods and notes. This is health information.</li>
                         <li>Questions for your care team, and the answers you note.</li>
                         <li>Ultrasound scan results and medicines given (such as steroid or magnesium doses), if you record them.</li>
                         <li>Hospital stays (who, when, the hospital and any notes such as a room number) and your list of things to bring, if you add them.</li>
+                        <li>For family updates: the names, phone numbers and email addresses of the people you add, and the updates you send.</li>
                         <li>Checklist progress and settings, including your care team's email address if you save one.</li>
                         <li>It is stored on your phone, in storage that other apps can't read.</li>
                     </ul>
@@ -454,17 +457,17 @@
                     <ul>
                         <li>Until you turn on sync, it doesn't connect to the internet.</li>
                         <li>It has no advertising, no analytics and no crash reporting.</li>
-                        <li>It doesn't ask for your location, contacts, photos, camera or microphone.</li>
+                        <li>It doesn't ask for your location, photos, camera or microphone, or for permission to read your contacts. If you pick someone from your contacts for family updates, Android hands Early Bloom only that one number or address.</li>
                         <li>Hallowed Gains never sells or shares your information, and can't read what you enter.</li>
                     </ul>
 
-                    <h3>Sync and partner sharing (optional)</h3>
+                    <h3>Sync and sharing (optional)</h3>
                     <ul>
                         <li>Signing in with Google creates an Early Bloom account (Google Firebase Authentication) with your email address and an account ID. Hallowed Gains can see these, to run the service and to handle deletion requests.</li>
-                        <li>What syncs: your pregnancy details, conditions, journal, questions, scans, medicines, hospital stays, the bring list and checklist progress. Settings stay on each phone.</li>
+                        <li>What syncs: your pregnancy details, conditions, journal, questions, scans, medicines, hospital stays, the bring list, checklist progress, family update contacts and sent updates, and the names and relationships of the people sharing the journal. Settings stay on each phone.</li>
                         <li>Everything is encrypted on your phone (AES-256) before it is stored in Google Cloud Firestore in the United States. Only your household's phones have the key. Hallowed Gains and Google can see only that encrypted records exist, how many and how large, when they change, and which accounts share a journal.</li>
-                        <li>So a new phone can unlock your journal, a copy of the key is kept in your phone's backup (encrypted with your screen lock, so not even Google can read it) and, unless you turn it off in Sync &amp; partner, in a hidden Early Bloom folder in your Google Drive. Google could read the Drive copy; Hallowed Gains can't. You also get a recovery key to keep yourself.</li>
-                        <li>To share with your partner, you send them an invite containing the key. Send it privately. Your partner then sees and can change everything that syncs.</li>
+                        <li>So a new phone can unlock your journal, a copy of the key is kept in your phone's backup (encrypted with your screen lock, so not even Google can read it) and, unless you turn it off in Sync &amp; sharing, in a hidden Early Bloom folder in your Google Drive. Google could read the Drive copy; Hallowed Gains can't. You also get a recovery key to keep yourself.</li>
+                        <li>To share, you send an invite containing the key. Send it privately. A partner or support person you invite (one at most) sees and can change everything that syncs. Family you invite to view (up to ten) see everything that syncs, including the journal, but can't change it. You can remove them in Sync &amp; sharing, and the journal is then removed from their phone.</li>
                         <li>Firebase and Google Drive are provided by Google and covered by the <a href="https://policies.google.com/privacy">Google Privacy Policy</a>.</li>
                     </ul>
 
@@ -479,13 +482,14 @@
                     <ul>
                         <li><strong>Export backup and Save as a file:</strong> the file goes where you choose, such as Downloads or Google Drive. It contains your information in plain text, and that place's own privacy terms apply.</li>
                         <li><strong>Email care team:</strong> opens your own email app with a draft for you to check and send. Early Bloom doesn't send it and never sees it. Email is usually less private than a patient portal.</li>
+                        <li><strong>Family updates:</strong> opens your own messages or email app (or the share sheet, for apps like WhatsApp) with the update and the people you chose, for you to check and send. Early Bloom doesn't send it. Emails go to everyone blind-copied, so they don't see each other's addresses; a group text shows everyone's number to the group.</li>
                         <li><strong>Copy text:</strong> puts the report on your phone's clipboard, where other apps you paste into can read it.</li>
                     </ul>
 
                     <h3>Deleting your information</h3>
                     <ul>
                         <li><strong>Settings &rarr; Delete all data</strong> removes everything from your phone, and so does uninstalling the app. If sync is on, it is turned off first, so your synced copy is kept.</li>
-                        <li><strong>Settings &rarr; Sync &amp; partner &rarr; Delete my account and cloud data</strong> deletes your account, your synced journal and both key copies. If your partner shares the journal, you are removed from it and they keep it.</li>
+                        <li><strong>Settings &rarr; Sync &amp; sharing &rarr; Delete my account and cloud data</strong> deletes your account, your synced journal and both key copies. If your partner shares the journal, you are removed from it and they keep it. If you were viewing someone else's journal, you are removed from it and it is cleared from your phone.</li>
                         <li>Without the app, email <a href="mailto:contact@hallowedgains.com">contact@hallowedgains.com</a> from the address you signed in with; we delete your account and cloud data within 30 days. See <a href="/early-bloom-delete-account">Delete your Early Bloom account and data</a>.</li>
                         <li>Files you exported and emails you sent stay where they are, so delete those yourself. Android backups in your Google account expire when they aren't updated, or you can delete them in your Google account.</li>
                     </ul>
