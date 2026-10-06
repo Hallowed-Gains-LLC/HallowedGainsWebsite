@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Early Bloom — For Families Whose Baby May Arrive Early</title>
+    <meta name="description" content="Early Bloom is an Android app in progress for families whose baby may arrive early: gestational and corrected age, a week-by-week guide, baby's growth, scans, medicines, a journal and a care-team report. Now in internal testing.">
+    <!-- Open Graph / social preview -->
+    <meta property="og:title" content="Early Bloom — For Families Whose Baby May Arrive Early">
+    <meta property="og:description" content="A gentle Android app for a pregnancy where the baby may arrive early, and for the baby afterwards. Now in internal testing on Google Play.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://hallowedgains.com/early-bloom">
+    <meta property="og:image" content="https://hallowedgains.com/early-bloom-icon.png">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="early-bloom-icon.png">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#F7F3E3',   // ivory
+                            100: '#EDE4CC',  // warm ivory (borders / subtle bg)
+                            200: '#DED2B2',  // warm ivory hover
+                            500: '#8A7866',  // warm muted brown (secondary text)
+                            800: '#65342F',  // burgundy red (accent / hover)
+                            900: '#322E2C',  // dark brown/black (headings / dark bg)
+                        },
+                        gold: {
+                            DEFAULT: '#AF9164',
+                            soft: '#EFE3CB',
+                            deep: '#7A6340',
+                        },
+                        silver: {
+                            DEFAULT: '#B4B6B7',
+                            soft: '#E6E7E8',
+                            deep: '#6E7172',
+                        },
+                        burgundy: {
+                            soft: '#F0DCD9',
+                            deep: '#4A2421',
+                        },
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-brand-50 text-brand-900 font-sans antialiased flex flex-col min-h-screen">
+
+    <!-- Gold accent stripe -->
+    <div class="h-1 bg-gold w-full"></div>
+
+    <!-- Header -->
+    <header class="bg-brand-900 shadow-lg sticky top-0 z-50 border-b border-gold/40">
+        <div class="max-w-5xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="/" class="flex items-center gap-2 text-brand-50 font-serif font-semibold text-xl tracking-tight hover:opacity-80 transition-opacity">
+                <img src="HallowedGains_Logo_Lettermark_Gold.png" alt="Hallowed Gains Logo" class="h-9 w-auto object-contain">
+                Hallowed Gains LLC
+            </a>
+            <nav>
+                <ul class="flex gap-6 text-sm font-medium text-brand-50/70">
+                    <li><a href="/" class="hover:text-gold transition-colors">Home</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-grow">
+
+        <!-- Hero Section -->
+        <section class="bg-brand-900 text-brand-50 border-b-2 border-gold/70 relative overflow-hidden">
+            <div class="max-w-3xl mx-auto px-6 py-16 md:py-24 text-center relative z-10">
+                <div class="flex justify-center mb-6">
+                    <div class="bg-white p-4 rounded-2xl shadow-lg border border-gold/40">
+                        <img src="early-bloom-icon.png" alt="Early Bloom App Icon" class="w-20 h-20 md:w-24 md:h-24 object-contain rounded-xl">
+                    </div>
+                </div>
+                <span class="inline-block text-xs font-semibold uppercase tracking-[0.25em] text-gold mb-4">In Progress for Android</span>
+                <h1 class="font-serif text-4xl md:text-6xl font-bold text-brand-50 mb-5 leading-tight">
+                    Early <span class="text-gold">Bloom</span>
+                </h1>
+                <p class="text-lg md:text-xl text-brand-50/75 max-w-2xl mx-auto mb-4 leading-relaxed">
+                    A gentle companion for a pregnancy where the baby may arrive early, and for the baby, whenever they get here.
+                </p>
+                <p class="text-sm text-brand-50/60 max-w-xl mx-auto mb-9 leading-relaxed">
+                    Follow the pregnancy week by week, keep track of scans, medicines and symptoms in one place, and switch to NICU and corrected-age guidance once your baby has arrived.
+                </p>
+                <div class="inline-flex items-center gap-2 bg-brand-800 text-brand-50 px-6 py-3 rounded-full font-medium border border-gold/60">
+                    <i data-lucide="flask-conical" class="w-5 h-5 text-gold"></i>
+                    In internal testing on Google Play
+                </div>
+                <p class="text-xs text-brand-50/50 mt-4">Not yet publicly available</p>
+            </div>
+        </section>
+
+        <!-- Features -->
+        <section class="bg-white py-16 md:py-20 border-y border-brand-100">
+            <div class="max-w-5xl mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="font-serif text-3xl font-bold text-brand-900 mb-4">What's Inside</h2>
+                    <p class="text-brand-500 max-w-2xl mx-auto leading-relaxed">
+                        Clear, sourced information for the weeks that matter, and simple tools for keeping track of what's happening.
+                    </p>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+                    <div class="bg-brand-50 rounded-2xl p-7 border border-brand-100 shadow-sm">
+                        <div class="flex items-center gap-3 mb-4">
+                            <div class="bg-white p-2 rounded-lg border border-brand-100">
+                                <i data-lucide="calendar-days" class="w-5 h-5 text-brand-800"></i>
+                            </div>
+                            <h3 class="font-semibold text-brand-900">Gestational &amp; Corrected Age</h3>
+                        </div>
+                        <p class="text-brand-500 leading-relaxed text-sm">
+                            See the exact week and day of the pregnancy. Once your baby is born, Early Bloom shows <strong class="text-brand-800">chronological age, postmenstrual age and corrected age</strong>, and the guidance follows along.
+                        </p>
+                    </div>
+                    <div class="bg-brand-50 rounded-2xl p-7 border border-brand-100 shadow-sm">
+                        <div class="flex items-center gap-3 mb-4">
+                            <div class="bg-white p-2 rounded-lg border border-brand-100">
+                                <i data-lucide="book-open" class="w-5 h-5 text-brand-800"></i>
+                            </div>
+                            <h3 class="font-semibold text-brand-900">Week-by-Week Guide</h3>
+                        </div>
+                        <p class="text-brand-500 leading-relaxed text-sm">
+                            Each week's development, symptoms and preterm-aware tips, with a timeline of every pregnancy week and the stages after birth, from the NICU to going home.
+                        </p>
+                    </div>
+                    <div class="bg-brand-50 rounded-2xl p-7 border border-brand-100 shadow-sm">
+                        <div class="flex items-center gap-3 mb-4">
+                            <div class="bg-white p-2 rounded-lg border border-brand-100">
+                                <i data-lucide="chart-line" class="w-5 h-5 text-brand-800"></i>
+                            </div>
+                            <h3 class="font-semibold text-brand-900">Baby's Growth</h3>
+                        </div>
+                        <p class="text-brand-500 leading-relaxed text-sm">
+                            The measurements an ultrasound reports, calculated for the exact day with their typical range, using either the <strong class="text-brand-800">INTERGROWTH-21st</strong> standards or <strong class="text-brand-800">Hadlock</strong> charts.
+                        </p>
+                    </div>
+                    <div class="bg-brand-50 rounded-2xl p-7 border border-brand-100 shadow-sm">
+                        <div class="flex items-center gap-3 mb-4">
+                            <div class="bg-white p-2 rounded-lg border border-brand-100">
+                                <i data-lucide="clipboard-list" class="w-5 h-5 text-brand-800"></i>
+                            </div>
+                            <h3 class="font-semibold text-brand-900">Ultrasound Scans &amp; Medicines</h3>
+                        </div>
+                        <p class="text-brand-500 leading-relaxed text-sm">
+                            Copy in each scan's results to see every measurement's centile across scans, and keep a log of steroid, magnesium and other doses with the date and time.
+                        </p>
+                    </div>
+                    <div class="bg-brand-50 rounded-2xl p-7 border border-brand-100 shadow-sm">
+                        <div class="flex items-center gap-3 mb-4">
+                            <div class="bg-white p-2 rounded-lg border border-brand-100">
+                                <i data-lucide="notebook-pen" class="w-5 h-5 text-brand-800"></i>
+                            </div>
+                            <h3 class="font-semibold text-brand-900">Journal &amp; Care-Team Report</h3>
+                        </div>
+                        <p class="text-brand-500 leading-relaxed text-sm">
+                            Log bleeding, contractions, symptoms, blood pressure, blood sugar, kick counts and notes. Then put together a report for any period and <strong class="text-brand-800">email it to your care team</strong> from your own email app.
+                        </p>
+                    </div>
+                    <div class="bg-brand-50 rounded-2xl p-7 border border-brand-100 shadow-sm">
+                        <div class="flex items-center gap-3 mb-4">
+                            <div class="bg-white p-2 rounded-lg border border-brand-100">
+                                <i data-lucide="message-circle-question-mark" class="w-5 h-5 text-brand-800"></i>
+                            </div>
+                            <h3 class="font-semibold text-brand-900">Questions for Your Care Team</h3>
+                        </div>
+                        <p class="text-brand-500 leading-relaxed text-sm">
+                            Jot questions down as they come up, tick them off at the appointment and note the answer. Open questions can go straight into the care-team report.
+                        </p>
+                    </div>
+                    <div class="bg-brand-50 rounded-2xl p-7 border border-brand-100 shadow-sm">
+                        <div class="flex items-center gap-3 mb-4">
+                            <div class="bg-white p-2 rounded-lg border border-brand-100">
+                                <i data-lucide="hospital" class="w-5 h-5 text-brand-800"></i>
+                            </div>
+                            <h3 class="font-semibold text-brand-900">If Baby Arrived Today</h3>
+                        </div>
+                        <p class="text-brand-500 leading-relaxed text-sm">
+                            From 22 weeks, what a birth this week would likely mean: NICU care, main risks and typical length of stay, drawn from <strong class="text-brand-800">ACOG, SMFM and NICHD</strong> sources.
+                        </p>
+                    </div>
+                    <div class="bg-brand-50 rounded-2xl p-7 border border-brand-100 shadow-sm">
+                        <div class="flex items-center gap-3 mb-4">
+                            <div class="bg-white p-2 rounded-lg border border-brand-100">
+                                <i data-lucide="users" class="w-5 h-5 text-brand-800"></i>
+                            </div>
+                            <h3 class="font-semibold text-brand-900">Partner Sharing</h3>
+                        </div>
+                        <p class="text-brand-500 leading-relaxed text-sm">
+                            Share an end-to-end encrypted copy of the pregnancy details and journal through Google Drive, so your partner can follow along, read-only, on their own phone.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Coming Next -->
+        <section class="max-w-5xl mx-auto px-6 py-16 md:py-20">
+            <div class="text-center mb-12">
+                <h2 class="font-serif text-3xl font-bold text-brand-900 mb-4">Coming Next</h2>
+                <p class="text-brand-500 max-w-2xl mx-auto leading-relaxed">
+                    What we're working on now.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+                <div class="bg-white rounded-2xl p-7 border border-dashed border-brand-200 shadow-sm">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="bg-brand-50 p-2 rounded-lg border border-brand-100">
+                            <i data-lucide="refresh-cw" class="w-5 h-5 text-brand-800"></i>
+                        </div>
+                        <h3 class="font-semibold text-brand-900">Encrypted Sync Between Partners</h3>
+                    </div>
+                    <p class="text-brand-500 leading-relaxed text-sm">
+                        Optional, end-to-end encrypted sync between partners' phones, so you both see the same journal without passing files back and forth.
+                    </p>
+                </div>
+                <div class="bg-white rounded-2xl p-7 border border-dashed border-brand-200 shadow-sm">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="bg-brand-50 p-2 rounded-lg border border-brand-100">
+                            <i data-lucide="cross" class="w-5 h-5 text-brand-800"></i>
+                        </div>
+                        <h3 class="font-semibold text-brand-900">Prayers &amp; Scripture</h3>
+                    </div>
+                    <p class="text-brand-500 leading-relaxed text-sm">
+                        Optional Lutheran prayers and Scripture for the days of waiting, worry and thanksgiving, for those who want them.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Privacy & Disclaimer -->
+        <section class="bg-white py-14 border-y border-brand-100">
+            <div class="max-w-3xl mx-auto px-6 text-center">
+                <div class="flex justify-center mb-4">
+                    <div class="bg-brand-50 p-3 rounded-xl border border-brand-100">
+                        <i data-lucide="shield-check" class="w-6 h-6 text-brand-800"></i>
+                    </div>
+                </div>
+                <h2 class="font-serif text-2xl md:text-3xl font-bold text-brand-900 mb-3">Private by Design</h2>
+                <p class="text-brand-500 max-w-xl mx-auto leading-relaxed mb-6">
+                    Early Bloom keeps what you enter on your phone. There are no ads and no analytics, and you don't need an account. Your information only leaves your phone when you choose to share it, or through Android's own encrypted backup.
+                </p>
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-x-6 gap-y-3 text-sm font-semibold">
+                    <a href="/privacy#early-bloom" class="inline-flex items-center gap-2 text-brand-900 hover:text-brand-500 transition-colors">
+                        Read the privacy policy
+                        <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </a>
+                    <a href="/early-bloom-delete-account" class="inline-flex items-center gap-2 text-brand-900 hover:text-brand-500 transition-colors">
+                        Delete your account &amp; data
+                        <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </a>
+                </div>
+
+                <div class="mt-10 bg-burgundy-soft/60 border border-brand-800/20 rounded-2xl p-6 text-left">
+                    <div class="flex items-start gap-3">
+                        <i data-lucide="info" class="w-5 h-5 text-brand-800 flex-shrink-0 mt-0.5"></i>
+                        <p class="text-sm text-brand-800 leading-relaxed">
+                            <strong>Not medical advice.</strong> Early Bloom shares general, sourced information. It doesn't replace your care team. If you're worried about yourself or your baby, contact your care team or emergency services.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Bottom CTA -->
+        <section class="max-w-5xl mx-auto px-6 py-16 md:py-20">
+            <div class="max-w-md mx-auto text-center">
+                <div class="bg-brand-900 p-8 rounded-2xl border border-gold/50 shadow-xl">
+                    <div class="flex justify-center mb-4">
+                        <div class="bg-white p-3 rounded-xl border border-gold/50">
+                            <img src="early-bloom-icon.png" alt="Early Bloom App Icon" class="w-10 h-10 object-contain rounded-lg">
+                        </div>
+                    </div>
+                    <h3 class="font-serif text-2xl font-bold text-brand-50 mb-2">Still Growing</h3>
+                    <p class="text-sm text-brand-50/70 mb-6 leading-relaxed">
+                        Early Bloom is in internal testing on Google Play and isn't publicly available yet. Questions or ideas? We'd love to hear from you.
+                    </p>
+                    <a href="/contact.html"
+                       class="inline-flex items-center justify-center gap-2 w-full bg-gold text-brand-900 font-semibold py-3 rounded-lg border border-gold hover:bg-gold-deep hover:text-brand-50 transition-colors">
+                        <i data-lucide="mail" class="w-4 h-4"></i>
+                        Get in Touch
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-brand-900 text-brand-50/70 py-10 text-center text-sm border-t-2 border-gold">
+        <div class="max-w-5xl mx-auto px-6 flex flex-col items-center justify-center gap-3">
+            <nav aria-label="Footer">
+                <ul class="flex flex-wrap justify-center gap-x-6 gap-y-2 text-brand-50/70">
+                    <li><a href="/" class="hover:text-gold transition-colors">Home</a></li>
+                    <li><a href="/contact.html" class="hover:text-gold transition-colors">Contact</a></li>
+                    <li><a href="/privacy.html" class="hover:text-gold transition-colors">Privacy Policy</a></li>
+                    <li><a href="/terms.html" class="hover:text-gold transition-colors">Terms of Service</a></li>
+                </ul>
+            </nav>
+            <div class="flex items-center gap-5">
+                <a href="https://www.facebook.com/hallowedgains" target="_blank" rel="noopener noreferrer" aria-label="Hallowed Gains on Facebook" class="hover:text-gold transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+                </a>
+                <a href="https://www.instagram.com/hallowedgainsllc/" target="_blank" rel="noopener noreferrer" aria-label="Hallowed Gains on Instagram" class="hover:text-gold transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                </a>
+            </div>
+            <p>&copy; <script>document.write(new Date().getFullYear())</script> Hallowed Gains LLC. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Initialize Icons -->
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
