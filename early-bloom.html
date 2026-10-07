@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Early Bloom — For Families Whose Baby May Arrive Early</title>
-    <meta name="description" content="Early Bloom is an Android app in progress for families whose baby may arrive early: gestational and corrected age, a week-by-week guide, baby's growth, scans, medicines, a journal and a care-team report. Now in open testing on Google Play.">
+    <meta name="description" content="Early Bloom is an Android app in progress for families whose baby may arrive early: gestational and corrected age, a week-by-week guide, baby's growth, scans, medicines, a journal and a care-team report. Early access for Android, through Google Play's open testing.">
     <!-- Open Graph / social preview -->
     <meta property="og:title" content="Early Bloom — For Families Whose Baby May Arrive Early">
-    <meta property="og:description" content="A gentle Android app for a pregnancy where the baby may arrive early, and for the baby afterwards. Now in open testing on Google Play: anyone can try it.">
+    <meta property="og:description" content="A gentle Android app for a pregnancy where the baby may arrive early, and for the baby afterwards. Early access for Android, through Google Play's open testing.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://hallowedgains.com/early-bloom">
     <meta property="og:image" content="https://hallowedgains.com/early-bloom-icon.png">
@@ -98,15 +98,28 @@
                 <p class="text-sm text-brand-50/60 max-w-xl mx-auto mb-9 leading-relaxed">
                     Follow the pregnancy week by week, keep track of scans, medicines and symptoms in one place, and switch to NICU and corrected-age guidance once your baby has arrived.
                 </p>
-                <a href="https://play.google.com/store/apps/details?id=com.hallowedgains.early_bloom" target="_blank" rel="noopener noreferrer"
-                   class="inline-flex items-center gap-2 bg-gold text-brand-900 px-6 py-3 rounded-full font-semibold border border-gold hover:bg-gold-deep hover:text-brand-50 transition-colors">
-                    <i data-lucide="play" class="w-5 h-5"></i>
-                    Get it on Google Play
-                </a>
-                <p class="text-xs text-brand-50/60 mt-4">
-                    In open testing: anyone with an Android phone can try it.
-                    Not showing up? <a href="https://play.google.com/apps/testing/com.hallowedgains.early_bloom" target="_blank" rel="noopener noreferrer" class="underline underline-offset-2 hover:text-gold">Join the test here</a>, then install.
-                </p>
+                <!-- Google Play links: shown by early-bloom-status.js once the app is on Google Play. -->
+                <div data-play="live" class="hidden">
+                    <a href="https://play.google.com/store/apps/details?id=com.hallowedgains.early_bloom" target="_blank" rel="noopener noreferrer"
+                       class="inline-flex items-center gap-2 bg-gold text-brand-900 px-6 py-3 rounded-full font-semibold border border-gold hover:bg-gold-deep hover:text-brand-50 transition-colors">
+                        <i data-lucide="play" class="w-5 h-5"></i>
+                        Get it on Google Play
+                    </a>
+                    <p class="text-xs text-brand-50/60 mt-4">
+                        In open testing: anyone with an Android phone can try it.
+                        Not showing up? <a href="https://play.google.com/apps/testing/com.hallowedgains.early_bloom" target="_blank" rel="noopener noreferrer" class="underline underline-offset-2 hover:text-gold">Join the test here</a>, then install.
+                    </p>
+                </div>
+                <div data-play="soon">
+                    <span class="inline-flex items-center gap-2 bg-brand-50/10 text-brand-50 px-6 py-3 rounded-full font-semibold border border-gold/60">
+                        <i data-lucide="sprout" class="w-5 h-5"></i>
+                        Coming soon to Google Play
+                    </span>
+                    <p class="text-xs text-brand-50/60 mt-4">
+                        Open testing is about to start: anyone with an Android phone will be able to try it.
+                        Want to hear when it's ready? <a href="/contact.html" class="underline underline-offset-2 hover:text-gold">Let us know</a>.
+                    </p>
+                </div>
             </div>
         </section>
 
@@ -304,14 +317,22 @@
                         </div>
                     </div>
                     <h3 class="font-serif text-2xl font-bold text-brand-50 mb-2">Try It Early</h3>
-                    <p class="text-sm text-brand-50/70 mb-6 leading-relaxed">
+                    <p data-play="live" class="hidden text-sm text-brand-50/70 mb-6 leading-relaxed">
                         Early Bloom is in open testing on Google Play, so it's still growing. Try it, and tell us what would help your family: questions and ideas shape what comes next.
                     </p>
-                    <a href="https://play.google.com/store/apps/details?id=com.hallowedgains.early_bloom" target="_blank" rel="noopener noreferrer"
-                       class="inline-flex items-center justify-center gap-2 w-full bg-gold text-brand-900 font-semibold py-3 rounded-lg border border-gold hover:bg-gold-deep hover:text-brand-50 transition-colors">
+                    <p data-play="soon" class="text-sm text-brand-50/70 mb-6 leading-relaxed">
+                        Early Bloom is about to open for testing on Google Play, and it's still growing. Tell us what would help your family: questions and ideas shape what comes next.
+                    </p>
+                    <a data-play="live" href="https://play.google.com/store/apps/details?id=com.hallowedgains.early_bloom" target="_blank" rel="noopener noreferrer"
+                       class="hidden inline-flex items-center justify-center gap-2 w-full bg-gold text-brand-900 font-semibold py-3 rounded-lg border border-gold hover:bg-gold-deep hover:text-brand-50 transition-colors">
                         <i data-lucide="play" class="w-4 h-4"></i>
                         Get it on Google Play
                     </a>
+                    <span data-play="soon"
+                       class="inline-flex items-center justify-center gap-2 w-full text-brand-50/80 font-semibold py-3 rounded-lg border border-gold/40">
+                        <i data-lucide="sprout" class="w-4 h-4"></i>
+                        Coming soon to Google Play
+                    </span>
                     <a href="/contact.html"
                        class="inline-flex items-center justify-center gap-2 w-full mt-3 text-brand-50 font-semibold py-3 rounded-lg border border-gold/60 hover:bg-brand-800 transition-colors">
                         <i data-lucide="mail" class="w-4 h-4"></i>
@@ -350,5 +371,6 @@
     <script>
         lucide.createIcons();
     </script>
+    <script src="/early-bloom-status.js"></script>
 </body>
 </html>
