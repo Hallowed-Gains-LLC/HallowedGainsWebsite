@@ -4,7 +4,7 @@ name: Early Bloom Play check
 # actually on Google Play. Until then the Early Bloom page and the home
 # page card say "coming soon" (see early-bloom-status.js).
 #
-# Every hour this checks the Play store page. Once it works (HTTP 200 and
+# Every three hours this checks the Play store page. Once it works (HTTP 200 and
 # the page names the app), it sets "onGooglePlay": true in
 # early-bloom-status.json, commits that to main, and runs the deploy
 # workflow. After that it finds the flag already set and does nothing.
@@ -12,7 +12,7 @@ name: Early Bloom Play check
 
 on:
   schedule:
-    - cron: "17 * * * *"
+    - cron: "17 */3 * * *"
   workflow_dispatch:
 
 permissions:

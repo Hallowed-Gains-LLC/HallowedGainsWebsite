@@ -3,7 +3,7 @@
 //
 // early-bloom-status.json holds the switch. The "Early Bloom Play check"
 // workflow (.github/workflows/early-bloom-play-check.yml) checks the Play
-// store page every hour and flips it to true (and redeploys) once the page
+// store page every three hours and flips it to true (and redeploys) once the page
 // works; nothing else needs to change.
 //
 // Markup: elements with data-play="live" start hidden (class "hidden") and
