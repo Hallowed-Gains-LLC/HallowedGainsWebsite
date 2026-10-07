@@ -12,6 +12,15 @@
     "trailingSlash": false,
     "headers": [
       {
+        "source": "/early-bloom-status.json",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "no-cache"
+          }
+        ]
+      },
+      {
         "source": "/ft-game",
         "headers": [
           {

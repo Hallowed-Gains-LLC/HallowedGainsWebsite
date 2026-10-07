@@ -1,0 +1,71 @@
+name: Early Bloom Play check
+
+# Shows Early Bloom's Google Play links on the site once the app is
+# actually on Google Play. Until then the Early Bloom page and the home
+# page card say "coming soon" (see early-bloom-status.js).
+#
+# Every three hours this checks the Play store page. Once it works (HTTP 200 and
+# the page names the app), it sets "onGooglePlay": true in
+# early-bloom-status.json, commits that to main, and runs the deploy
+# workflow. After that it finds the flag already set and does nothing.
+# Run it by hand from Actions to check straight away.
+
+on:
+  schedule:
+    - cron: "17 */3 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: write
+
+concurrency:
+  group: early-bloom-play-check
+  cancel-in-progress: false
+
+env:
+  PACKAGE: com.hallowedgains.early_bloom
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Check Google Play
+        id: play
+        run: |
+          if jq -e '.onGooglePlay == true' early-bloom-status.json > /dev/null; then
+            echo "Already showing the Google Play links; nothing to do."
+            echo "flip=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          page="$RUNNER_TEMP/play.html"
+          code=$(curl -sSL -o "$page" -w '%{http_code}' -H 'Accept-Language: en-US' \
+            "https://play.google.com/store/apps/details?id=${PACKAGE}&hl=en_US&gl=US" || echo 000)
+          # A missing app is a 404 that doesn't mention it; a consent or
+          # error page wouldn't name it either.
+          if [ "$code" = "200" ] && grep -q "$PACKAGE" "$page"; then
+            echo "Early Bloom is on Google Play."
+            echo "flip=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "Not on Google Play yet (HTTP $code)."
+            echo "flip=false" >> "$GITHUB_OUTPUT"
+          fi
+          echo "Google Play check: HTTP $code" >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Show the links
+        if: steps.play.outputs.flip == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          printf '{\n  "onGooglePlay": true\n}\n' > early-bloom-status.json
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -am "Early Bloom is on Google Play: show its links"
+          git push origin HEAD:main
+          gh workflow run deploy.yml --ref main
+          echo "Flipped early-bloom-status.json and started the deploy." >> "$GITHUB_STEP_SUMMARY"

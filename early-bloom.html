@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Early Bloom — For Families Whose Baby May Arrive Early</title>
-    <meta name="description" content="Early Bloom is an Android app in progress for families whose baby may arrive early: gestational and corrected age, a week-by-week guide, baby's growth, scans, medicines, a journal and a care-team report. Now in internal testing.">
+    <meta name="description" content="Early Bloom is an Android app in progress for families whose baby may arrive early: gestational and corrected age, a week-by-week guide, baby's growth, scans, medicines, a journal and a care-team report. Early access for Android, through Google Play's open testing.">
     <!-- Open Graph / social preview -->
     <meta property="og:title" content="Early Bloom — For Families Whose Baby May Arrive Early">
-    <meta property="og:description" content="A gentle Android app for a pregnancy where the baby may arrive early, and for the baby afterwards. Now in internal testing on Google Play.">
+    <meta property="og:description" content="A gentle Android app for a pregnancy where the baby may arrive early, and for the baby afterwards. Early access for Android, through Google Play's open testing.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://hallowedgains.com/early-bloom">
     <meta property="og:image" content="https://hallowedgains.com/early-bloom-icon.png">
@@ -88,7 +88,7 @@
                         <img src="early-bloom-icon.png" alt="Early Bloom App Icon" class="w-20 h-20 md:w-24 md:h-24 object-contain rounded-xl">
                     </div>
                 </div>
-                <span class="inline-block text-xs font-semibold uppercase tracking-[0.25em] text-gold mb-4">In Progress for Android</span>
+                <span class="inline-block text-xs font-semibold uppercase tracking-[0.25em] text-gold mb-4">Early Access for Android</span>
                 <h1 class="font-serif text-4xl md:text-6xl font-bold text-brand-50 mb-5 leading-tight">
                     Early <span class="text-gold">Bloom</span>
                 </h1>
@@ -98,11 +98,28 @@
                 <p class="text-sm text-brand-50/60 max-w-xl mx-auto mb-9 leading-relaxed">
                     Follow the pregnancy week by week, keep track of scans, medicines and symptoms in one place, and switch to NICU and corrected-age guidance once your baby has arrived.
                 </p>
-                <div class="inline-flex items-center gap-2 bg-brand-800 text-brand-50 px-6 py-3 rounded-full font-medium border border-gold/60">
-                    <i data-lucide="flask-conical" class="w-5 h-5 text-gold"></i>
-                    In internal testing on Google Play
+                <!-- Google Play links: shown by early-bloom-status.js once the app is on Google Play. -->
+                <div data-play="live" class="hidden">
+                    <a href="https://play.google.com/store/apps/details?id=com.hallowedgains.early_bloom" target="_blank" rel="noopener noreferrer"
+                       class="inline-flex items-center gap-2 bg-gold text-brand-900 px-6 py-3 rounded-full font-semibold border border-gold hover:bg-gold-deep hover:text-brand-50 transition-colors">
+                        <i data-lucide="play" class="w-5 h-5"></i>
+                        Get it on Google Play
+                    </a>
+                    <p class="text-xs text-brand-50/60 mt-4">
+                        In open testing: anyone with an Android phone can try it.
+                        Not showing up? <a href="https://play.google.com/apps/testing/com.hallowedgains.early_bloom" target="_blank" rel="noopener noreferrer" class="underline underline-offset-2 hover:text-gold">Join the test here</a>, then install.
+                    </p>
                 </div>
-                <p class="text-xs text-brand-50/50 mt-4">Not yet publicly available</p>
+                <div data-play="soon">
+                    <span class="inline-flex items-center gap-2 bg-brand-50/10 text-brand-50 px-6 py-3 rounded-full font-semibold border border-gold/60">
+                        <i data-lucide="sprout" class="w-5 h-5"></i>
+                        Coming soon to Google Play
+                    </span>
+                    <p class="text-xs text-brand-50/60 mt-4">
+                        Open testing is about to start: anyone with an Android phone will be able to try it.
+                        Want to hear when it's ready? <a href="/contact.html" class="underline underline-offset-2 hover:text-gold">Let us know</a>.
+                    </p>
+                </div>
             </div>
         </section>
 
@@ -202,7 +219,7 @@
                             <h3 class="font-semibold text-brand-900">Sync &amp; Partner Sharing</h3>
                         </div>
                         <p class="text-brand-500 leading-relaxed text-sm">
-                            Optional sync through your Google account backs your journal up and brings it back on a new phone. Your partner joins with an invite, and you both see and add to the same journal. It's <strong class="text-brand-800">end-to-end encrypted</strong>: we can't read it, and neither can Google.
+                            Optional sync through your Google account backs your journal up and brings it back on a new phone. Your partner joins with an invite, and you both see and add to the same journal. Family and friends can follow a feed of just the updates you choose to share, and leave a heart. It's <strong class="text-brand-800">end-to-end encrypted</strong>: we can't read it, and neither can Google.
                         </p>
                     </div>
                     <div class="bg-brand-50 rounded-2xl p-7 border border-brand-100 shadow-sm">
@@ -250,8 +267,8 @@
                     <figcaption class="text-xs text-brand-500 mt-3 text-center leading-snug">Questions to ask your care team</figcaption>
                 </figure>
                 <figure class="snap-center shrink-0 w-56 md:w-auto">
-                    <img src="early-bloom-shots/sync.png" width="412" height="915" loading="lazy" alt="Optional, end-to-end encrypted sync with your partner" class="w-full h-auto rounded-2xl border border-brand-100 shadow-md bg-white">
-                    <figcaption class="text-xs text-brand-500 mt-3 text-center leading-snug">Optional, end-to-end encrypted sync with your partner</figcaption>
+                    <img src="early-bloom-shots/feed.png" width="412" height="915" loading="lazy" alt="The family feed: just the updates you share, with hearts from family" class="w-full h-auto rounded-2xl border border-brand-100 shadow-md bg-white">
+                    <figcaption class="text-xs text-brand-500 mt-3 text-center leading-snug">The family feed: just the updates you share, with hearts from family</figcaption>
                 </figure>
             </div>
         </section>
@@ -299,14 +316,27 @@
                             <img src="early-bloom-icon.png" alt="Early Bloom App Icon" class="w-10 h-10 object-contain rounded-lg">
                         </div>
                     </div>
-                    <h3 class="font-serif text-2xl font-bold text-brand-50 mb-2">Still Growing</h3>
-                    <p class="text-sm text-brand-50/70 mb-6 leading-relaxed">
-                        Early Bloom is in internal testing on Google Play and isn't publicly available yet. Questions or ideas? We'd love to hear from you.
+                    <h3 class="font-serif text-2xl font-bold text-brand-50 mb-2">Try It Early</h3>
+                    <p data-play="live" class="hidden text-sm text-brand-50/70 mb-6 leading-relaxed">
+                        Early Bloom is in open testing on Google Play, so it's still growing. Try it, and tell us what would help your family: questions and ideas shape what comes next.
                     </p>
+                    <p data-play="soon" class="text-sm text-brand-50/70 mb-6 leading-relaxed">
+                        Early Bloom is about to open for testing on Google Play, and it's still growing. Tell us what would help your family: questions and ideas shape what comes next.
+                    </p>
+                    <a data-play="live" href="https://play.google.com/store/apps/details?id=com.hallowedgains.early_bloom" target="_blank" rel="noopener noreferrer"
+                       class="hidden inline-flex items-center justify-center gap-2 w-full bg-gold text-brand-900 font-semibold py-3 rounded-lg border border-gold hover:bg-gold-deep hover:text-brand-50 transition-colors">
+                        <i data-lucide="play" class="w-4 h-4"></i>
+                        Get it on Google Play
+                    </a>
+                    <span data-play="soon"
+                       class="inline-flex items-center justify-center gap-2 w-full text-brand-50/80 font-semibold py-3 rounded-lg border border-gold/40">
+                        <i data-lucide="sprout" class="w-4 h-4"></i>
+                        Coming soon to Google Play
+                    </span>
                     <a href="/contact.html"
-                       class="inline-flex items-center justify-center gap-2 w-full bg-gold text-brand-900 font-semibold py-3 rounded-lg border border-gold hover:bg-gold-deep hover:text-brand-50 transition-colors">
+                       class="inline-flex items-center justify-center gap-2 w-full mt-3 text-brand-50 font-semibold py-3 rounded-lg border border-gold/60 hover:bg-brand-800 transition-colors">
                         <i data-lucide="mail" class="w-4 h-4"></i>
-                        Get in Touch
+                        Share an Idea
                     </a>
                 </div>
             </div>
@@ -341,5 +371,6 @@
     <script>
         lucide.createIcons();
     </script>
+    <script src="/early-bloom-status.js"></script>
 </body>
 </html>

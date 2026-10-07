@@ -4,6 +4,10 @@ on:
   push:
     branches:
       - main
+  # Also run by the Early Bloom Play check after it flips
+  # early-bloom-status.json (a push made by a workflow doesn't start
+  # another workflow, but asking for a run does).
+  workflow_dispatch:
 
 jobs:
   deploy:
