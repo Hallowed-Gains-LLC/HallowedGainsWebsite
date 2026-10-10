@@ -1,14 +1,17 @@
 name: Early Bloom Play check
 
-# Shows Early Bloom's Google Play links on the site once the app is
-# actually on Google Play. Until then the Early Bloom page and the home
-# page card say "coming soon" (see early-bloom-status.js).
+# Shows Early Bloom's Google Play links on the site while the app is on
+# Google Play for everyone (open testing or production), and the
+# internal-testing message (greyed-out button, "ask to join the test")
+# while it isn't. See early-bloom-status.js.
 #
-# Every three hours this checks the Play store page. Once it works (HTTP 200 and
-# the page names the app), it sets "onGooglePlay": true in
-# early-bloom-status.json, commits that to main, and runs the deploy
-# workflow. After that it finds the flag already set and does nothing.
-# Run it by hand from Actions to check straight away.
+# Every three hours this checks the public Play store page and keeps
+# "onGooglePlay" in early-bloom-status.json in step with it: true once the
+# page works (HTTP 200 and the page names the app), false again if it's
+# gone (a 404: an app only in internal testing has no public page). Any
+# other answer (a network error, a 5xx, a consent page) changes nothing, so
+# a blip doesn't flip the site. A change is committed to main and the
+# deploy workflow run. Run it by hand from Actions to check straight away.
 
 on:
   schedule:
@@ -38,34 +41,44 @@ jobs:
       - name: Check Google Play
         id: play
         run: |
-          if jq -e '.onGooglePlay == true' early-bloom-status.json > /dev/null; then
-            echo "Already showing the Google Play links; nothing to do."
-            echo "flip=false" >> "$GITHUB_OUTPUT"
-            exit 0
-          fi
+          shown=$(jq -r '.onGooglePlay == true' early-bloom-status.json)
           page="$RUNNER_TEMP/play.html"
           code=$(curl -sSL -o "$page" -w '%{http_code}' -H 'Accept-Language: en-US' \
             "https://play.google.com/store/apps/details?id=${PACKAGE}&hl=en_US&gl=US" || echo 000)
           # A missing app is a 404 that doesn't mention it; a consent or
           # error page wouldn't name it either.
           if [ "$code" = "200" ] && grep -q "$PACKAGE" "$page"; then
-            echo "Early Bloom is on Google Play."
-            echo "flip=true" >> "$GITHUB_OUTPUT"
+            onPlay=true
+          elif [ "$code" = "404" ]; then
+            onPlay=false
           else
-            echo "Not on Google Play yet (HTTP $code)."
-            echo "flip=false" >> "$GITHUB_OUTPUT"
+            echo "Google Play answered HTTP $code: leaving the site as it is." | tee -a "$GITHUB_STEP_SUMMARY"
+            echo "change=false" >> "$GITHUB_OUTPUT"
+            exit 0
           fi
-          echo "Google Play check: HTTP $code" >> "$GITHUB_STEP_SUMMARY"
+          echo "Google Play check: HTTP $code, on Google Play: $onPlay, site shows links: $shown" | tee -a "$GITHUB_STEP_SUMMARY"
+          if [ "$onPlay" = "$shown" ]; then
+            echo "change=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "change=true" >> "$GITHUB_OUTPUT"
+            echo "onPlay=$onPlay" >> "$GITHUB_OUTPUT"
+          fi
 
-      - name: Show the links
-        if: steps.play.outputs.flip == 'true'
+      - name: Update the site
+        if: steps.play.outputs.change == 'true'
         env:
           GH_TOKEN: ${{ github.token }}
+          ON_PLAY: ${{ steps.play.outputs.onPlay }}
         run: |
-          printf '{\n  "onGooglePlay": true\n}\n' > early-bloom-status.json
+          printf '{\n  "onGooglePlay": %s\n}\n' "$ON_PLAY" > early-bloom-status.json
+          if [ "$ON_PLAY" = "true" ]; then
+            message="Early Bloom is on Google Play: show its links"
+          else
+            message="Early Bloom isn't on Google Play for everyone: show internal testing"
+          fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git commit -am "Early Bloom is on Google Play: show its links"
+          git commit -am "$message"
           git push origin HEAD:main
           gh workflow run deploy.yml --ref main
-          echo "Flipped early-bloom-status.json and started the deploy." >> "$GITHUB_STEP_SUMMARY"
+          echo "Set onGooglePlay to $ON_PLAY and started the deploy." >> "$GITHUB_STEP_SUMMARY"

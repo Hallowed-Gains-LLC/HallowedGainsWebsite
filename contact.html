@@ -96,8 +96,15 @@
                 <p class="text-brand-500 text-lg leading-relaxed">Questions, feedback, or a project in mind? Send us a note.</p>
             </div>
 
+            <!-- Shown for /contact.html?about=early-bloom-testing (see the script below). -->
+            <p id="testing-note" class="hidden mb-6 text-brand-500 leading-relaxed bg-brand-50 border border-brand-100 rounded-xl p-4">
+                Asking to join Early Bloom's internal testing? Add the Google account email you use on your Android phone
+                (the one Google Play uses) to your message, and we'll add you to the test and send you the link.
+            </p>
+
             <div class="bg-white rounded-2xl border border-brand-100 shadow-sm overflow-hidden">
                 <iframe
+                    id="contact-form"
                     src="https://docs.google.com/forms/d/e/1FAIpQLSfJ9ydz5vudJAcuXeuj1M8tgAH7kxnRALVGwtO0y9o1f_z35g/viewform?embedded=true"
                     width="100%"
                     height="700"
@@ -137,6 +144,30 @@
 
     <script>
         lucide.createIcons();
+
+        // Links can ask for a known topic, e.g. Early Bloom's "Ask to join the
+        // test" (/contact.html?about=early-bloom-testing): the form's Inquiry
+        // field starts with the request filled in, using Google Forms'
+        // prefill (usp=pp_url, entry.<field id>). Only these messages can be
+        // prefilled; anything else in the URL is ignored.
+        const prefills = {
+            'early-bloom-testing': {
+                note: 'testing-note',
+                inquiry: "I'd like to join Early Bloom's internal testing. " +
+                    'The Google account email on my Android phone is: ',
+            },
+        };
+        const inquiryField = 'entry.509070684';
+        const about = new URLSearchParams(location.search).get('about');
+        const topic = about && Object.hasOwn(prefills, about) ? prefills[about] : null;
+        if (topic) {
+            const form = document.getElementById('contact-form');
+            const url = new URL(form.src);
+            url.searchParams.set('usp', 'pp_url');
+            url.searchParams.set(inquiryField, topic.inquiry);
+            form.src = url.toString();
+            document.getElementById(topic.note).classList.remove('hidden');
+        }
 
         const menuBtn = document.getElementById('menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');

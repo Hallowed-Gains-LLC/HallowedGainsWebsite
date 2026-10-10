@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Early Bloom — For Families Whose Baby May Arrive Early</title>
-    <meta name="description" content="Early Bloom is an Android app for families whose baby may arrive early: a week-by-week guide, scans and baby's growth, a journal and care-team report, baby care and NICU tools after the birth, home screen widgets, and a private family feed. Early access for Android, through Google Play's open testing.">
+    <meta name="description" content="Early Bloom is an Android app for families whose baby may arrive early: a week-by-week guide, scans and baby's growth, a journal and care-team report, baby care and NICU tools after the birth, home screen widgets, and a private family feed. Early access for Android, through Google Play testing.">
     <!-- Open Graph / social preview -->
     <meta property="og:title" content="Early Bloom — For Families Whose Baby May Arrive Early">
-    <meta property="og:description" content="A gentle Android app for a pregnancy where the baby may arrive early, and for the baby afterwards. Early access for Android, through Google Play's open testing.">
+    <meta property="og:description" content="A gentle Android app for a pregnancy where the baby may arrive early, and for the baby afterwards. Early access for Android, through Google Play testing.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://hallowedgains.com/early-bloom">
     <meta property="og:image" content="https://hallowedgains.com/early-bloom-icon.png">
@@ -98,7 +98,9 @@
                 <p class="text-sm text-brand-50/60 max-w-xl mx-auto mb-9 leading-relaxed">
                     Follow the pregnancy week by week, keep track of scans, medicines and symptoms in one place, keep family posted, and switch to baby care and NICU guidance once your baby has arrived.
                 </p>
-                <!-- Google Play links: shown by early-bloom-status.js once the app is on Google Play. -->
+                <!-- Google Play links: shown by early-bloom-status.js once the app is on Google Play
+                     (open testing). Until then it's in internal testing, by invitation, and the
+                     button is greyed out. -->
                 <div data-play="live" class="hidden">
                     <a href="https://play.google.com/store/apps/details?id=com.hallowedgains.early_bloom" target="_blank" rel="noopener noreferrer"
                        class="inline-flex items-center gap-2 bg-gold text-brand-900 px-6 py-3 rounded-full font-semibold border border-gold hover:bg-gold-deep hover:text-brand-50 transition-colors">
@@ -111,13 +113,15 @@
                     </p>
                 </div>
                 <div data-play="soon">
-                    <span class="inline-flex items-center gap-2 bg-brand-50/10 text-brand-50 px-6 py-3 rounded-full font-semibold border border-gold/60">
-                        <i data-lucide="sprout" class="w-5 h-5"></i>
-                        Coming soon to Google Play
+                    <span aria-disabled="true" title="Not on Google Play yet"
+                          class="inline-flex items-center gap-2 bg-brand-50/10 text-brand-50/50 px-6 py-3 rounded-full font-semibold border border-brand-50/20 cursor-not-allowed select-none">
+                        <i data-lucide="play" class="w-5 h-5"></i>
+                        Get it on Google Play
                     </span>
-                    <p class="text-xs text-brand-50/60 mt-4">
-                        Open testing is about to start: anyone with an Android phone will be able to try it.
-                        Want to hear when it's ready? <a href="/contact.html" class="underline underline-offset-2 hover:text-gold">Let us know</a>.
+                    <p class="text-xs text-brand-50/60 mt-4 max-w-md mx-auto leading-relaxed">
+                        Early Bloom is in internal testing for now, so it isn't on Google Play for everyone yet.
+                        Want to try it? <a href="/contact.html?about=early-bloom-testing" class="underline underline-offset-2 hover:text-gold">Message us through the contact form</a>
+                        with the Google account email on your Android phone, and we'll add you to the test.
                     </p>
                 </div>
             </div>
@@ -362,18 +366,23 @@
                         Early Bloom is in open testing on Google Play, so it's still growing. Try it, and tell us what would help your family: questions and ideas shape what comes next.
                     </p>
                     <p data-play="soon" class="text-sm text-brand-50/70 mb-6 leading-relaxed">
-                        Early Bloom is about to open for testing on Google Play, and it's still growing. Tell us what would help your family: questions and ideas shape what comes next.
+                        Early Bloom is in internal testing, and it's still growing. To join the test, message us with the Google account email on your Android phone. Tell us what would help your family, too: questions and ideas shape what comes next.
                     </p>
                     <a data-play="live" href="https://play.google.com/store/apps/details?id=com.hallowedgains.early_bloom" target="_blank" rel="noopener noreferrer"
                        class="hidden inline-flex items-center justify-center gap-2 w-full bg-gold text-brand-900 font-semibold py-3 rounded-lg border border-gold hover:bg-gold-deep hover:text-brand-50 transition-colors">
                         <i data-lucide="play" class="w-4 h-4"></i>
                         Get it on Google Play
                     </a>
-                    <span data-play="soon"
-                       class="inline-flex items-center justify-center gap-2 w-full text-brand-50/80 font-semibold py-3 rounded-lg border border-gold/40">
-                        <i data-lucide="sprout" class="w-4 h-4"></i>
-                        Coming soon to Google Play
+                    <span data-play="soon" aria-disabled="true" title="Not on Google Play yet"
+                       class="inline-flex items-center justify-center gap-2 w-full text-brand-50/40 font-semibold py-3 rounded-lg border border-brand-50/15 cursor-not-allowed select-none">
+                        <i data-lucide="play" class="w-4 h-4"></i>
+                        Get it on Google Play
                     </span>
+                    <a data-play="soon" href="/contact.html?about=early-bloom-testing"
+                       class="inline-flex items-center justify-center gap-2 w-full mt-3 bg-gold text-brand-900 font-semibold py-3 rounded-lg border border-gold hover:bg-gold-deep hover:text-brand-50 transition-colors">
+                        <i data-lucide="user-plus" class="w-4 h-4"></i>
+                        Ask to Join the Test
+                    </a>
                     <a href="/contact.html"
                        class="inline-flex items-center justify-center gap-2 w-full mt-3 text-brand-50 font-semibold py-3 rounded-lg border border-gold/60 hover:bg-brand-800 transition-colors">
                         <i data-lucide="mail" class="w-4 h-4"></i>
