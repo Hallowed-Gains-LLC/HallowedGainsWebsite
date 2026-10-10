@@ -10,6 +10,13 @@
     ],
     "cleanUrls": true,
     "trailingSlash": false,
+    "redirects": [
+      {
+        "source": "/idle-bible-android",
+        "destination": "/idle-bible",
+        "type": 301
+      }
+    ],
     "headers": [
       {
         "source": "/early-bloom-status.json",
