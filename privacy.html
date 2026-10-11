@@ -105,7 +105,7 @@
                 <span class="inline-block text-xs font-semibold uppercase tracking-[0.25em] text-gold mb-4">Privacy Policy</span>
                 <h1 class="font-serif text-4xl md:text-5xl font-bold text-brand-900 mb-4 leading-tight">Privacy Policy</h1>
                 <p class="text-brand-500 text-base"><strong class="text-brand-900">Effective date:</strong> May 9, 2026</p>
-                <p class="text-brand-500 text-base"><strong class="text-brand-900">Last updated:</strong> October 10, 2026</p>
+                <p class="text-brand-500 text-base"><strong class="text-brand-900">Last updated:</strong> October 11, 2026</p>
             </div>
 
             <!-- Table of Contents -->
@@ -476,11 +476,11 @@
                         <li>Medicine reminders are scheduled on your phone. When a dose is logged or a medicine changes, the phone sends the new reminder times to the household's other phones the same way, encrypted so only your household can read them; the server sees only that something about medicines changed, and when.</li>
                         <li>Following in a browser: family and friends without an Android phone can follow the feed at early-bloom.hallowedgains.com instead. It works the same way, with Google sign-in and the feed's own key, which is kept in that browser's storage (clearing the site's data removes it). The key in an invite link stays in the part of the address browsers never send to a server. Like any website, loading the page sends your IP address and browser details to Google, which hosts it. If you turn on notifications there, the browser's notification token and the site's address are stored with your account, as on a phone.</li>
                         <li>If you already use Early Bloom on Android, you can sign in on that site with the same Google account to read the family feed. With your permission, the page reads your key copy from your Google Drive (or you type your recovery key), works out the feed's key from it, and keeps only that in the browser: never the key to the journal. It doesn't download the journal, and signing out of the browser leaves everything else as it was.</li>
-                        <li>So a new phone can unlock your journal, a copy of the key is kept in your phone's backup (encrypted with your screen lock, so not even Google can read it) and, unless you turn it off in Sync &amp; sharing, in a hidden Early Bloom folder in your Google Drive. Google could read the Drive copy; Hallowed Gains can't. You also get a recovery key to keep yourself.</li>
+                        <li>So a new phone can unlock your journal, a copy of the key is kept in your phone's backup (encrypted with your screen lock, so not even Google can read it) and, unless you turn it off in Sync &amp; sharing, in a hidden Early Bloom folder in your Google Drive. Google could read the Drive copy; Hallowed Gains can't. On an iPhone, the copy that would be in the phone's backup is kept in iCloud Keychain instead, which Apple encrypts end to end, if iCloud Keychain is on. You also get a recovery key to keep yourself.</li>
                         <li>To share, you send an invite containing the key. Send it privately. A partner or support person you invite (one at most) sees and can change everything that syncs. Family you invite to view (up to ten) see everything that syncs, including the journal, but can't change it. Family and friends you invite to follow (up to 30) get a separate key that opens only the family feed: they see what you share there and, unless you turn it off on the feed, how far along you are or how old your baby is, with the days to go (never your baby's name, or whether a planned birth is a C-section or an induction), and nothing else. You can remove anyone in Sync &amp; sharing; a viewer's copy of the journal is then removed from their phone.</li>
                         <li>An invite works once. To follow the family feed, you can instead share one link with a group, for the number of people and the time you choose (up to a week). Anyone who has the link can follow until it's used up or expires, so share it only with people you would invite one by one. The server counts how many have joined with it, and you can stop it at any time.</li>
                         <li>Both editors see the invites either of you has out, and can share them again or cancel them. Who each is for is stored encrypted, like the journal.</li>
-                        <li>Firebase (including Cloud Messaging, Cloud Functions and Cloud Storage) and Google Drive are provided by Google and covered by the <a href="https://policies.google.com/privacy">Google Privacy Policy</a>.</li>
+                        <li>Firebase (including Cloud Messaging, Cloud Functions and Cloud Storage) and Google Drive are provided by Google and covered by the <a href="https://policies.google.com/privacy">Google Privacy Policy</a>. On an iPhone, notifications are delivered through Apple's push notification service, and iCloud Keychain is Apple's, both covered by <a href="https://www.apple.com/legal/privacy/">Apple's Privacy Policy</a>.</li>
                     </ul>
 
                     <h3>Android backup</h3>
@@ -488,6 +488,13 @@
                         <li>If backup is on in your phone's settings, Android may back up Early Bloom's data to your Google account and restore it when you reinstall the app or set up a new phone.</li>
                         <li>Early Bloom allows this only when the backup is end-to-end encrypted, which needs Android 9 or later and a screen lock (PIN, pattern or password). Neither Google nor Hallowed Gains can read an end-to-end encrypted backup.</li>
                         <li>Google's backup service is covered by the <a href="https://policies.google.com/privacy">Google Privacy Policy</a>. You can turn it off in your phone's settings.</li>
+                    </ul>
+
+                    <h3>iPhone backup</h3>
+                    <ul>
+                        <li>If iCloud Backup is on, your iPhone backs up Early Bloom's data to your iCloud account with your other apps, and restores it when you set up a new iPhone from that backup. Bleed photos are left out.</li>
+                        <li>Apple encrypts iCloud backups, but unless Advanced Data Protection is on in your Apple Account settings, they aren't end-to-end encrypted, so Apple could read them. Hallowed Gains can't.</li>
+                        <li>iCloud is covered by <a href="https://www.apple.com/legal/privacy/">Apple's Privacy Policy</a>. You can turn iCloud Backup off, or leave Early Bloom out of it, in your iPhone's settings.</li>
                     </ul>
 
                     <h3>When you share</h3>
