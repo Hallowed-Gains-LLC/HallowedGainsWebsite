@@ -6,7 +6,8 @@
       "**/.*",
       ".github/**",
       "README.md",
-      "CNAME"
+      "CNAME",
+      "brand/**"
     ],
     "cleanUrls": true,
     "trailingSlash": false,
