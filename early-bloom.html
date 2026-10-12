@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Early Bloom — For Families Whose Baby May Arrive Early</title>
-    <meta name="description" content="Early Bloom is an Android app for families whose baby may arrive early: a week-by-week guide, scans and baby's growth, a journal and care-team report, baby care and NICU tools after the birth, home screen widgets, and a private family feed. Early access for Android, through Google Play testing.">
+    <meta name="description" content="Early Bloom is an Android and iPhone app for families whose baby may arrive early: a week-by-week guide, scans and baby's growth, a journal and care-team report, baby care and NICU tools after the birth, home screen widgets, and a private family feed. Early access through Google Play testing and Apple's TestFlight.">
     <!-- Open Graph / social preview -->
     <meta property="og:title" content="Early Bloom — For Families Whose Baby May Arrive Early">
-    <meta property="og:description" content="A gentle Android app for a pregnancy where the baby may arrive early, and for the baby afterwards. Early access for Android, through Google Play testing.">
+    <meta property="og:description" content="A gentle Android and iPhone app for a pregnancy where the baby may arrive early, and for the baby afterwards. Early access through Google Play testing and Apple's TestFlight.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://hallowedgains.com/early-bloom">
     <meta property="og:image" content="https://hallowedgains.com/early-bloom-icon.png">
@@ -88,7 +88,7 @@
                         <img src="early-bloom-icon.png" alt="Early Bloom App Icon" class="w-20 h-20 md:w-24 md:h-24 object-contain rounded-xl">
                     </div>
                 </div>
-                <span class="inline-block text-xs font-semibold uppercase tracking-[0.25em] text-gold mb-4">Early Access for Android</span>
+                <span class="inline-block text-xs font-semibold uppercase tracking-[0.25em] text-gold mb-4">Early Access for Android &amp; iPhone</span>
                 <h1 class="font-serif text-4xl md:text-6xl font-bold text-brand-50 mb-5 leading-tight">
                     Early <span class="text-gold">Bloom</span>
                 </h1>
@@ -100,28 +100,39 @@
                 </p>
                 <!-- Google Play links: shown by early-bloom-status.js once the app is on Google Play
                      (open testing). Until then it's in internal testing, by invitation, and the
-                     button is greyed out. -->
-                <div data-play="live" class="hidden">
-                    <a href="https://play.google.com/store/apps/details?id=com.hallowedgains.early_bloom" target="_blank" rel="noopener noreferrer"
-                       class="inline-flex items-center gap-2 bg-gold text-brand-900 px-6 py-3 rounded-full font-semibold border border-gold hover:bg-gold-deep hover:text-brand-50 transition-colors">
+                     button is greyed out. The iPhone app is in TestFlight's public beta, open to
+                     anyone with the link, so its button is always live. -->
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-3">
+                    <a data-play="live" href="https://play.google.com/store/apps/details?id=com.hallowedgains.early_bloom" target="_blank" rel="noopener noreferrer"
+                       class="hidden inline-flex items-center gap-2 bg-gold text-brand-900 px-6 py-3 rounded-full font-semibold border border-gold hover:bg-gold-deep hover:text-brand-50 transition-colors">
                         <i data-lucide="play" class="w-5 h-5"></i>
                         Get it on Google Play
                     </a>
-                    <p class="text-xs text-brand-50/60 mt-4">
-                        In open testing: anyone with an Android phone can try it.
-                        Not showing up? <a href="https://play.google.com/apps/testing/com.hallowedgains.early_bloom" target="_blank" rel="noopener noreferrer" class="underline underline-offset-2 hover:text-gold">Join the test here</a>, then install.
-                    </p>
-                </div>
-                <div data-play="soon">
-                    <span aria-disabled="true" title="Not on Google Play yet"
+                    <span data-play="soon" aria-disabled="true" title="Not on Google Play yet"
                           class="inline-flex items-center gap-2 bg-brand-50/10 text-brand-50/50 px-6 py-3 rounded-full font-semibold border border-brand-50/20 cursor-not-allowed select-none">
                         <i data-lucide="play" class="w-5 h-5"></i>
                         Get it on Google Play
                     </span>
-                    <p class="text-xs text-brand-50/60 mt-4 max-w-md mx-auto leading-relaxed">
-                        Early Bloom is in internal testing for now, so it isn't on Google Play for everyone yet.
+                    <a href="https://testflight.apple.com/join/J9XsUdY5" target="_blank" rel="noopener noreferrer"
+                       class="inline-flex items-center gap-2 bg-gold text-brand-900 px-6 py-3 rounded-full font-semibold border border-gold hover:bg-gold-deep hover:text-brand-50 transition-colors">
+                        <i data-lucide="smartphone" class="w-5 h-5"></i>
+                        Try it on iPhone
+                    </a>
+                </div>
+                <div class="text-xs text-brand-50/60 mt-4 max-w-md mx-auto leading-relaxed space-y-2">
+                    <p data-play="live" class="hidden">
+                        Android: in open testing, so anyone with an Android phone can try it.
+                        Not showing up? <a href="https://play.google.com/apps/testing/com.hallowedgains.early_bloom" target="_blank" rel="noopener noreferrer" class="underline underline-offset-2 hover:text-gold">Join the test here</a>, then install.
+                    </p>
+                    <p data-play="soon">
+                        Android: Early Bloom is in internal testing for now, so it isn't on Google Play for everyone yet.
                         Want to try it? <a href="/contact.html?about=early-bloom-testing" class="underline underline-offset-2 hover:text-gold">Message us through the contact form</a>
                         with the Google account email on your Android phone, and we'll add you to the test.
+                    </p>
+                    <p>
+                        iPhone: a public beta through Apple's TestFlight. Install the free
+                        <a href="https://apps.apple.com/app/testflight/id899247664" target="_blank" rel="noopener noreferrer" class="underline underline-offset-2 hover:text-gold">TestFlight app</a>,
+                        then open <a href="https://testflight.apple.com/join/J9XsUdY5" target="_blank" rel="noopener noreferrer" class="underline underline-offset-2 hover:text-gold">the invitation link</a> on your iPhone.
                     </p>
                 </div>
             </div>
@@ -328,7 +339,7 @@
                 </div>
                 <h2 class="font-serif text-2xl md:text-3xl font-bold text-brand-900 mb-3">Private by Design</h2>
                 <p class="text-brand-500 max-w-xl mx-auto leading-relaxed mb-6">
-                    Early Bloom keeps what you enter on your phone, with no ads and no analytics. Sync is optional, and end-to-end encrypted when you use it: only your family's phones can read your journal. Without it, nothing leaves your phone unless you choose to share it, or through Android's own encrypted backup.
+                    Early Bloom keeps what you enter on your phone, with no ads and no analytics. Sync is optional, and end-to-end encrypted when you use it: only your family's phones can read your journal. Without it, nothing leaves your phone unless you choose to share it, or through your phone's own backup (Android's encrypted backup, or iCloud Backup on an iPhone).
                 </p>
                 <div class="flex flex-col sm:flex-row items-center justify-center gap-x-6 gap-y-3 text-sm font-semibold">
                     <a href="/privacy#early-bloom" class="inline-flex items-center gap-2 text-brand-900 hover:text-brand-500 transition-colors">
@@ -363,10 +374,10 @@
                     </div>
                     <h3 class="font-serif text-2xl font-bold text-brand-50 mb-2">Try It Early</h3>
                     <p data-play="live" class="hidden text-sm text-brand-50/70 mb-6 leading-relaxed">
-                        Early Bloom is in open testing on Google Play, so it's still growing. Try it, and tell us what would help your family: questions and ideas shape what comes next.
+                        Early Bloom is in open testing on Google Play and in TestFlight on iPhone, so it's still growing. Try it, and tell us what would help your family: questions and ideas shape what comes next.
                     </p>
                     <p data-play="soon" class="text-sm text-brand-50/70 mb-6 leading-relaxed">
-                        Early Bloom is in internal testing, and it's still growing. To join the test, message us with the Google account email on your Android phone. Tell us what would help your family, too: questions and ideas shape what comes next.
+                        Early Bloom is in testing, and it's still growing. On iPhone, anyone can join the TestFlight beta. On Android, message us with the Google account email on your phone to join the test. Tell us what would help your family, too: questions and ideas shape what comes next.
                     </p>
                     <a data-play="live" href="https://play.google.com/store/apps/details?id=com.hallowedgains.early_bloom" target="_blank" rel="noopener noreferrer"
                        class="hidden inline-flex items-center justify-center gap-2 w-full bg-gold text-brand-900 font-semibold py-3 rounded-lg border border-gold hover:bg-gold-deep hover:text-brand-50 transition-colors">
@@ -382,6 +393,11 @@
                        class="inline-flex items-center justify-center gap-2 w-full mt-3 bg-gold text-brand-900 font-semibold py-3 rounded-lg border border-gold hover:bg-gold-deep hover:text-brand-50 transition-colors">
                         <i data-lucide="user-plus" class="w-4 h-4"></i>
                         Ask to Join the Test
+                    </a>
+                    <a href="https://testflight.apple.com/join/J9XsUdY5" target="_blank" rel="noopener noreferrer"
+                       class="inline-flex items-center justify-center gap-2 w-full mt-3 bg-gold text-brand-900 font-semibold py-3 rounded-lg border border-gold hover:bg-gold-deep hover:text-brand-50 transition-colors">
+                        <i data-lucide="smartphone" class="w-4 h-4"></i>
+                        Try it on iPhone (TestFlight)
                     </a>
                     <a href="/contact.html"
                        class="inline-flex items-center justify-center gap-2 w-full mt-3 text-brand-50 font-semibold py-3 rounded-lg border border-gold/60 hover:bg-brand-800 transition-colors">
