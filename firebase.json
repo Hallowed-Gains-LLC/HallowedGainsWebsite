@@ -7,24 +7,43 @@
       ".github/**",
       "README.md",
       "CNAME",
-      "brand/**"
+      "brand/**",
+      "scripts/**"
     ],
     "cleanUrls": true,
-    "trailingSlash": false,
     "redirects": [
       {
         "source": "/idle-bible-android",
         "destination": "/idle-bible",
         "type": 301
+      },
+      {
+        "source": "/ft-game",
+        "destination": "/games/first-trinity/",
+        "type": 301
+      },
+      {
+        "regex": "^/games/(?P<path>(?:[^/]+/)*[^/.]+)$",
+        "destination": "/games/:path/",
+        "type": 301
+      },
+      {
+        "regex": "^/(?P<page>[^/.]+)/$",
+        "destination": "/:page",
+        "type": 301
       }
     ],
     "headers": [
       {
-        "source": "/ft-game",
+        "source": "/games/**",
         "headers": [
           {
             "key": "X-Robots-Tag",
             "value": "noindex, nofollow"
+          },
+          {
+            "key": "Cache-Control",
+            "value": "no-cache"
           }
         ]
       }
