@@ -31,6 +31,11 @@ sooner, run the workflow by hand from the Actions tab.
 GitHub pauses scheduled workflows in a repo with no commits for 60 days. If
 game updates stop showing up, check the Actions tab and re-enable it.
 
+Lily's games used to be served at unicorngame.hallowedgains.com. That address
+now forwards to `/games/lily/`. GitHub Pages serves the redirect from the
+`pages-redirect` branch of
+[brandonadamprice/lily](https://github.com/brandonadamprice/lily/tree/pages-redirect).
+
 ### Trailing slashes (`firebase.json`)
 
 Game folders need a trailing slash (`/games/lily/`), or their relative links
