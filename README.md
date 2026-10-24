@@ -36,9 +36,10 @@ GitHub pauses scheduled workflows in a repo with no commits for 60 days. If
 game updates stop showing up, check the Actions tab and re-enable it.
 
 Lily's games used to be served at unicorngame.hallowedgains.com. That address
-now forwards to `/games/lily/`. GitHub Pages serves the redirect from the
-`pages-redirect` branch of
-[brandonadamprice/lily](https://github.com/brandonadamprice/lily/tree/pages-redirect).
+now forwards to `/games/lily/` with a Cloudflare redirect rule (Rules →
+Redirect Rules), which keeps the rest of the path, so `/unicorn/` lands on
+`/games/lily/unicorn/`. Its DNS record is a proxied placeholder; nothing
+serves that hostname any more.
 
 ### Trailing slashes (`firebase.json`)
 
