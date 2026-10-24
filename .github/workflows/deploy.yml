@@ -6,9 +6,9 @@ on:
       - main
   # Run by hand from the Actions tab to redeploy without a change.
   workflow_dispatch:
-  # The games under /games live in their own repos (see games/games.json).
-  # Every 30 minutes, redeploy if any of them has new commits, so pushing to a
-  # game repo goes live here without touching this one.
+  # The games under /games live in other repos (see games/sources.json).
+  # Every 30 minutes, redeploy if any of them has new commits, so pushing a
+  # game goes live here without touching this repo.
   schedule:
     - cron: "*/30 * * * *"
 
@@ -18,8 +18,8 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  # Scheduled runs only: compare each game's latest commit with the commits
-  # recorded in the live site's /games/versions.json.
+  # Scheduled runs only: compare each source repo's latest commit with the
+  # commits recorded in the live site's /games/versions.json.
   check-games:
     if: github.event_name == 'schedule'
     runs-on: ubuntu-latest

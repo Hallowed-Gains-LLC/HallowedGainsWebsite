@@ -99,8 +99,9 @@
         <p id="status">Loading&hellip;</p>
     </main>
 
-    <!-- One card per entry in games.json, the same manifest the deploy uses
-         to pull each game in, so adding a game there is all it takes. -->
+    <!-- One card per game. scripts/fetch-games.sh writes games.json at deploy
+         time from each game folder's game.json, so this page never needs
+         editing when a game is added. -->
     <template id="game-card">
         <li>
             <a class="game">

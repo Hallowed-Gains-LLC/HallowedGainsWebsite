@@ -8,24 +8,28 @@ of little HTML games. Nothing links to it and it's marked `noindex`, so search
 engines leave it alone, but anyone with the link can open it. It's unlisted,
 not private.
 
-Each game lives in **its own public GitHub repo** and stays the source of
-truth. This repo only lists them:
+The games themselves live in
+**[Hallowed-Gains-LLC/web-games](https://github.com/Hallowed-Gains-LLC/web-games)**,
+one folder per game. Its README covers adding a game and the rules games must
+follow. This repo only pulls them in:
 
-- [`games/games.json`](games/games.json) is the manifest. Each entry has a
-  `slug` (its URL, `/games/<slug>/`), `title`, `description`, an `icon` (a
-  path inside the game's repo) or an `emoji`, the `repo` and the `branch`.
-- [`games/index.html`](games/index.html) is the menu. It builds its cards
-  from the manifest, so it never needs editing.
-- [`scripts/fetch-games.sh`](scripts/fetch-games.sh) copies each game's
-  branch into `games/<slug>/` (gitignored) and records the commits in
-  `games/versions.json`.
+- [`games/sources.json`](games/sources.json) lists the repos to pull games
+  from, with the branch to use. Today that's just `web-games`. In each source,
+  every top-level folder with a `game.json` is a game, served at
+  `/games/<folder>/`.
+- [`scripts/fetch-games.sh`](scripts/fetch-games.sh) copies each game into
+  `games/<folder>/`. It writes `games/games.json` (the menu's cards, built from
+  the `game.json` files) and `games/versions.json` (the commit deployed from
+  each source). All of these are gitignored.
+- [`games/index.html`](games/index.html) is the menu. It renders
+  `games.json`, so it never needs editing.
 
 ### How games go live
 
 The deploy workflow (`.github/workflows/deploy.yml`) runs the fetch script
-before every deploy. It also checks every 30 minutes whether any game repo
-has new commits and redeploys if so. **Pushing to a game's repo goes live
-here within about 30 minutes**, with no change needed in this repo. To ship it
+before every deploy. It also checks every 30 minutes whether any source repo
+has new commits and redeploys if so. **Pushing to `web-games` goes live here
+within about 30 minutes**, with no change needed in this repo. To ship it
 sooner, run the workflow by hand from the Actions tab.
 
 GitHub pauses scheduled workflows in a repo with no commits for 60 days. If
@@ -49,16 +53,9 @@ setting is gone, replaced by two redirects:
 
 ### Adding a game
 
-1. Add an entry to `games/games.json` and merge it. That's all.
-2. The game must work from a sub-folder: use relative links (`img/x.png`,
-   not `/img/x.png`).
-3. Extra pages must be folders (`level-2/index.html`, linked as `level-2/`),
-   not loose `level-2.html` files. The site's clean URLs plus the trailing
-   slash that game folders need would 404 a loose file. The fetch script
-   prints a warning in the deploy log if it finds one.
-4. Saves in `localStorage` are shared by every game on hallowedgains.com, so
-   prefix keys per game (Lily's games already do: `uq_*`, `wmh_*`).
-5. The repo must be public, or the workflow will need a token to clone it.
+Add a folder with a `game.json` to `web-games`, as its README describes. Nothing
+changes here. To pull games from another repo too, add it to
+`games/sources.json`. Folder names must be unique across all sources.
 
 ### Running it locally
 
