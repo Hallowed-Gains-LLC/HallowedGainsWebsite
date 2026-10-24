@@ -1,0 +1,5 @@
+# Games are copied in from their own repos at deploy time by
+# scripts/fetch-games.sh; only the menu and the list of sources live here.
+/games/*/
+/games/games.json
+/games/versions.json
