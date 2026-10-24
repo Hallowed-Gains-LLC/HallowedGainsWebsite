@@ -58,3 +58,9 @@ jobs:
           firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_HALLOWED_GAINS_WEBSITE }}
           channelId: live
           projectId: hallowed-gains-website
+          # Pinned: 15.34.1 started checking that the Hosting API is enabled
+          # before deploying, which needs serviceusage.services.get. This
+          # service account lacks it, so deploys fail with a 403. To unpin,
+          # first grant the account "Service Usage Consumer" in Google Cloud
+          # IAM for this project.
+          firebaseToolsVersion: 15.34.0
