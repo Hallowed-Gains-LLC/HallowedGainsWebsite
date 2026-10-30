@@ -4,13 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Early Bloom — For Families Whose Baby May Arrive Early</title>
-    <meta name="description" content="Early Bloom is an Android and iPhone app for families whose baby may arrive early: a week-by-week guide, scans and baby's growth, a journal and care-team report, baby care and NICU tools after the birth, home screen widgets, and a private family feed. Free on Google Play, and in Apple's TestFlight on iPhone.">
+    <meta name="description" content="Early Bloom is an Android and iPhone app for families whose baby may arrive early: a week-by-week guide, scans and baby's growth, a journal and care-team report, baby care and NICU tools after the birth, home screen widgets, and a private family feed. Free on Google Play and the App Store.">
     <!-- Open Graph / social preview -->
     <meta property="og:title" content="Early Bloom — For Families Whose Baby May Arrive Early">
-    <meta property="og:description" content="A gentle Android and iPhone app for a pregnancy where the baby may arrive early, and for the baby afterwards. Free on Google Play, and in Apple's TestFlight on iPhone.">
+    <meta property="og:description" content="A gentle Android and iPhone app for a pregnancy where the baby may arrive early, and for the baby afterwards. Free on Google Play and the App Store.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://hallowedgains.com/early-bloom">
     <meta property="og:image" content="https://hallowedgains.com/early-bloom-icon.png">
+    <!-- Safari on iOS shows its native Smart App Banner for the App Store listing -->
+    <meta name="apple-itunes-app" content="app-id=6821502053">
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="early-bloom-icon.png">
     <!-- Tailwind CSS -->
@@ -56,6 +58,23 @@
             }
         }
     </script>
+    <style>
+        /* Official store badges, sized so both show the same visible height
+           (--badge-h). Apple's SVG is the bare badge; Google's PNG ships with
+           41px of required clear space around a 564x168 badge (646x250 total),
+           so it is scaled up by 250/168 and the padding pulled back in with a
+           negative margin. The artwork itself is unmodified, per both brand
+           guidelines (don't recolor, crop, or restyle the badges). Same rules
+           as a-simple-way-to-pray.html. */
+        .store-badge { display: inline-block; line-height: 0; transition: opacity .15s; }
+        .store-badge:hover { opacity: .85; }
+        .store-badge img { width: auto; max-width: none; }
+        .store-badge-apple img { height: var(--badge-h); }
+        .store-badge-play img {
+            height: calc(var(--badge-h) * 250 / 168);
+            margin: calc(var(--badge-h) * -41 / 168);
+        }
+    </style>
 </head>
 <body class="bg-brand-50 text-brand-900 font-sans antialiased flex flex-col min-h-screen">
 
@@ -88,7 +107,7 @@
                         <img src="early-bloom-icon.png" alt="Early Bloom App Icon" class="w-20 h-20 md:w-24 md:h-24 object-contain rounded-xl">
                     </div>
                 </div>
-                <span class="inline-block text-xs font-semibold uppercase tracking-[0.25em] text-gold mb-4">Free on Google Play &middot; iPhone Beta</span>
+                <span class="inline-block text-xs font-semibold uppercase tracking-[0.25em] text-gold mb-4">Free on Google Play &middot; App Store</span>
                 <h1 class="font-serif text-4xl md:text-6xl font-bold text-brand-50 mb-5 leading-tight">
                     Early <span class="text-gold">Bloom</span>
                 </h1>
@@ -98,28 +117,14 @@
                 <p class="text-sm text-brand-50/60 max-w-xl mx-auto mb-9 leading-relaxed">
                     Follow the pregnancy week by week, keep track of scans, medicines and symptoms in one place, keep family posted, and switch to baby care and NICU guidance once your baby has arrived.
                 </p>
-                <!-- Google Play (released) and the iPhone app's public TestFlight beta. -->
+                <!-- Google Play and the App Store -->
                 <div class="flex flex-col sm:flex-row items-center justify-center gap-3">
-                    <a href="https://play.google.com/store/apps/details?id=com.hallowedgains.early_bloom" target="_blank" rel="noopener noreferrer"
-                       class="inline-flex items-center gap-2 bg-gold text-brand-900 px-6 py-3 rounded-full font-semibold border border-gold hover:bg-gold-deep hover:text-brand-50 transition-colors">
-                        <i data-lucide="play" class="w-5 h-5"></i>
-                        Get it on Google Play
+                    <a href="https://play.google.com/store/apps/details?id=com.hallowedgains.early_bloom" target="_blank" rel="noopener noreferrer" class="store-badge store-badge-play" style="--badge-h: 52px;">
+                        <img src="badges/google-play-badge.png" alt="Get it on Google Play">
                     </a>
-                    <a href="https://testflight.apple.com/join/J9XsUdY5" target="_blank" rel="noopener noreferrer"
-                       class="inline-flex items-center gap-2 bg-gold text-brand-900 px-6 py-3 rounded-full font-semibold border border-gold hover:bg-gold-deep hover:text-brand-50 transition-colors">
-                        <i data-lucide="smartphone" class="w-5 h-5"></i>
-                        Try it on iPhone
+                    <a href="https://apps.apple.com/us/app/early-bloom-pregnancy-nicu/id6821502053" target="_blank" rel="noopener noreferrer" class="store-badge store-badge-apple" style="--badge-h: 52px;">
+                        <img src="badges/app-store-badge.svg" alt="Download on the App Store">
                     </a>
-                </div>
-                <div class="text-xs text-brand-50/60 mt-4 max-w-md mx-auto leading-relaxed space-y-2">
-                    <p>
-                        Android: free on Google Play, for any Android phone.
-                    </p>
-                    <p>
-                        iPhone: a public beta through Apple's TestFlight. Install the free
-                        <a href="https://apps.apple.com/app/testflight/id899247664" target="_blank" rel="noopener noreferrer" class="underline underline-offset-2 hover:text-gold">TestFlight app</a>,
-                        then open <a href="https://testflight.apple.com/join/J9XsUdY5" target="_blank" rel="noopener noreferrer" class="underline underline-offset-2 hover:text-gold">the invitation link</a> on your iPhone.
-                    </p>
                 </div>
             </div>
         </section>
@@ -364,24 +369,23 @@
                     </div>
                     <h3 class="font-serif text-2xl font-bold text-brand-50 mb-2">Get Early Bloom</h3>
                     <p class="text-sm text-brand-50/70 mb-6 leading-relaxed">
-                        Early Bloom is free on Google Play, and in TestFlight on iPhone while the App Store version is on its way. It's still growing, so tell us what would help your family: questions and ideas shape what comes next.
+                        Early Bloom is free on Google Play and the App Store. It's still growing, so tell us what would help your family: questions and ideas shape what comes next.
                     </p>
-                    <a href="https://play.google.com/store/apps/details?id=com.hallowedgains.early_bloom" target="_blank" rel="noopener noreferrer"
-                       class="inline-flex items-center justify-center gap-2 w-full bg-gold text-brand-900 font-semibold py-3 rounded-lg border border-gold hover:bg-gold-deep hover:text-brand-50 transition-colors">
-                        <i data-lucide="play" class="w-4 h-4"></i>
-                        Get it on Google Play
-                    </a>
-                    <a href="https://testflight.apple.com/join/J9XsUdY5" target="_blank" rel="noopener noreferrer"
-                       class="inline-flex items-center justify-center gap-2 w-full mt-3 bg-gold text-brand-900 font-semibold py-3 rounded-lg border border-gold hover:bg-gold-deep hover:text-brand-50 transition-colors">
-                        <i data-lucide="smartphone" class="w-4 h-4"></i>
-                        Try it on iPhone (TestFlight)
-                    </a>
+                    <div class="flex flex-wrap items-center justify-center gap-3">
+                        <a href="https://play.google.com/store/apps/details?id=com.hallowedgains.early_bloom" target="_blank" rel="noopener noreferrer" class="store-badge store-badge-play" style="--badge-h: 44px;">
+                            <img src="badges/google-play-badge.png" alt="Get it on Google Play">
+                        </a>
+                        <a href="https://apps.apple.com/us/app/early-bloom-pregnancy-nicu/id6821502053" target="_blank" rel="noopener noreferrer" class="store-badge store-badge-apple" style="--badge-h: 44px;">
+                            <img src="badges/app-store-badge.svg" alt="Download on the App Store">
+                        </a>
+                    </div>
                     <a href="/contact.html"
-                       class="inline-flex items-center justify-center gap-2 w-full mt-3 text-brand-50 font-semibold py-3 rounded-lg border border-gold/60 hover:bg-brand-800 transition-colors">
+                       class="inline-flex items-center justify-center gap-2 w-full mt-5 text-brand-50 font-semibold py-3 rounded-lg border border-gold/60 hover:bg-brand-800 transition-colors">
                         <i data-lucide="mail" class="w-4 h-4"></i>
                         Share an Idea
                     </a>
                 </div>
+                <p class="text-xs text-brand-500 mt-4">Google Play and the Google Play logo are trademarks of Google LLC. Apple and the App Store are trademarks of Apple Inc., registered in the U.S. and other countries.</p>
             </div>
         </section>
 
