@@ -6,9 +6,10 @@ on:
       - main
   # Run by hand from the Actions tab to redeploy without a change.
   workflow_dispatch:
-  # The games under /games live in other repos (see games/sources.json).
-  # Every 30 minutes, redeploy if any of them has new commits, so pushing a
-  # game goes live here without touching this repo.
+  # The games under /games live in other repos (see games/sources.json),
+  # and so do apps' privacy policies (policies/sources.json). Every 30
+  # minutes, redeploy if any game repo has new commits or a policy has
+  # changed, so either goes live here without touching this repo.
   schedule:
     - cron: "*/30 * * * *"
 
@@ -18,8 +19,9 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  # Scheduled runs only: compare each source repo's latest commit with the
-  # commits recorded in the live site's /games/versions.json.
+  # Scheduled runs only: compare each game repo's latest commit with the
+  # commits recorded in the live site's /games/versions.json, and each
+  # app's policy with the hashes in /policies/versions.json.
   check-games:
     if: github.event_name == 'schedule'
     runs-on: ubuntu-latest
@@ -29,16 +31,25 @@ jobs:
       - uses: actions/checkout@v4
       - id: compare
         run: |
+          changed=false
           scripts/fetch-games.sh --versions > latest.json
-          # If the live file can't be read (first deploy, outage), deploy anyway.
+          # If a live file can't be read (first deploy, outage), deploy anyway.
           curl -fsS https://hallowedgains.com/games/versions.json > live.json || echo '{}' > live.json
           if [ "$(jq -S . latest.json)" = "$(jq -S . live.json)" ]; then
             echo "Games are up to date."
-            echo "changed=false" >> "$GITHUB_OUTPUT"
           else
             echo "Games changed:"; diff <(jq -S . live.json) <(jq -S . latest.json) || true
-            echo "changed=true" >> "$GITHUB_OUTPUT"
+            changed=true
           fi
+          python3 scripts/fetch-policies.py --versions > latest-policies.json
+          curl -fsS https://hallowedgains.com/policies/versions.json > live-policies.json || echo '{}' > live-policies.json
+          if [ "$(jq -S . latest-policies.json)" = "$(jq -S . live-policies.json)" ]; then
+            echo "Policies are up to date."
+          else
+            echo "Policies changed:"; diff <(jq -S . live-policies.json) <(jq -S . latest-policies.json) || true
+            changed=true
+          fi
+          echo "changed=$changed" >> "$GITHUB_OUTPUT"
 
   deploy:
     needs: check-games
@@ -52,6 +63,10 @@ jobs:
       - uses: actions/checkout@v4
       - name: Pull in the games
         run: scripts/fetch-games.sh
+      # Fails the deploy if a policy can't be fetched, rather than publish
+      # the privacy page without it.
+      - name: Pull in the apps' privacy policies
+        run: python3 scripts/fetch-policies.py
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: ${{ secrets.GITHUB_TOKEN }}
