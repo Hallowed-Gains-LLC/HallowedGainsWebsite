@@ -8,7 +8,8 @@
       "README.md",
       "CNAME",
       "brand/**",
-      "scripts/**"
+      "scripts/**",
+      "policies/sources.json"
     ],
     "cleanUrls": true,
     "redirects": [

@@ -68,3 +68,36 @@ python3 -m http.server        # then open http://localhost:8000/games/
 A plain static server doesn't apply `firebase.json` (redirects, headers). To
 test those, use the Firebase CLI's hosting emulator
 (`firebase emulators:start --only hosting`).
+
+## Apps' privacy policies (`/privacy`)
+
+Early Bloom's section of [hallowedgains.com/privacy](https://hallowedgains.com/privacy#early-bloom)
+(the privacy policy URL the stores have) isn't written here. It's written once,
+in Early Bloom's own repo (`lib/content/privacy_policy.dart`, the text the app
+shows), which publishes it as a web page at
+[early-bloom.hallowedgains.com/privacy](https://early-bloom.hallowedgains.com/privacy)
+whenever its web app deploys. This site copies it in when it deploys:
+
+- [`policies/sources.json`](policies/sources.json) lists each app's policy:
+  its id, the page here it goes in, and the URL to copy it from.
+- [`scripts/fetch-policies.py`](scripts/fetch-policies.py) copies what's
+  between `<!-- <id>-policy:start -->` and `<!-- <id>-policy:end -->` on that
+  page to between the same markers in the page here, so it's plain HTML
+  styled like the rest of the page and reads without JavaScript. It only
+  allows plain tags (headings, paragraphs, lists, links, bold), and fails the
+  deploy if a policy can't be fetched or has anything else, rather than
+  publish the page without it. It writes `policies/versions.json` (a hash of
+  each), which is gitignored.
+- The committed `privacy.html` holds a placeholder between the markers. To
+  see the real thing locally, run `python3 scripts/fetch-policies.py` (and
+  don't commit the result).
+
+Like the games, the deploy workflow checks every 30 minutes and redeploys
+when a policy has changed, so **a change merged in Early Bloom is live here
+within about half an hour** of its web app deploying. The rest of the privacy
+page (the general sections, Idle Bible, A Simple Way to Pray) is still edited
+here, and so is its "Last updated" date; Early Bloom's section carries its
+own.
+
+To add another app: publish its policy with those markers, add it to
+`sources.json`, and put the markers in its `<section>` here.

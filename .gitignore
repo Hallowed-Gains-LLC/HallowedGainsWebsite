@@ -3,3 +3,7 @@
 /games/*/
 /games/games.json
 /games/versions.json
+
+# Apps' privacy policies are copied into privacy.html at deploy time by
+# scripts/fetch-policies.py; only the list of sources lives here.
+/policies/versions.json
