@@ -60,6 +60,8 @@
         .prose-policy a { color: #65342F; text-decoration: underline; text-underline-offset: 2px; }
         .prose-policy a:hover { color: #AF9164; }
     </style>
+    <!-- Google Analytics (see /analytics.js) -->
+    <script src="/analytics.js" async></script>
 </head>
 <body class="bg-brand-50 text-brand-900 font-sans antialiased flex flex-col min-h-screen">
 
@@ -105,7 +107,7 @@
                 <span class="inline-block text-xs font-semibold uppercase tracking-[0.25em] text-gold mb-4">Privacy Policy</span>
                 <h1 class="font-serif text-4xl md:text-5xl font-bold text-brand-900 mb-4 leading-tight">Privacy Policy</h1>
                 <p class="text-brand-500 text-base"><strong class="text-brand-900">Effective date:</strong> May 9, 2026</p>
-                <p class="text-brand-500 text-base"><strong class="text-brand-900">Last updated:</strong> November 11, 2026</p>
+                <p class="text-brand-500 text-base"><strong class="text-brand-900">Last updated:</strong> November 12, 2026</p>
             </div>
 
             <!-- Table of Contents -->
@@ -170,6 +172,11 @@
                         <li><strong>Usage and event analytics.</strong> Aggregated, mostly de-identified analytics about how the Services are used (screens opened, features used, session length, performance metrics). We use this to understand which features help people and which need work.</li>
                         <li><strong>Crash and diagnostic data.</strong> If an app crashes or throws an error, we collect a stack trace, device state, and app version so we can fix it.</li>
                         <li><strong>Log data.</strong> Standard server logs (IP address, request timestamps, user-agent) when you visit our websites or our backends.</li>
+                        <li><strong>Website analytics (hallowedgains.com).</strong> We use Google Analytics to understand how our website is used: pages viewed, how you
+                            arrived (for example, from a link or a search), approximate location (country or city, derived from your IP address, which Google Analytics
+                            does not store), and device and browser type. It is set up for measurement only: advertising features and Google signals are turned off. If
+                            your browser sends a Global Privacy Control signal, we do not load Google Analytics at all, and visitors in the EEA, the UK and Switzerland
+                            are measured without analytics cookies. Pages made for young children (Lily's games, under /games/lily) do not use analytics.</li>
                     </ul>
 
                     <h3>What we do <em>not</em> collect</h3>
@@ -215,7 +222,7 @@
                         <li><strong>Google / Firebase</strong> (Authentication, Firestore / Cloud database, Hosting, Crashlytics crash reporting in Idle Bible, and Cloud Messaging push notifications in A Simple Way to Pray) &mdash;
                             <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener noreferrer">Firebase Privacy and Security</a>,
                             <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google Privacy Policy</a>.</li>
-                        <li><strong>Google Analytics</strong> (website usage analytics on asimplewaytopray.com) &mdash;
+                        <li><strong>Google Analytics</strong> (website usage analytics on hallowedgains.com and asimplewaytopray.com) &mdash;
                             <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google Privacy Policy</a>,
                             <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener noreferrer">browser opt-out add-on</a>.</li>
                         <li><strong>Google Play Games Services</strong> (optional sign-in and achievements in Idle Bible on Android) &mdash;
@@ -286,8 +293,10 @@
                     </p>
                     <p>
                         You can also control certain things directly in your device settings &mdash; for example, you can limit or disable notifications, manage your
-                        Google Play Games profile visibility, and control browser cookies. Our apps do not track you across other companies' apps or websites, so iOS App
-                        Tracking Transparency prompts do not apply to them.
+                        Google Play Games profile visibility, and control browser cookies. On hallowedgains.com, Google Analytics sets first-party cookies (named
+                        <code>_ga</code>) to count repeat visits; you can block them in your browser, turn on Global Privacy Control, or use Google's
+                        <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener noreferrer">opt-out add-on</a>. Our apps do not track you across
+                        other companies' apps or websites, so iOS App Tracking Transparency prompts do not apply to them.
                     </p>
                 </section>
 
@@ -306,6 +315,10 @@
                         Our apps are intended for a <strong>general, family-friendly audience</strong>. They are <strong>not directed to children under 13</strong>
                         (or the equivalent minimum age in your jurisdiction, such as 16 in some EU member states), and we do not knowingly collect personal information from
                         children under that age.
+                    </p>
+                    <p>
+                        The one exception is a few small web games on our site made for young children (Lily's games, under /games/lily). They collect no personal
+                        information: they have no sign-in and no analytics, and they save progress only in your own browser.
                     </p>
                     <p>
                         If you believe a child has provided us with personal information without parental consent, please contact us at
