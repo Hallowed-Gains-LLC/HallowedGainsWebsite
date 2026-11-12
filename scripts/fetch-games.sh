@@ -63,6 +63,24 @@ warn_on_html_pages() {
   done < <(cd "$games_dir/$slug" && find . -name '*.html' ! -name index.html | sed 's|^\./||')
 }
 
+# Add the site's Google Analytics tag (/analytics.js) to every page of a game,
+# just before </head>. Done here at deploy so the games themselves stay
+# standalone. A game opts out with "analytics": false in its game.json, which
+# any game made for young children must do (COPPA and Google's terms rule out
+# analytics on child-directed pages).
+add_analytics() {
+  local slug="$1" page
+  while IFS= read -r page; do
+    grep -q 'src="/analytics.js"' "$page" && continue
+    if ! grep -q '</head>' "$page"; then
+      echo "::warning::${page#"$repo_root/"} has no </head>; analytics not added"
+      continue
+    fi
+    # GNU sed: replace only the first </head>.
+    sed -i '0,/<\/head>/s##<script src="/analytics.js" async></script>\n</head>#' "$page"
+  done < <(cd "$games_dir/$slug" && find . -name '*.html' | sed "s|^\.|$games_dir/$slug|")
+}
+
 fetch_all() {
   local versions='{}' cards='[]' checkout slug
   # Script-level (not local) so the EXIT trap can still see it after return.
@@ -102,6 +120,11 @@ fetch_all() {
       mkdir -p "$games_dir/$slug"
       git -C "$checkout" archive "HEAD:$slug" | tar -x -C "$games_dir/$slug"
       warn_on_html_pages "$slug"
+      if [[ "$(jq -r '.analytics' "$manifest")" == "false" ]]; then
+        echo "fetch-games:   (analytics off for $slug)"
+      else
+        add_analytics "$slug"
+      fi
 
       cards="$(jq --arg slug "$slug" --slurpfile game "$manifest" '. + [{slug: $slug} + $game[0]]' <<<"$cards")"
     done

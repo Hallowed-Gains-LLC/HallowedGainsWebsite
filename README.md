@@ -101,3 +101,23 @@ own.
 
 To add another app: publish its policy with those markers, add it to
 `sources.json`, and put the markers in its `<section>` here.
+
+## Google Analytics
+
+Every page loads [`analytics.js`](analytics.js), which holds the GA4
+measurement ID in one place (`MEASUREMENT_ID`). An empty ID turns analytics
+off. Games get the same tag added to each of their pages at deploy by
+`scripts/fetch-games.sh`, unless their `game.json` says `"analytics": false`.
+Lily's games opt out because they're made for young children; COPPA and
+Google's terms rule out analytics on child-directed pages.
+
+It's set up for measurement only, matching `privacy.html`:
+
+- Google signals and ad personalization are off, and ad consent is denied.
+- The EEA, the UK and Switzerland default to no analytics cookies (Consent Mode).
+- Browsers sending Global Privacy Control load nothing.
+- Only hallowedgains.com is measured. Local copies and preview channels load
+  nothing.
+
+If you add a page, include `<script src="/analytics.js" async></script>` in
+its `<head>`. If you change what's collected, update `privacy.html` too.
