@@ -21,7 +21,7 @@
   // GA4 measurement ID (Admin -> Data streams -> the hallowedgains.com stream).
   // Measurement IDs are public by design; they appear in every page's source.
   // Empty means analytics is off.
-  var MEASUREMENT_ID = '';
+  var MEASUREMENT_ID = 'G-184E2N4YKM';
 
   var LIVE_HOSTS = ['hallowedgains.com', 'www.hallowedgains.com'];
 
