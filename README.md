@@ -38,6 +38,25 @@ has new commits and redeploys if so. **Pushing to `web-games` or `DriftLight`
 goes live here within about 30 minutes**, with no change needed in this repo. To ship it
 sooner, run the workflow by hand from the Actions tab.
 
+**Private game repos.** DriftLight is private, so the deploy needs a token to
+read it, in this repo's `GAMES_REPO_TOKEN` secret (Settings → Secrets and
+variables → Actions). It's a fine-grained personal access token:
+
+1. GitHub → your profile → Settings → Developer settings → Personal access
+   tokens → Fine-grained tokens → Generate new token.
+2. Resource owner: **Hallowed-Gains-LLC**. Repository access: **Only select
+   repositories**, then DriftLight (and any other private game repo).
+3. Permissions → Repository permissions → **Contents: Read-only**. Nothing
+   else.
+4. Pick the longest expiry you're comfortable with, and put a reminder in
+   your calendar: when it expires, deploys fail with "can't reach
+   Hallowed-Gains-LLC/DriftLight" until you make a new one and update the
+   secret. If the organization requires approval for tokens, an owner has
+   to approve it before it works.
+
+Public repos need no token. To change a token, generate a new one and paste
+it over the old secret; nothing else changes.
+
 GitHub pauses scheduled workflows in a repo with no commits for 60 days. If
 game updates stop showing up, check the Actions tab and re-enable it.
 

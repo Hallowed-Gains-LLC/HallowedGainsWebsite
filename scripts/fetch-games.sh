@@ -27,9 +27,37 @@
 #                                      this with the live versions.json to
 #                                      decide whether to redeploy.
 #
+# Private source repos (DriftLight) need a GitHub token in GAMES_REPO_TOKEN:
+# a fine-grained personal access token with read-only "Contents" on those
+# repos. The deploy workflow passes it from the repo secret of the same
+# name; see the README. Public repos need nothing.
+#
 # Requires git and jq.
 
 set -euo pipefail
+
+# Fail rather than wait for a password nobody will type.
+export GIT_TERMINAL_PROMPT=0
+
+# git, logged in to github.com with GAMES_REPO_TOKEN if there is one. The
+# token goes in a header for this one command only: it's never written to
+# disk or into a URL that could end up in a log.
+git_gh() {
+  if [[ -n "${GAMES_REPO_TOKEN:-}" ]]; then
+    local auth
+    auth="$(printf 'x-access-token:%s' "$GAMES_REPO_TOKEN" | base64 -w0)"
+    git -c "http.https://github.com/.extraheader=AUTHORIZATION: basic $auth" "$@"
+  else
+    git "$@"
+  fi
+}
+
+# Say what to do when a repo can't be reached, the usual cause being a
+# private repo and a missing or expired token.
+unreachable() {
+  echo "fetch-games: can't reach $1. If it's private, GAMES_REPO_TOKEN must be set and able to read it (see the README)." >&2
+  exit 1
+}
 
 repo_root="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 games_dir="$repo_root/games"
@@ -45,7 +73,7 @@ list_sources() {
 # Latest commit SHA of a branch, without cloning.
 remote_sha() {
   local repo="$1" branch="$2" sha
-  sha="$(git ls-remote "https://github.com/$repo.git" "refs/heads/$branch" | cut -f1)"
+  sha="$(git_gh ls-remote "https://github.com/$repo.git" "refs/heads/$branch" | cut -f1)" || unreachable "$repo"
   if [[ -z "$sha" ]]; then
     echo "fetch-games: branch '$branch' not found in $repo" >&2
     exit 1
@@ -55,8 +83,12 @@ remote_sha() {
 
 print_versions() {
   local versions='{}'
+  local sha
   while IFS=$'\t' read -r repo branch _; do
-    versions="$(jq --arg k "$repo" --arg v "$(remote_sha "$repo" "$branch")" '. + {($k): $v}' <<<"$versions")"
+    # remote_sha's own `exit` only leaves the $(...) subshell, so pass its
+    # failure on, or a repo it can't reach would quietly read as "".
+    sha="$(remote_sha "$repo" "$branch")" || exit 1
+    versions="$(jq --arg k "$repo" --arg v "$sha" '. + {($k): $v}' <<<"$versions")"
   done < <(list_sources)
   echo "$versions"
 }
@@ -139,7 +171,7 @@ fetch_all() {
   while IFS=$'\t' read -r repo branch folder one exclude; do
     checkout="$tmp/${repo//\//__}"
     echo "fetch-games: $repo@$branch"
-    git clone --quiet --depth 1 --branch "$branch" "https://github.com/$repo.git" "$checkout"
+    git_gh clone --quiet --depth 1 --branch "$branch" "https://github.com/$repo.git" "$checkout" || unreachable "$repo"
 
     if [[ "$folder" != "-" ]]; then
       # A repo that is one game.
