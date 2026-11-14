@@ -46,7 +46,14 @@ git_gh() {
   if [[ -n "${GAMES_REPO_TOKEN:-}" ]]; then
     local auth
     auth="$(printf 'x-access-token:%s' "$GAMES_REPO_TOKEN" | base64 -w0)"
-    git -c "http.https://github.com/.extraheader=AUTHORIZATION: basic $auth" "$@"
+    # The empty value first clears any header already configured for
+    # github.com: actions/checkout leaves its own in the checkout's git
+    # config, and git sends every value, so GitHub got two Authorization
+    # headers and answered 400 ("Duplicate header"). That broke the
+    # scheduled check's `git ls-remote`, which runs inside the checkout
+    # (a clone doesn't read the checkout's config, so deploys still worked).
+    git -c "http.https://github.com/.extraheader=" \
+        -c "http.https://github.com/.extraheader=AUTHORIZATION: basic $auth" "$@"
   else
     git "$@"
   fi
