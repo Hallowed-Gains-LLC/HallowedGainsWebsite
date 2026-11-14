@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Idle Bible — A Handcrafted Pixel-Art Idle Game Through the Entire Bible</title>
-    <meta name="description" content="Journey through the entire Bible — from 'In the beginning' to 'Amen' — in a handcrafted pixel-art idle game for Android, iPhone, and iPad. No ads, no in-app purchases, ever. Pre-register on Google Play today.">
+    <meta name="description" content="Journey through the entire Bible — from 'In the beginning' to 'Amen' — in a handcrafted pixel-art idle game for Android, iPhone, and iPad. No ads, no in-app purchases, ever. Available now on Google Play.">
     <!-- Open Graph / social preview -->
     <meta property="og:title" content="Idle Bible — A Handcrafted Pixel-Art Idle Game Through the Entire Bible">
-    <meta property="og:description" content="A premium idle game with a beginning, a middle, and a true ending. Build the great landmarks of Scripture from Genesis to Revelation. No ads, no in-app purchases, ever. Pre-register now on Google Play; coming soon to iPhone and iPad.">
+    <meta property="og:description" content="A premium idle game with a beginning, a middle, and a true ending. Build the great landmarks of Scripture from Genesis to Revelation. No ads, no in-app purchases, ever. Available now on Google Play; coming soon to iPhone and iPad.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://hallowedgains.com/idle-bible">
     <meta property="og:image" content="https://hallowedgains.com/idle-bible-icon.png">
@@ -56,6 +56,22 @@
             }
         }
     </script>
+    <style>
+        /* Official store badges, sized so both show the same visible height
+           (--badge-h). Google's PNG ships with 41px of required clear space
+           around a 564x168 badge (646x250 total), so it is scaled up by
+           250/168 and the padding pulled back in with a negative margin. The
+           artwork itself is unmodified, per Google's brand guidelines. Same
+           rules as early-bloom.html and a-simple-way-to-pray.html. */
+        .store-badge { display: inline-block; line-height: 0; transition: opacity .15s; }
+        .store-badge:hover { opacity: .85; }
+        .store-badge img { width: auto; max-width: none; }
+        .store-badge-apple img { height: var(--badge-h); }
+        .store-badge-play img {
+            height: calc(var(--badge-h) * 250 / 168);
+            margin: calc(var(--badge-h) * -41 / 168);
+        }
+    </style>
     <!-- Google Analytics (see /analytics.js) -->
     <script src="/analytics.js" async></script>
 </head>
@@ -90,7 +106,7 @@
                         <img src="idle-bible-icon.png" alt="Idle Bible App Icon" class="w-20 h-20 md:w-24 md:h-24 object-contain rounded-xl">
                     </div>
                 </div>
-                <span class="inline-block text-xs font-semibold uppercase tracking-[0.25em] text-gold mb-4">Coming Soon to Android, iPhone&nbsp;&amp;&nbsp;iPad</span>
+                <span class="inline-block text-xs font-semibold uppercase tracking-[0.25em] text-gold mb-4">Now on Android &middot; Coming Soon to iPhone&nbsp;&amp;&nbsp;iPad</span>
                 <h1 class="font-serif text-4xl md:text-6xl font-bold text-brand-50 mb-5 leading-tight">
                     Idle <span class="text-gold">Bible</span>
                 </h1>
@@ -101,13 +117,14 @@
                     A premium idle/clicker with a beginning, a middle, and a true ending. Gather resources, raise the great landmarks of Scripture, and watch tiny workers bring each era to life.
                 </p>
                 <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-                    <a href="https://play.google.com/store/apps/details?id=com.idlebible.idle_bible" target="_blank" rel="noopener noreferrer"
-                       class="inline-flex items-center gap-3 whitespace-nowrap bg-gold text-brand-900 px-6 sm:px-8 py-4 rounded-full font-semibold text-base sm:text-lg border border-gold hover:bg-gold-deep hover:text-brand-50 transition-colors shadow-lg">
-                        <i data-lucide="play" class="w-5 h-5"></i>
-                        Pre-register on Google Play
+                    <a href="https://play.google.com/store/apps/details?id=com.idlebible.idle_bible" target="_blank" rel="noopener noreferrer" class="store-badge store-badge-play" style="--badge-h: 56px;">
+                        <img src="badges/google-play-badge.png" alt="Get it on Google Play">
                     </a>
                     <!-- Not a link: there is no App Store listing to point at yet.
-                         Swap in badges/app-store-badge.svg (linked) once it's live. -->
+                         Once there is, swap in the official badge, linked, as on
+                         early-bloom.html: <a class="store-badge store-badge-apple"
+                         style="--badge-h: 56px;"><img src="badges/app-store-badge.svg"
+                         alt="Download on the App Store"></a> -->
                     <span class="inline-flex items-center gap-3 whitespace-nowrap px-6 sm:px-8 py-4 rounded-full font-semibold text-base sm:text-lg text-brand-50/80 border border-gold/50">
                         <i data-lucide="tablet-smartphone" class="w-5 h-5 text-gold"></i>
                         Coming soon to the App Store
@@ -265,14 +282,12 @@
                             <img src="idle-bible-icon.png" alt="Idle Bible App Icon" class="w-10 h-10 object-contain rounded-lg">
                         </div>
                     </div>
-                    <h3 class="font-serif text-2xl font-bold text-brand-50 mb-2">Be First to Play</h3>
+                    <h3 class="font-serif text-2xl font-bold text-brand-50 mb-2">Play Idle Bible</h3>
                     <p class="text-sm text-brand-50/70 mb-6 leading-relaxed">
-                        On Android, pre-register now and Idle Bible will be delivered to your device automatically on launch day.
+                        Idle Bible is out now on Android.
                     </p>
-                    <a href="https://play.google.com/store/apps/details?id=com.idlebible.idle_bible" target="_blank" rel="noopener noreferrer"
-                       class="inline-flex items-center justify-center gap-2 w-full bg-gold text-brand-900 font-semibold py-3 rounded-lg border border-gold hover:bg-gold-deep hover:text-brand-50 transition-colors">
-                        <i data-lucide="play" class="w-4 h-4"></i>
-                        Pre-register on Google Play
+                    <a href="https://play.google.com/store/apps/details?id=com.idlebible.idle_bible" target="_blank" rel="noopener noreferrer" class="store-badge store-badge-play" style="--badge-h: 52px;">
+                        <img src="badges/google-play-badge.png" alt="Get it on Google Play">
                     </a>
                     <p class="text-sm text-brand-50/70 mt-5 leading-relaxed">
                         On iPhone and iPad, Idle Bible is in final testing and coming soon to the App Store.
