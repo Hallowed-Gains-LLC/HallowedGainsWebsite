@@ -2,7 +2,14 @@
   "sources": [
     {
       "repo": "Hallowed-Gains-LLC/web-games",
-      "branch": "main"
+      "branch": "main",
+      "exclude": ["driftlight"]
+    },
+    {
+      "repo": "Hallowed-Gains-LLC/DriftLight",
+      "branch": "main",
+      "folder": "www",
+      "slug": "driftlight"
     }
   ]
 }

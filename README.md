@@ -10,13 +10,19 @@ not private.
 
 The games themselves live in
 **[Hallowed-Gains-LLC/web-games](https://github.com/Hallowed-Gains-LLC/web-games)**,
-one folder per game. Its README covers adding a game and the rules games must
-follow. This repo only pulls them in:
+one folder per game, except Driftlight, which has its own repo
+(**[Hallowed-Gains-LLC/DriftLight](https://github.com/Hallowed-Gains-LLC/DriftLight)**,
+which also builds it as a phone app). The web-games README covers adding a
+game and the rules games must follow. This repo only pulls them in:
 
 - [`games/sources.json`](games/sources.json) lists the repos to pull games
-  from, with the branch to use. Today that's just `web-games`. In each source,
-  every top-level folder with a `game.json` is a game, served at
-  `/games/<folder>/`.
+  from, with the branch to use. A source is one of two kinds:
+  - **A repo of games** (`web-games`): every top-level folder with a
+    `game.json` is a game, served at `/games/<folder>/`. `"exclude"` lists
+    folders to skip, such as a game that has moved to its own repo.
+  - **A repo that is one game** (`DriftLight`): `"folder"` is the folder
+    holding it (with its `game.json`) and `"slug"` the name it's served
+    under, so DriftLight's `www/` is served at `/games/driftlight/`.
 - [`scripts/fetch-games.sh`](scripts/fetch-games.sh) copies each game into
   `games/<folder>/`. It writes `games/games.json` (the menu's cards, built from
   the `game.json` files) and `games/versions.json` (the commit deployed from
@@ -28,9 +34,28 @@ follow. This repo only pulls them in:
 
 The deploy workflow (`.github/workflows/deploy.yml`) runs the fetch script
 before every deploy. It also checks every 30 minutes whether any source repo
-has new commits and redeploys if so. **Pushing to `web-games` goes live here
-within about 30 minutes**, with no change needed in this repo. To ship it
+has new commits and redeploys if so. **Pushing to `web-games` or `DriftLight`
+goes live here within about 30 minutes**, with no change needed in this repo. To ship it
 sooner, run the workflow by hand from the Actions tab.
+
+**Private game repos.** DriftLight is private, so the deploy needs a token to
+read it, in this repo's `GAMES_REPO_TOKEN` secret (Settings → Secrets and
+variables → Actions). It's a fine-grained personal access token:
+
+1. GitHub → your profile → Settings → Developer settings → Personal access
+   tokens → Fine-grained tokens → Generate new token.
+2. Resource owner: **Hallowed-Gains-LLC**. Repository access: **Only select
+   repositories**, then DriftLight (and any other private game repo).
+3. Permissions → Repository permissions → **Contents: Read-only**. Nothing
+   else.
+4. Pick the longest expiry you're comfortable with, and put a reminder in
+   your calendar: when it expires, deploys fail with "can't reach
+   Hallowed-Gains-LLC/DriftLight" until you make a new one and update the
+   secret. If the organization requires approval for tokens, an owner has
+   to approve it before it works.
+
+Public repos need no token. To change a token, generate a new one and paste
+it over the old secret; nothing else changes.
 
 GitHub pauses scheduled workflows in a repo with no commits for 60 days. If
 game updates stop showing up, check the Actions tab and re-enable it.
@@ -56,7 +81,9 @@ setting is gone, replaced by two redirects:
 
 Add a folder with a `game.json` to `web-games`, as its README describes. Nothing
 changes here. To pull games from another repo too, add it to
-`games/sources.json`. Folder names must be unique across all sources.
+`games/sources.json`. Slugs must be unique across all sources: the deploy
+fails if two sources serve the same one, so when a game moves repos, exclude
+it from the old source in the same change that adds the new one.
 
 ### Running it locally
 

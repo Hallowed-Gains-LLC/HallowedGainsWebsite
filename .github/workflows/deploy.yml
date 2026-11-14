@@ -30,6 +30,9 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - id: compare
+        env:
+          # Read access to private game repos (DriftLight); see the README.
+          GAMES_REPO_TOKEN: ${{ secrets.GAMES_REPO_TOKEN }}
         run: |
           changed=false
           scripts/fetch-games.sh --versions > latest.json
@@ -62,6 +65,8 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Pull in the games
+        env:
+          GAMES_REPO_TOKEN: ${{ secrets.GAMES_REPO_TOKEN }}
         run: scripts/fetch-games.sh
       # Fails the deploy if a policy can't be fetched, rather than publish
       # the privacy page without it.
