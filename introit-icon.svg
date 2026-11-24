@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" role="img" aria-label="Introit">
+  <!-- Introit's mark: a wall, with a cross cut out of it above an arched door.
+       The same shape and green as the tab icon on introit.church (MARK_PATH in
+       church-websites/src/layout/icons.ts). Change them together. -->
+  <path fill="#2c6142" fill-rule="evenodd" d="M0 0H48V48H0ZM21.5 3H26.5V7.5H31.5V12.5H26.5V18H21.5V12.5H16.5V7.5H21.5ZM13 48V34A11 11 0 0 1 35 34V48Z"/>
+</svg>
