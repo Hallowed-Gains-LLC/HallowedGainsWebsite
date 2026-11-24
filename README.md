@@ -129,6 +129,40 @@ own.
 To add another app: publish its policy with those markers, add it to
 `sources.json`, and put the markers in its `<section>` here.
 
+## Introit (`/introit`)
+
+[Introit](https://introit.church) is websites for Lutheran parishes. Its own
+site is introit.church and its code is in
+**[Hallowed-Gains-LLC/church-websites](https://github.com/Hallowed-Gains-LLC/church-websites)**.
+What is here is the short account of it for somebody who came to Hallowed
+Gains first: [`introit.html`](introit.html), and a card on the home page that
+leads to it.
+
+- **The page says what introit.church says, shortened.** What Introit is,
+  what a parish gets and what it will not do are in the words of Introit's own
+  front page (`platform/src/home.ts` in that repo). If those change there,
+  change them here.
+- **The price is not on this page, on purpose.** It is on introit.church, and
+  this page sends people there for it, so there is one place to change it.
+- **The mark** is `introit-icon.svg` (and `introit-icon.png`, for the picture
+  on a shared link's card, which will not take an SVG). It is the same shape
+  and green as Introit's own tab icon (`MARK_PATH` in `src/layout/icons.ts`
+  there).
+
+**When Introit opens to parishes**, three things here are out of date. Each is
+marked `WHEN INTROIT OPENS` in a comment, or is the "Coming Soon" badge:
+
+1. `introit.html`: the "Coming Soon" label in the hero and the line under the
+   buttons ("Not yet open to parishes").
+2. `introit.html`: the "Coming Soon" section at the foot, which says Introit
+   is not taking parishes. Say how a parish starts instead.
+3. `index.html`: the "Coming Soon" badge on the Introit card, the sentence in
+   it that says Introit is not taking parishes yet, and "(coming soon)" in the
+   page's `<meta name="description">`.
+
+The card under it, "Church Web & App Development", is for custom work and
+sends a parish that wants an ordinary website to Introit.
+
 ## Google Analytics
 
 Every page loads [`analytics.js`](analytics.js), which holds the GA4
