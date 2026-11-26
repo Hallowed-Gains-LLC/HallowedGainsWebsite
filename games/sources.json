@@ -10,6 +10,12 @@
       "branch": "main",
       "folder": "www",
       "slug": "driftlight"
+    },
+    {
+      "repo": "Hallowed-Gains-LLC/hearthstead",
+      "branch": "site",
+      "folder": "www",
+      "slug": "hearthstead"
     }
   ]
 }
