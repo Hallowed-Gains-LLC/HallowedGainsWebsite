@@ -168,15 +168,19 @@ sends a parish that wants an ordinary website to Introit.
 ## Oratio (a card only)
 
 [Oratio](https://www.oratioprayer.com/) is a Daily Office prayer app we are
-building for Oratio Press, its publisher. It is not out yet, so it has no page
-here: just a card on the home page, among the client work, that links out to
-oratioprayer.com (which has its launch list).
+building for Oratio Press LLC, the client and owner; its code is in
+**[Oratio-Press/Oratio-Prayer-App](https://github.com/Oratio-Press/Oratio-Prayer-App)**.
+It is not out yet, so it has no page here: just a card on the home page, among
+the client work, that links out to oratioprayer.com (which has its launch list).
 
-- **The words are Oratio's own, shortened**, from its home and About pages:
-  Scripture and the historic Daily Office, confessional Lutheran, five forms
-  of prayer, the Church Year, teaching notes. If those change, change the card.
-- **The mark** is `oratio-mark.svg`, a copy of `assets/img/oratio_mark.svg`
-  from oratioprayer.com (gold, `#E0A74C`).
+- **The words follow Oratio's own**: its site's home and About pages, and the
+  client's Messaging Guide (digested in that repo's
+  `docs/product/messaging-and-copy.md`). So it is "Prayer Forms", never
+  "levels"; no "unlock", "streaks" or "content". Launch dates and platforms
+  are the client's to announce, so the card names neither until their site does.
+- **The icon** is `oratio-icon.svg`, a copy of that repo's
+  `design/brand/oratio_logo.svg` (the app icon: gold `#E0A74C` cross and book
+  on burgundy `#620E1B`). If the icon changes there, copy it again.
 
 **When Oratio launches**, update the card in `index.html` (it is marked
 "In Development"): the badge, the sentence that says it isn't out yet, and
