@@ -165,6 +165,23 @@ marked `WHEN INTROIT OPENS` in a comment, or is the "Coming Soon" badge:
 The card under it, "Church Web & App Development", is for custom work and
 sends a parish that wants an ordinary website to Introit.
 
+## Oratio (a card only)
+
+[Oratio](https://www.oratioprayer.com/) is a Daily Office prayer app we are
+building for Oratio Press, its publisher. It is not out yet, so it has no page
+here: just a card on the home page, among the client work, that links out to
+oratioprayer.com (which has its launch list).
+
+- **The words are Oratio's own, shortened**, from its home and About pages:
+  Scripture and the historic Daily Office, confessional Lutheran, five forms
+  of prayer, the Church Year, teaching notes. If those change, change the card.
+- **The mark** is `oratio-mark.svg`, a copy of `assets/img/oratio_mark.svg`
+  from oratioprayer.com (gold, `#E0A74C`).
+
+**When Oratio launches**, update the card in `index.html` (it is marked
+"In Development"): the badge, the sentence that says it isn't out yet, and
+the link if it should go to the app stores or a page here instead.
+
 ## Google Analytics
 
 Every page loads [`analytics.js`](analytics.js), which holds the GA4
